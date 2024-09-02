@@ -1,0 +1,401 @@
+/* style.css */
+
+:root {
+    --ffff-ffff: rgb(1, 1, 1);
+}
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* MAIN */
+.main-wrap {
+    /* background-image: url('./images/top_background.jpeg');
+    background-size: contain; /* or cover?
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: inherit; */
+
+    position: relative;
+    /* display: grid;
+    grid-template-rows: repeat(5, 900px);
+    grid-template-columns: 100vw; */
+
+    width: 100%;
+}
+
+/* TOP LANDING SECTION */
+.top-landing-page {
+    /* grid-row: 1 / 2; */
+
+    position: relative;
+    top: 0;
+    background-image: url('./images/top_background.jpeg');
+    background-size: cover; /* or contain? */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.top-quote {
+    max-width: 500px;
+    text-align: center;
+    color: rgba(3, 6, 51, 1);
+    font-size: 30px;
+
+    /* border: 1px solid black; */
+}
+
+.request-button {
+    inset: all;
+    border: none;
+    box-sizing: border-box;
+    font-family: tahoma;
+    font-size: 12px;
+    border-radius: 25px;
+    padding: 10px 13px;
+    color: #EFC506;
+    background: rgba(1, 36, 86, 0.8392156862745098);
+
+}
+
+.request-button:hover {
+    color: rgba(219, 153, 36, 1);
+    background: rgba(33, 80, 173, 1);
+
+}
+
+.top-mid-quote {
+    text-align: center;
+    color: rgba(3, 6, 51, 1);
+    /* font-family: s; */
+    font-size: 24px;
+    font-weight: 500;
+
+}
+
+
+/* HEADER */
+.top-main {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    width: 100vw;
+    height: auto;
+    border: 1px solid black;
+    /* background: rgba(1, 1, 1, .1); */
+    /* opacity: 0; */
+}
+
+.header-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    list-style-type: none;
+    border: 1px solid red;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.head-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* all: unset; */
+    padding: 4px 4px;
+    margin: 0;
+    padding: 0;
+    height: min-content;
+    /*text-decoration: none; Removes the underline */
+    /* color: inherit; */
+
+    /* border: 1px solid black; */
+
+    /* links should be dark blue, with a yellow hover. font should be mild bold. */
+};
+
+.head-logo {
+    text-decoration: none;
+    color: inherit;
+}
+
+.head-link > a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;
+    color: rgba(1, 36, 86, 0.94);
+    font-size: 20px;
+}
+
+.head-link > a:hover {
+    color: rgba(219, 153, 36, 1);
+}
+
+/* .header-links a {
+    text-decoration: none; /* Removes the underline
+    color: inherit;
+    
+} */
+
+/* li > a {
+    text-decoration: none;
+    color: red;
+    /* font-style: unset; */
+    /* color: inherit;
+} */
+
+
+
+.head-logo {
+    background-image: url('./images/rwags-logo.png');
+    background-size: contain; /* or contain? */
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    /* background-color: inherit; */
+
+    width: 130px;
+    height: 90px;
+};
+
+/* Serve main Quote */
+
+.sec-quote {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    height: 200px;
+}
+
+.serv-main-quote {
+    /* min-height: 100px; */
+    font-size: 27px;
+    /* padding-top: 20px; */
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+/* SERVICES SECTION */
+
+.services-main {
+    display: grid;
+    grid-template-rows: repeat(4, 300px);
+    /* grid-row: 2 / 3; */
+    border: 1px solid red;
+    padding-top: 50px;
+    padding-bottom: 40px;
+
+}
+
+.service-wrap {
+    border: 1px solid green;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.subservice-wrap-desc {
+    max-width: 350px; 
+}
+
+.serv-lrn-butn {
+    all: unset;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 7px 30px;
+    color: rgba(232, 123, 11, 1);
+}
+
+.serv-lrn-butn:hover {
+    background: rgba(33, 80, 173, 1);
+}
+
+#win-wash-wrap {
+    width: 343px;
+    height: 260px;
+    /* border: 1px solid black; */
+    background: url(./images/dylan-cleanwindow-v1.png);
+    background-size: contain; /* or contain? */
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+}
+
+#roofgut-img-wrap {
+    width: 334px;
+    height: 260px;
+    /* width: 343px;
+    height: 260px; */
+    /* border: 1px solid black; */
+    background: url(./images/debris-roof-main_page.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#pwrwash-img-wrap {
+    width: 324px;
+    height: 260px;
+    background: url(./images/power-wash.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#solrp-img-wrap {
+    width: 324px;
+    height: 260px;
+    background: url(./images/new-solar-dylan.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* QUOTE SLIDER */
+
+#quote-slider-wrap {
+    /* grid-row: 3 / 4; */
+    border: 1px solid green;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* quote-request-section */
+
+.quote-request-section {
+    /* grid-row: 4 / 5; */
+    /* height: 900px; */
+    border: 1px solid red;
+}
+
+.divider-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    height: 35px;
+    min-width: 100%;
+    
+    border: 1px solid black;
+}
+
+.divider-spn {
+    width: 60%;
+    height: 2.5px;
+    background: black;
+    /* padding: 2px 5px; */
+}
+
+.slider-title {
+    padding: 5px;
+    font-size: 30px;
+    /* font-weight: 600; */
+    letter-spacing: .1rem;
+}
+
+.slider {
+    height: 250px;
+    width: 450px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+    border-radius: 4px;
+    background: #f1f5f9;
+    position: relative;
+}
+
+.quote-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.quote-slide span:first-child {
+    font-size: 20px;
+    letter-spacing: .1rem;
+    padding-bottom: 7px;
+    width: 400px;
+}
+
+.scroll-slider {
+    height: 30px;
+    width: 30px;
+}
+
+.scroll-l {
+    position: absolute;
+    left: 0;
+}
+
+.scroll-r {
+    position: absolute;
+    right: 0;
+}
+
+
+
+
+
+
+
+/* .divider > span {
+    /* height: 2px;
+    box-sizing: border-box;
+    width: 100px;
+    height: 5px;
+    padding: 5px;
+    
+    border: 3px solid black;
+    
+    
+} */
+
+
+
+
+
