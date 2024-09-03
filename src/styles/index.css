@@ -357,13 +357,13 @@ html, body {
     box-sizing: border-box;
     height: 35px;
     min-width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .divider-spn {
-    width: 60%;
+    width: 70%;
     height: 2.5px;
-    background: black;
+    background: #0f172a;
     /* padding: 2px 5px; */
 }
 
@@ -486,29 +486,77 @@ html, body {
 /* FOOTER SECTION */
 
 .index-footer {
-   height: 400px;
-   /* background: rgba(2, 6, 23, .8); */
-   /* background: rgba(217, 119, 6, .7); */
-   background: #0ea5e9;
-
+    height: 400px;
+    display: flex;
+    justify-content: end;
+    /* background: rgba(2, 6, 23, .8); */
+    /* background: rgba(217, 119, 6, .7); */
+    background: rgba(14, 165, 233, .9);
 }
-
+ 
 .logo-foot-wrap {
-    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 18px;
+    padding-left: 22px;
+    width: 100%;
 }
 
+.foot-contact-left {
+    width: 400px;
+}
+
+.foot-contact-left > span {
+    font-size: 10px;
+}
+ 
 .footer-logo {
-        background-image: url('../images/rwags-logo.png');
-        background-size: contain; /* or contain? */
-        /* background-attachment: fixed; */
-        background-repeat: no-repeat;
-        /* background-color: inherit; */
-        background-color: yellow;
-    
-        box-sizing: border-box;
-        width: 250px;
-        height: 250px;
-        border: 1px solid black;
-        /* padding: 30px; */
-        border-radius: 125px;
-    };
+    background-image: url('../images/rwags-logo.png');
+    background-size: cover; /* or cover? */
+    background-repeat: no-repeat;
+    background-color: yellow;
+    box-sizing: border-box;
+    width: 460px;
+    height: 300px;
+    border: 1px solid black;
+    /* border-radius: 125px; */
+}
+
+.logo-foot-wrap > div > h2 {
+    color: rgba(240, 233, 221, 1);
+}
+
+.foot-links {
+    display: flex;
+    gap: 12px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#phone-number {
+    font-size: 40px;
+}
+
+#phone-number > a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;
+}
+
+#phone-number > a:hover {
+    color: rgba(219, 153, 36, .8);
+}
+
+.foot-link > a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;
+    /* color: rgba(1, 36, 86, 0.94); */
+    color: rgba(219, 153, 36, 1);
+    font-size: 15px;
+}
+ 
+
+
+

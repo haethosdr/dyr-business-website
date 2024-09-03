@@ -12,6 +12,7 @@ html, body {
     margin: 0;
     padding: 0;
     background: rgba(240, 233, 221, 1);
+    /* background: #eff6ff; */
 }
 
 
@@ -34,7 +35,7 @@ html, body {
     align-items: center;
     justify-content: center;
 
-    height: calc(100vh + 100px);
+    height: 100vh;
     width: 100%;
 }
 
@@ -64,8 +65,6 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 
 }
-
-
 
 
 /* HEADER */
@@ -153,31 +152,38 @@ section > .about-cont-wrap {
     /* align-items: center;
     justify-items: center; */
     
-    min-height: 650px;
+    min-height: 570px; /* ADJUST THIS LATER with more content */
     max-height: max-content;
     min-width: 550px;
     max-width: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     gap: 5px;
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-right: 15px;
 }
 
 .content-left-wrap {
     max-width: 375px;
     padding-right: 20px;
     padding-left: 12px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+.content-left-wrap > h2 {
+    /* color: rgba(16, 28, 86, 1); */
+    color: #1d4ed8;
 }
 
-.content-left-wrap > h4,
+
+.content-left-wrap > h2,
 .content-left-wrap > p {
-    padding-top: 10px;
+    padding-top: 0;
     margin: 0;
 }
 
 .content-left-wrap > p {
+    padding-top: 10px;
     font-weight: 500;
-    color: rgba(16, 28, 86, 1);
+    color: rgba(16, 28, 86, .7);
 }
 
 
@@ -187,9 +193,153 @@ section > .about-cont-wrap {
     /* background-attachment: fixed; */
     background-repeat: no-repeat;
 
-    min-width: 250px;
+    min-width: 350px;
     max-width: 500px;
-    height: 480px;
-    border: 1px solid red;
+    height: 468px;
+    /* border: 1px solid red; */
+
 }
+
+/* About - bottom: contact us */
+
+.contactus-bottom-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+
+    height: 150px;
+    padding-bottom: 50px;
+    /* background: #1d4ed8; */
+    /* background: rgba(96, 165, 250, .8); */
+    /* border: 1px solid black; */
+}
+
+.contus-insd-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contactus-bottom-wrap > div {
+    /* border: 1px solid black; */
+}
+
+.contactus-bottom-wrap > div > h2,
+.contactus-bottom-wrap > div > h3 {
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+.about-botm-btn {
+    inset: all;
+    border: none;
+    /* border: 1px solid black; */
+    padding: 5px 10px;
+    background: rgba(3, 105, 161, .8);
+    /* border-radius: 3px; */
+    color: white;
+}
+
+.about-botm-btn:hover {
+    background: rgba(3, 105, 161, .9);
+    color: rgba(219, 153, 36, 1);
+}
+
+/* DIVIDER */
+
+.divider-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    height: 35px;
+    min-width: 100%;
+}
+
+.divider-spn {
+    width: 70%;
+    height: 2.5px;
+    background: #0369a1;
+    /* padding: 2px 5px; */
+}
+
+/* FOOTER SECTION */
+
+.index-footer {
+    height: 400px;
+    display: flex;
+    justify-content: end;
+    /* background: rgba(2, 6, 23, .8); */
+    /* background: rgba(217, 119, 6, .7); */
+    background: rgba(14, 165, 233, .9);
+}
+ 
+.logo-foot-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 18px;
+    padding-left: 22px;
+    width: 100%;
+}
+
+.foot-contact-left {
+    width: 400px;
+}
+
+.foot-contact-left > span {
+    font-size: 10px;
+}
+ 
+.footer-logo {
+    background-image: url('../images/rwags-logo.png');
+    background-size: cover; /* or cover? */
+    background-repeat: no-repeat;
+    background-color: yellow;
+    box-sizing: border-box;
+    width: 460px;
+    height: 300px;
+    border: 1px solid black;
+    /* border-radius: 125px; */
+}
+
+.logo-foot-wrap > div > h2 {
+    color: rgba(240, 233, 221, 1);
+}
+
+.foot-links {
+    display: flex;
+    gap: 12px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#phone-number {
+    font-size: 40px;
+}
+
+#phone-number > a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;
+}
+
+#phone-number > a:hover {
+    color: rgba(219, 153, 36, .8);
+}
+
+.foot-link > a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;
+    /* color: rgba(1, 36, 86, 0.94); */
+    color: rgba(219, 153, 36, 1);
+    font-size: 15px;
+}
+ 
+
+
 
