@@ -14,7 +14,6 @@ html, body {
     background: rgba(240, 233, 221, 1);
 }
 
-
 /* MAIN/WRAP */
 #about-main-body {
     display: flex;
@@ -23,10 +22,8 @@ html, body {
 
 /* ABOUT TOP LANDING */
 #landing-wrap {
-    /* background-image: url('../images/services-background.png'); */
     background-image: url('../images/contact-img3.png');
     background-size: cover; /* or contain? */
-    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     
     display: flex;
@@ -40,9 +37,7 @@ html, body {
 
 .about-top-sub-cont {
     max-width: 400px;
-    /* border: 1px solid orange; */
     text-align: center;
-
     display: flex;
     flex-direction: column;
 }
@@ -71,15 +66,14 @@ html, body {
 /* HEADER */
 .top-main {
     position: absolute;
+    width: 100vw;
+    height: auto;
+    padding-top: 10px;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     /* background-color: rgba(219, 153, 36, .3); */
-    
-    width: 100vw;
-    height: auto;
-    padding-top: 10px;
 }
 
 .header-links {
@@ -87,24 +81,24 @@ html, body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    box-sizing: border-box;
+    gap: 5px;
 
     list-style-type: none;
-    
     margin: 0;
     padding: 0;
 }
 
-.head-link {
+.head-link-item {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
    
-    padding: 4px 4px;
+    padding: 8px 8px;
     margin: 0;
-    padding: 0;
     height: min-content;
-
+    /* border: 1px solid black; */
     /* links should be dark blue, with a yellow hover. font should be mild bold. */
 };
 
@@ -113,31 +107,94 @@ html, body {
     color: inherit;
 }
 
-.head-link > a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit;
+.head-link-item > a {
+    box-sizing: border-box;
+    text-decoration: none;
+ }
+
+.head-link-item > .unselected {
     color: rgba(1, 36, 86, 1);
-    /* color: rgba(219, 153, 36, 1); */
     font-size: 20px;
 }
 
-.head-link > a:hover {
+.head-link-item > .unselected:hover {
     color: rgba(219, 153, 36, 1);
-    text-decoration: underline;
-    /* font-style: ; */
 }
 
 .head-logo {
     background-image: url('../images/rwags-logo.png');
     background-size: contain; /* or contain? */
-    /* background-attachment: fixed; */
     background-repeat: no-repeat;
-    /* background-color: inherit; */
+    position: relative;
 
     width: 150px;
     height: 100px;
-    /* border: 1px solid red; */
-};
+}
+
+.head-logo a {
+    position: absolute;  /* Positioning the link within the container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures the link covers the full container */
+    height: 100%;
+    z-index: 10;
+}
+
+/* #services {
+    border: 1px solid black;
+} */
+
+/* DROPDOWN MENU */
+#dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    box-sizing: border-box;
+    width: 200px;
+    height: auto;
+    /* background: rgba(14, 165, 233, .8); */
+    background: rgba(1, 36, 86, .9);
+    /* border: 1px solid rgba(219, 153, 36, 1); */
+    /* rgba(2, 132, 199, */
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */
+    /* transform: translateY(-10px); Initial transform state */
+    /* pointer-events: none; */
+    z-index: 2;
+}
+
+#dropdown-menu > a {
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 7px;
+    color: white;
+    z-index: 10;
+}
+
+#dropdown-menu > a:hover {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: rgba(219, 153, 36, 1);
+}
+
+#dropdown-menu span {
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+/* HEADER: SELECTED PAGE LINK */
+
+.selected-link {
+    color: rgba(219, 153, 36, 1);
+    font-size: 23px;
+    /* background: rgba(1, 36, 86, .3); */
+    background: rgba(14, 165, 233, .4);
+    border-radius: 3px;
+}
 
 /* CONTACT INFO AREA */
 
@@ -152,13 +209,16 @@ section > .contact-info-wrap {
     align-items: center;
 
     border: 1px solid black;
-    height: 550px;
+    height: 400px;
+    padding-top: 15px;
 }
 
 .info-subwrap {
     border: 1px solid black;
     padding-top: 10px;
     padding-bottom: 30px;
+    padding-right: 20px;
+    padding-left: 25px;
 }
 
 .cont-into-title {
@@ -177,7 +237,7 @@ section > .contact-info-wrap {
 }
 
 .divider-spn {
-    width: 70%;
+    width: 75%;
     height: 2.5px;
     background: #0369a1;
 }
@@ -185,12 +245,169 @@ section > .contact-info-wrap {
 .contact-subwrap {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 250px;
+    grid-template-rows: 150px;
     border: 1px solid black;
-
-
 }
 
 .cont-into-box {
     border: 1px solid green;
+    padding: 15px;
 }
+
+.cont-into-box > h3 {
+    color: rgba(1, 36, 86, .9);
+}
+
+.email-num-cont {
+    border: 1px solid black;
+}
+
+.cont-into-box > p {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* MAP SECTION */
+.map-wrap {
+    display: flex;
+    justify-content: center;
+}
+/* #goog-map {
+
+} */
+
+.form-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding-bottom: 50px;
+}
+
+.form-section-title {
+    font-size: 22px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 13px;
+}
+
+#contact-form {
+    width: 85%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sub-input-group {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid yellow;
+    gap: 2px;
+}
+
+.form-input-field {
+    border: 1px solid black;
+    padding: 7px;
+}
+
+.name-group {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid green;
+    gap: 8px;
+}
+
+#form-submit {
+    all: unset;
+    border: 1px solid black;
+    padding: 6px;
+}
+
+#form-submit:hover {
+    color: white;
+    background: #0369a1;
+}
+
+textarea.form-input-field {
+    resize: vertical;
+    min-height: 100px;
+    max-width: 100%;
+}
+
+
+/* FOOTER SECTION */
+.index-footer {
+    height: 400px;
+    display: flex;
+    justify-content: end;
+    /* background: rgba(2, 6, 23, .8); */
+    /* background: rgba(217, 119, 6, .7); */
+    background: rgba(14, 165, 233, .9);
+}
+ 
+.logo-foot-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 18px;
+    padding-left: 22px;
+    width: 100%;
+}
+
+.foot-contact-left {
+    width: 400px;
+}
+
+.foot-contact-left > span {
+    font-size: 10px;
+}
+ 
+.footer-logo {
+    background-image: url('../images/rwags-logo.png');
+    background-size: cover; /* or cover? */
+    background-repeat: no-repeat;
+    background-color: yellow;
+    box-sizing: border-box;
+    width: 460px;
+    height: 300px;
+    border: 1px solid black;
+    /* border-radius: 125px; */
+}
+
+.logo-foot-wrap > div > h2 {
+    color: rgba(240, 233, 221, 1);
+}
+
+.foot-links {
+    display: flex;
+    gap: 12px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#phone-number {
+    font-size: 40px;
+}
+
+#phone-number > a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;
+}
+
+#phone-number > a:hover {
+    color: rgba(219, 153, 36, .8);
+}
+
+.foot-link > a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;
+    /* color: rgba(1, 36, 86, 0.94); */
+    color: rgba(219, 153, 36, 1);
+    font-size: 15px;
+}
+ 

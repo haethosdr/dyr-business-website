@@ -7,36 +7,41 @@
 </head>
 <body>
 
-    <div id="main-wrap">
+    <div id="home-main-wrap">
 
         <header class="top-main">
             <ul class="header-links">
-                <li class="head-link"><a href="./about.html">About</a></li>
-                <li class="head-link"><a href="">Services</a></li>
-                <li class="head-logo"><a href="./index.html"></a></li>
-                <li class="head-link"><a href="./contact.html">Contact</a></li>
-                <li class="head-link"><a href="./testimonials.html">Testimonials</a></li>
+                <li class="head-link-item" id="about"><a href="./about.html" class="unselected">About</a></li>
+                <li class="head-link-item" id="services">
+                    <a href="" class="unselected">Services</a>
+                    <div id="dropdown-menu">
+                        <a href="./window-washing.html"><span>Window Washing</span></a>
+                        <a href=""><span>Roof & Gutter Cleaning</span></a>
+                        <a href=""><span>Pressure Washing</span></a>
+                    </div>
+                </li>
+    
+                <li class="head-logo" id="home"><a href="./index.html"></a></li>
+                <li class="head-link-item" id="contact"><a href="./contact.html" class="unselected">Contact</a></li>
+                <li class="head-link-item" id="testimonials"><a href="./testimonials.html" class="unselected">Testimonials</a></li>
             </ul>
         </header>
 
         <section class="top-landing-page">
-            <div class="sub-content">
-                <h2 class="top-quote">
-                    <i>" </i>Get your head out of the Gutter and don't miss your Window of opportunity! <i>"</i>
-                </h2>
-                <div></div>
-                <button class="request-button">REQUEST FREE ESTIMATE</button>
-                <div class="top-mid-quote">
-                    A Better View of Excellent Service
-                </div>
+          <div class="sub-content">
+            <h2 class="top-quote">
+             <i>" </i>Get your head out of the Gutter and don't miss your Window of opportunity! <i>"</i>
+             </h2>
+             <!-- <div></div> -->
+             <a href="./contact.html"><button class="request-button">REQUEST FREE ESTIMATE</button></a>
+             <div class="top-mid-quote">
+                A Better View of Excellent Service
             </div>
-
+          </div>
         </section>
 
         <section class="sec-quote">
-
             <h3 class="serv-main-quote">Spotless services for the south bay area.</h3>
-
         </section>
         
         <section class="services-main">
@@ -44,7 +49,7 @@
             <div class="service-wrap">
                 <div class="subservice-wrap-desc">
                     <h2>WINDOW CLEANING</h2>
-                    <p>The easiest way to get beautiful lighting and a crystal clear view? A good window clean from rogers widows and gutters!  We use state of the art window cleaning equipment including a gentle brush cleaner with a water fed pole and deionized water using patient squeegee techniques – we’ll make sure your home or business gets the view it deserves.</p>
+                    <p>The easiest way to get beautiful lighting and a crystal clear view? A good window clean from rogers widows and gutters! <br> We use state of the art window cleaning equipment including a gentle brush cleaner with a water fed pole and deionized water using patient squeegee techniques – we’ll make sure your home or business gets the view it deserves.</p>
                     <button class="serv-lrn-butn">LEARN MORE</button>
                 </div>
                 <div id="win-wash-wrap">
@@ -56,7 +61,7 @@
                 </div>
                 <div class="subservice-wrap-desc">
                     <h2>ROOF & GUTTER CLEANING</h2>
-                    <p>Dirt and debris accumulating on your roof overtime can cause composition tile or roof failure. Dirty Gutters exacerbate this and can also corrode and be in need of replacing. We do a comprehensive cleaning of your gutters and roof, including moss removal. We take good safety precautions and treat your roof like our own.</p>
+                    <p>Dirt and debris accumulating on your roof overtime can cause composition tile rot or roof failure. Dirty gutters can exacerbate roof decay and can themselves corrode, cause damage around the house and be in need of replacing. We do a comprehensive cleaning of your gutters and roof, including moss removal. We take good safety precautions and treat your roof like our own.</p>
                     <button class="serv-lrn-butn">LEARN MORE</button>
                 </div>
             </div>
@@ -109,36 +114,30 @@
             <div class="req-content-wrap">
                 <span>For windows that gleam, we're your dream team.</span>
                 <div class="req-logo-wrap"><span class="req-logo"></span></div>
-                <button class="req-button">REQUEST FREE QUOTE!</button>
+                <a href="./contact.html" class="req-link"><button class="req-button">REQUEST FREE QUOTE!</button></a>
             </div>
-
+        
         </section>
 
         <section class="intro-wrap">
             <div class="description-left">
                 <h3 class="low-intro-title">Rogers Windows and Gutters</h3>
-                <h4>Rogers Windows and Gutters started in 2017 with a vision of bringing great exterior home cleaning services to the people of the south bay.</h4>
+                <h4>Rogers Windows and Gutters started in 2017 with a vision of bringing great exterior home cleaning services to the people of the south bay area.</h4>
                 <p>We serve a diverse array of clients all over the South Bay area. Some of these include homes, apartments, apartment groups, and small & large businesses. We consist of a father and son team, 
                     striving to raise each part of our business to the most professional of standards – carbon fiber water fed poles, deionized water, 
                     high quality organic soaps – and of course, valuing our customers needs – are just some of the ways we try to be worthy of your business.
                     Our business spirit is one of professionalism, local family business character, and valued customer relationships. 
                     Going out and serving our customers makes our day. We look forward to having you as a client, now, and into the future. Thank you for considering Rogers Windows and Gutters.</p>
 
-                <button class="contact-lower-button">CONTACT US</button>
+                <a href="./contact.html" class="req-link"><button class="contact-lower-button">CONTACT US</button></a>
 
             </div>
 
             <div class="intro-img-right">
-                <!-- <img src="" alt=""> -->
+               
             </div>
 
         </section>
-
-        
-        <!-- <section class="lower-gallery-wrap">
-            <div></div>
-
-        </section> -->
 
         <footer class="index-footer">
             <div class="logo-foot-wrap">
@@ -150,12 +149,12 @@
                 <ul class="foot-links">
                     <li class="foot-link"><a href="./index.html">Home</a></li>
                     <li class="foot-link"><a href="./about.html">About</a></li>
-                    <li class="foot-link"><a href="./services/window-washing.html">Services</a></li>
+                    <li class="foot-link"><a href="./window-washing.html">Services</a></li>
                     <li class="foot-link"><a href="./contact.html">Contact</a></li>
                     <li class="foot-link"><a href="./testimonials.html">Testimonials</a></li>
                 </ul>
     
-                <span>© 2024 Rogers Widows and Gutters, all rights reserved.</span>
+                <span>© 2024 Rogers Windows and Gutters, all rights reserved.</span>
               </div>
     
               <div class="footer-logo"></div>

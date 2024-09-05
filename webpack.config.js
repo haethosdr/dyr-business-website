@@ -51,7 +51,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({ 
           template: './src/pages/services/roof-gutter-clean.html',
-          filename: 'pressure-washing.html',
+          filename: 'roof-gutter-clean.html',
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['services'],

@@ -70,16 +70,14 @@ html, body {
 /* HEADER */
 .top-main {
     position: absolute;
-    /* top: 10; */
-    /* z-index: 1; */
+    width: 100vw;
+    height: auto;
+    padding-top: 10px;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
-    width: 100vw;
-    height: auto;
-    padding-top: 10px;
+    /* background-color: rgba(219, 153, 36, .3); */
 }
 
 .header-links {
@@ -87,24 +85,24 @@ html, body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    box-sizing: border-box;
+    gap: 5px;
 
     list-style-type: none;
-    
     margin: 0;
     padding: 0;
 }
 
-.head-link {
+.head-link-item {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
    
-    padding: 4px 4px;
+    padding: 8px 8px;
     margin: 0;
-    padding: 0;
     height: min-content;
-
+    /* border: 1px solid black; */
     /* links should be dark blue, with a yellow hover. font should be mild bold. */
 };
 
@@ -113,34 +111,101 @@ html, body {
     color: inherit;
 }
 
-.head-link > a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit;
-    color: rgba(1, 36, 86, 0.94);
+.head-link-item > a {
+    box-sizing: border-box;
+    text-decoration: none;
+ }
+
+.head-link-item > .unselected {
+    color: rgba(1, 36, 86, 1);
     font-size: 20px;
 }
 
-.head-link > a:hover {
+.head-link-item > .unselected:hover {
     color: rgba(219, 153, 36, 1);
 }
 
 .head-logo {
     background-image: url('../images/rwags-logo.png');
     background-size: contain; /* or contain? */
-    /* background-attachment: fixed; */
     background-repeat: no-repeat;
-    /* background-color: inherit; */
+    position: relative;
 
     width: 150px;
     height: 100px;
-    /* border: 1px solid red; */
-};
+}
+
+.head-logo a {
+    position: absolute;  /* Positioning the link within the container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures the link covers the full container */
+    height: 100%;
+    z-index: 10;
+}
+
+/* #services {
+    border: 1px solid black;
+} */
+
+/* DROPDOWN MENU */
+#dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    box-sizing: border-box;
+    width: 200px;
+    height: auto;
+    /* background: rgba(14, 165, 233, .8); */
+    background: rgba(1, 36, 86, .9);
+    /* border: 1px solid rgba(219, 153, 36, 1); */
+    /* rgba(2, 132, 199, */
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */
+    /* transform: translateY(-10px); Initial transform state */
+    /* pointer-events: none; */
+    z-index: 2;
+}
+
+#dropdown-menu > a {
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 7px;
+    color: white;
+    z-index: 10;
+}
+
+#dropdown-menu > a:hover {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: rgba(219, 153, 36, 1);
+}
+
+#dropdown-menu span {
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+/* HEADER: SELECTED PAGE LINK */
+
+.selected-link {
+    color: rgba(219, 153, 36, 1);
+    font-size: 23px;
+    /* background: rgba(1, 36, 86, .3); */
+    background: rgba(14, 165, 233, .4);
+    border-radius: 3px;
+}
+
 
 
 /* ABOUT INFO */
 
 .about-cont-wrap {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 section > .about-cont-wrap {

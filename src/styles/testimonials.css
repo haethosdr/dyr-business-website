@@ -1,0 +1,375 @@
+/* testimonials.css */
+
+:root {
+    --ffff-ffff: rgb(1, 1, 1);
+}
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: rgba(240, 233, 221, 1);
+}
+
+
+/* MAIN/WRAP */
+#about-main-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ABOUT TOP LANDING */
+#landing-wrap {
+    /* background-image: url('../images/services-background.png'); */
+    background-image: url('../images/testimonials-background.png');
+    background-size: cover; /* or contain? */
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.about-top-sub-cont {
+    max-width: 400px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.about-top-sub-cont > h1 {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    /* border: 1px solid red; */
+}
+
+.about-top-sub-cont > h3 {
+    /* color: rgba(219, 153, 36, 1); */
+    /* color: rgba(234, 179, 8, .9); */
+    /* color: rgba(207, 93, 23, .9); */
+    /* color: rgba(1, 36, 86, 1); */
+    color: rgba(219, 153, 36, 1);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* HEADER */
+.top-main {
+    position: absolute;
+    width: 100vw;
+    height: auto;
+    padding-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: rgba(219, 153, 36, .3); */
+}
+
+.header-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 5px;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.head-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+   
+    padding: 8px 8px;
+    margin: 0;
+    height: min-content;
+    /* border: 1px solid black; */
+    /* links should be dark blue, with a yellow hover. font should be mild bold. */
+};
+
+.head-logo {
+    text-decoration: none;
+    color: inherit;
+}
+
+.head-link-item > a {
+    box-sizing: border-box;
+    text-decoration: none;
+ }
+
+.head-link-item > .unselected {
+    color: rgba(1, 36, 86, 1);
+    font-size: 20px;
+}
+
+.head-link-item > .unselected:hover {
+    color: rgba(219, 153, 36, 1);
+}
+
+.head-logo {
+    background-image: url('../images/rwags-logo.png');
+    background-size: contain; /* or contain? */
+    background-repeat: no-repeat;
+    position: relative;
+
+    width: 150px;
+    height: 100px;
+}
+
+.head-logo a {
+    position: absolute;  /* Positioning the link within the container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures the link covers the full container */
+    height: 100%;
+    z-index: 10;
+}
+
+/* #services {
+    border: 1px solid black;
+} */
+
+/* DROPDOWN MENU */
+#dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    box-sizing: border-box;
+    width: 200px;
+    height: auto;
+    /* background: rgba(14, 165, 233, .8); */
+    background: rgba(1, 36, 86, .9);
+    /* border: 1px solid rgba(219, 153, 36, 1); */
+    /* rgba(2, 132, 199, */
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */
+    /* transform: translateY(-10px); Initial transform state */
+    /* pointer-events: none; */
+    z-index: 2;
+}
+
+#dropdown-menu > a {
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 7px;
+    color: white;
+    z-index: 10;
+}
+
+#dropdown-menu > a:hover {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: rgba(219, 153, 36, 1);
+}
+
+#dropdown-menu span {
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+/* HEADER: SELECTED PAGE LINK */
+
+.selected-link {
+    color: rgba(219, 153, 36, 1);
+    font-size: 23px;
+    /* background: rgba(1, 36, 86, .3); */
+    background: rgba(14, 165, 233, .4);
+    border-radius: 3px;
+}
+
+
+/* CONTACT INFO AREA */
+.quote-main-wrap {
+    display: flex;
+}
+
+section > .quote-main-wrap {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+    border: 1px solid black;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.quote-main-intro {
+    max-width: 520px;
+}
+
+
+/* Divider */
+.divider-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    height: 45px;
+    min-width: 100%;
+}
+
+.divider-spn {
+    width: 70%;
+    height: 2.5px;
+    background: #0369a1;
+}
+
+
+/* QUOTES SECTION */
+
+.slides {
+    display: grid;
+    grid-template-columns: auto;
+    padding-top: 20px;
+    gap: 10px;
+}
+
+/* #quote-slider-wrap {
+    /* grid-row: 3 / 4; */
+    /* border: 1px solid green;
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+} */
+
+.slider-title {
+    padding: 5px;
+    font-size: 30px;
+    /* font-weight: 600; */
+    letter-spacing: .1rem;
+}
+
+.slider {
+    min-height: 250px;
+    width: 450px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+    border-radius: 4px;
+    background: rgba(33, 80, 173, .1);
+    position: relative;
+}
+
+.quote-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-slide span:first-child {
+    font-size: 15px;
+    letter-spacing: .1rem;
+    padding-bottom: 7px;
+    width: 400px;
+}
+
+/* FOOTER SECTION */
+
+.index-footer {
+    height: 400px;
+    display: flex;
+    justify-content: end;
+    /* background: rgba(2, 6, 23, .8); */
+    /* background: rgba(217, 119, 6, .7); */
+    background: rgba(14, 165, 233, .9);
+}
+ 
+.logo-foot-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 18px;
+    padding-left: 22px;
+    width: 100%;
+}
+
+.foot-contact-left {
+    width: 400px;
+}
+
+.foot-contact-left > span {
+    font-size: 10px;
+}
+ 
+.footer-logo {
+    background-image: url('../images/rwags-logo.png');
+    background-size: cover; /* or cover? */
+    background-repeat: no-repeat;
+    background-color: yellow;
+    box-sizing: border-box;
+    width: 460px;
+    height: 300px;
+    border: 1px solid black;
+    /* border-radius: 125px; */
+}
+
+.logo-foot-wrap > div > h2 {
+    color: rgba(240, 233, 221, 1);
+}
+
+.foot-links {
+    display: flex;
+    gap: 12px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#phone-number {
+    font-size: 40px;
+}
+
+#phone-number > a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;
+}
+
+#phone-number > a:hover {
+    color: rgba(219, 153, 36, .8);
+}
+
+.foot-link > a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;
+    /* color: rgba(1, 36, 86, 0.94); */
+    color: rgba(219, 153, 36, 1);
+    font-size: 15px;
+}
+ 
+
+
+
