@@ -47,7 +47,7 @@ html, body {
 .about-top-sub-cont {
     /* padding-top: 50px; */
     max-width: 400px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     text-align: center;
 
     display: flex;
@@ -59,7 +59,7 @@ html, body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 60px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     margin: 0;
     /* border: 1px solid red; */
 }
@@ -71,6 +71,9 @@ html, body {
     /* color: rgba(1, 36, 86, 1); */
     color: rgba(219, 153, 36, 1);
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin: 0;
+    padding-top: 10px;
 }
 
 
@@ -310,7 +313,7 @@ section > .about-cont-wrap {
     min-width: 350px;
     max-width: 500px;
     height: 380px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .benefits-title {
@@ -318,7 +321,7 @@ section > .about-cont-wrap {
 }
 
 .serv-lower-title {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: center;
     padding: 10px;
     margin: 0;

@@ -34,3 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('dropDownMenu: mouseover');
     });
 });
+
+
+// photo slider functionality //
+
+// 1. create two buttons. Attach eventlisteners.
+// 2. get photos together w/ dimensions of one standard, else set image bg to contain ?.
+// 3. load them into html/create elements
+// 4. create dontainer div w/ overflow settings.
+// 5. 
