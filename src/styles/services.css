@@ -326,6 +326,8 @@ section > .about-cont-wrap {
     padding: 10px;
     margin: 0;
     font-size: 23px;
+    color: rgba(3, 6, 51, .9);
+    letter-spacing: .1rem;
 }
 
 

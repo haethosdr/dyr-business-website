@@ -4,6 +4,36 @@ import '../styles/about.css';
 
 console.log("from about.js");
 
+const elem = (prop, par) => (par || document).querySelector(prop);
+const elems = (prop, par) => (par || document).querySelectorAll(prop);
+//const elementNew = (tag, prop) => Object.assign(document.createElement(tag), prop);
+
+let sliderIndex = 0;
+const WIDTH = 350;
+
+const nextImg = function () {
+    const images = elems('.img-cont');
+    if (sliderIndex === images.length - 1) return;
+   
+    sliderIndex += 1;
+    shiftImage();
+    console.log('nextImg');
+};
+
+const prevImg = function () {
+    if (sliderIndex === 0) return
+    sliderIndex -= 1;
+    shiftImage();
+    console.log('prevImg');
+};
+
+const shiftImage = function (ms = 400) {
+    const slideFrame = elem('#img-content');
+    slideFrame.style.transitionDuration = `${ms}ms`;
+    slideFrame.style.transform = `translateX(${-WIDTH * sliderIndex}px)`;
+};
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const page = document.querySelector('#about');
     page.childNodes[0].classList.remove('unselected');
@@ -11,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
+    const imgSlideButtons = elems('.scroll-slider');
     // serviceMenuLink.getBoundingClientRect();
 
     const toggleMenuDisplay = function () {
@@ -33,13 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleMenuDisplay();
         console.log('dropDownMenu: mouseover');
     });
+
+    // img slider functionality: //
+    imgSlideButtons[0].addEventListener('click', prevImg);
+    imgSlideButtons[1].addEventListener('click', nextImg);
+
 });
-
-
-// photo slider functionality //
-
-// 1. create two buttons. Attach eventlisteners.
-// 2. get photos together w/ dimensions of one standard, else set image bg to contain ?.
-// 3. load them into html/create elements
-// 4. create dontainer div w/ overflow settings.
-// 5. 

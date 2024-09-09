@@ -35,4 +35,11 @@ how we do it
 benefits of : "service"
 
 9/7
-1. 
+1. created quote slider and did some req quote formatting.
+
+9/8 
+1. do the image slider on the about page
+2. get the form set up.
+3. get the page on github and hosted.
+4. multiple the service pages
+5. get the mobile version done for the main page
