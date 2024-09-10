@@ -8,6 +8,10 @@ const elem = (prop, par) => (par || document).querySelector(prop);
 const elems = (prop, par) => (par || document).querySelectorAll(prop);
 //const elementNew = (tag, prop) => Object.assign(document.createElement(tag), prop);
 
+
+// will need to get width fronm bounding rect when media query is applied //
+// need WIDTH = slideFrame.getBoundingClientRect().width / (images.length - 1);
+
 let sliderIndex = 0;
 const WIDTH = 350;
 
@@ -29,6 +33,7 @@ const prevImg = function () {
 
 const shiftImage = function (ms = 400) {
     const slideFrame = elem('#img-content');
+    console.log(slideFrame.getBoundingClientRect());
     slideFrame.style.transitionDuration = `${ms}ms`;
     slideFrame.style.transform = `translateX(${-WIDTH * sliderIndex}px)`;
 };
@@ -68,5 +73,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // img slider functionality: //
     imgSlideButtons[0].addEventListener('click', prevImg);
     imgSlideButtons[1].addEventListener('click', nextImg);
+
+    const navOpenBtn = elem('#mobile-nav-btn');
+    const navDialog = elem('#mobile-dialog');
+    const closeDiaNav = elem('.nav-close-btn');
+
+    navOpenBtn.addEventListener('click', () => {
+        // navDialog.style.display = 'flex';
+        navDialog.showModal();
+        console.log("open Dialog");
+    });
+
+    closeDiaNav.addEventListener('click', () => {
+        navDialog.close();
+    });
+
+    const subNavbtn = elem('#services-nav');
+    const subNavDisplay = elem('#nav-srvc-menu');
+    subNavbtn.addEventListener('click', () => {
+        if (subNavDisplay.style.display === 'none') {
+            subNavDisplay.style.display = 'flex';
+        } else subNavDisplay.style.display = 'none';
+    });
+
+
 
 });

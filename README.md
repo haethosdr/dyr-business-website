@@ -38,8 +38,8 @@ benefits of : "service"
 1. created quote slider and did some req quote formatting.
 
 9/8 
-1. do the image slider on the about page
+1. do the image slider on the about page (basically done)
 2. get the form set up.
 3. get the page on github and hosted.
 4. multiple the service pages
-5. get the mobile version done for the main page
+5. get the mobile version done for the main page (start with top menu)
