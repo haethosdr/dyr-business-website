@@ -33,11 +33,13 @@ const prevImg = function () {
 
 const shiftImage = function (ms = 400) {
     const slideFrame = elem('#img-content');
+    const images = elems('.img-cont');
     console.log(slideFrame.getBoundingClientRect());
+    const newWIDTH = slideFrame.getBoundingClientRect().width / (images.length);
+    console.log(newWIDTH);
     slideFrame.style.transitionDuration = `${ms}ms`;
     slideFrame.style.transform = `translateX(${-WIDTH * sliderIndex}px)`;
 };
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const page = document.querySelector('#about');
@@ -79,13 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeDiaNav = elem('.nav-close-btn');
 
     navOpenBtn.addEventListener('click', () => {
-        // navDialog.style.display = 'flex';
-        navDialog.showModal();
-        console.log("open Dialog");
+        navDialog.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
     });
 
     closeDiaNav.addEventListener('click', () => {
-        navDialog.close();
+        subNavDisplay.style.display = 'none';
+        document.body.style.overflow = '';
+        navDialog.style.display = 'none';
     });
 
     const subNavbtn = elem('#services-nav');

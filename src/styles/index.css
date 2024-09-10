@@ -11,11 +11,12 @@
 html, body {
     margin: 0;
     padding: 0;
+    background: #e0f2fe;
+    font-size: 16px;
     /* background: rgba(33, 80, 173, .1); ORIGINAL */
     /* background: rgba(240, 233, 221, 1); */
     /* background: #99f6e4; lean away from*/
     /* background: #dbeafe; */
-    background: #e0f2fe;
     /* background: rgba(207, 250, 254, .3); */
     /* background: #ffe4e6; */
     /* background: rgb(238,174,202);
@@ -30,6 +31,7 @@ html, body {
     background-image: url('../images/top_background.jpeg');
     background-size: cover; /* or contain? */
     background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: inherit;
     width: 100%;
@@ -304,6 +306,7 @@ html, body {
     background: url(../images/main-page-supp.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: left;
     /* transform: rotate(90deg); */
     min-height: 500px;
     /* position: relative; */

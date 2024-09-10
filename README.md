@@ -26,7 +26,7 @@ notes:
 1. MAKE THE ADDRESS LINK CLICKABLE TO POPUP GOOGLE MAPS IN CONTACT SECTION
 
 9/6
-1. change contact image and low br color and oarangements
+1. change contact image and low br color and arangements
 
 format for service page
 What we do.
@@ -43,3 +43,16 @@ benefits of : "service"
 3. get the page on github and hosted.
 4. multiple the service pages
 5. get the mobile version done for the main page (start with top menu)
+
+9/10
+1. Need to shift background picture properly when resizing (done)
+2. create proper dialog that envelopes whole space and prevents scrolling. (done)
+3. make footer left textarea resize properly. 
+4. make fonts adjustable by using rem w/ base html font size set to 16px; (do later/post-release)
+5. create adjustable slider/carousel
+6. copy footer and header mobile functionality to other pages
+7. get mobile version of widow washing and then transfer to other pages
+8. make mobile nav/dialog / services / subservices close when reseting dialog (done)
+9. need overlay to close if it is outside media query range. (do later/post-release)
+10. styles for media screen sub 401px;
+11. for home, to indicate it is home, highlight circle behind logo yellow (do later/post-release)
