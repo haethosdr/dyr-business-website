@@ -129,17 +129,20 @@ html, body {
     color: inherit;
 }
 
-.head-link-item > a {
+.head-link-item > a,
+#nav-srvc-menu a {
     box-sizing: border-box;
     text-decoration: none;
  }
 
-.head-link-item > .unselected {
+.head-link-item > .unselected,
+.head-link-item.unselected {
     color: rgba(1, 36, 86, 1);
     font-size: 20px;
 }
 
-.head-link-item > .unselected:hover {
+.head-link-item > .unselected:hover,
+.head-link-item > .unselected:active {
     color: rgba(219, 153, 36, 1);
 }
 
@@ -206,6 +209,146 @@ html, body {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 18px;
+}
+
+/* MOBILE MENU */
+.mobile-header {
+    display: none;
+    flex-direction: row;
+}
+
+.mobile-btn-wrap {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    z-index: 20;
+}
+
+#mobile-nav-btn {
+    display: inline-flex;
+    align-items: center;  
+    justify-content: center;
+    padding: 0; 
+    width: 35px; 
+    height: 35px; 
+    border: 1px solid black;
+    border-radius: 5px;
+    background: rgba(14, 165, 233, .9);
+    fill: rgba(234, 179, 8, 1);
+    cursor: pointer;
+}
+
+/* nav overlay dialog menu */
+#mobile-dialog {
+    display: none;
+    position: fixed; /* Position fixed to cover the whole screen  */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(1, 36, 86, 0.4);
+    backdrop-filter: blur(7px);
+    z-index: 1000;
+    border: none;
+    outline: none;
+}
+
+#mobile-dialog > nav {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.nav-cls-btn-wrp {
+    position: absolute;
+    box-sizing: border-box;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: end;
+    /* border: 1px solid pink; */
+    /* padding: 3px; */
+    width: 100%;
+}
+
+.dialog-lnks-wrap {
+    /* border: 1px solid black; */
+    min-height: 300px;
+}
+
+.dialog-lnks-wrap > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-close-btn {
+    display: inline-flex; /* Use flex to center SVG */
+    align-items: center;   /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 0; /* Remove default padding */
+    width: 35px; /* Set desired width */
+    height: 35px; /* Set desired height */
+    border: 1px solid white;
+    border-radius: 5px;
+    fill: white;
+    background: rgba(1, 1, 1, .4);
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.dialog-lnks-wrap .head-link-item > .unselected,
+.dialog-lnks-wrap .head-link-item.unselected {
+    /* color: rgba(1, 36, 86, 1); */
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.dialog-lnks-wrap .head-link-item > .unselected:hover,
+.dialog-lnks-wrap .head-link-item > .unselected:active,
+#nav-srvc-menu .unselected:active {
+    color: rgba(219, 153, 36, 1);
+    font-size: 28px;
+}
+
+.dialog-lnks-wrap .head-link-item > .selected-link {
+    color: rgba(219, 153, 36, 1);
+    font-size: 28px;
+    background: inherit;
+}
+
+#nav-srvc-menu {
+    display: none;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    /* border: 1px solid black; */
+}
+
+#nav-srvc-menu a {
+    color: rgba(219, 153, 36, 1);
+    /* background: rgba(1, 36, 86, .3); */
+    background: rgba(14, 165, 233, .4);
+    border-radius: 5px;
+    padding: 4px 10px;
 }
 
 
@@ -581,30 +724,34 @@ html, body {
 /* FOOTER SECTION */
 
 .index-footer {
-    height: 400px;
+    min-height: 400px;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     /* background: rgba(2, 6, 23, .8); */
     /* background: rgba(217, 119, 6, .7); */
     background: rgba(14, 165, 233, .9);
 }
  
 .logo-foot-wrap {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding-right: 18px;
-    padding-left: 22px;
+    padding-right: 20px;
+    padding-left: 20px;
     width: 100%;
 }
 
 .foot-contact-left {
-    width: 400px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 400px;
 }
 
 .foot-contact-left > span {
-    font-size: 10px;
+    font-size: .6rem;
 }
  
 .footer-logo {
@@ -612,11 +759,15 @@ html, body {
     background-size: cover; /* or cover? */
     background-repeat: no-repeat;
     background-color: rgba(234, 179, 8, .9);
-    box-sizing: border-box;
-    width: 460px;
-    height: 300px;
-    border: 1px solid black;
-    /* border-radius: 125px; */
+
+    display: block;
+    aspect-ratio: 1.53 / 1;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border: 1px solid rgba(234, 179, 8, .9);
+    border-radius: 5px;
+    object-fit: contain;
 }
 
 .logo-foot-wrap > div > h2 {
@@ -632,7 +783,7 @@ html, body {
 }
 
 #phone-number {
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 #phone-number > a {
@@ -649,9 +800,117 @@ html, body {
     color: inherit;
     /* color: rgba(1, 36, 86, 0.94); */
     color: rgba(219, 153, 36, 1);
-    font-size: 15px;
+    font-size: 1rem;
 }
- 
 
 
+/* MEDIA QUERIES */
+
+/* works for far */
+@media screen and (width < 741px) {
+    /* section > .about-cont-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 310px;
+        padding-top: 20px;
+
+    } */
+
+    #top-landing-page {
+        justify-content: end;
+    }
+
+    .sub-content {
+        height: 50%;
+    }
+
+/* footer */
+    .logo-foot-wrap {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .foot-contact-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30px;
+        /* border: 1px solid black; */
+    }
+
+    #phone-number {
+        margin: 0;
+        padding: 5px;
+    }
+
+    #phone-number > a:active {
+        color: rgba(219, 153, 36, 1);
+    }
+
+    .foot-links {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .footer-logo {
+        display: block;
+        aspect-ratio: 1.53 / 1;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        border: 1px solid rgba(234, 179, 8, .9);
+        border-radius: 5px;
+        object-fit: contain;
+    }
+
+/* non-mobile-header */
+    .top-main {
+        display: none;
+    }
+
+ /* MOBILE NAV MENU */
+    .mobile-header {
+        position: absolute;
+        top: 0;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .head-logo {
+        width: 200px;
+        height: 130px;
+    }
+}
+
+@media screen and (width < 401px) { 
+
+
+    /* equvalent would be sub-content */
+    section > .about-cont-wrap {
+        padding-right: .5rem;
+        padding-left: .5rem;
+        border: 1px solid red;
+    }
+
+    /* header  */
+    .foot-link > a {
+        font-size: .8rem;
+    }
+
+    #phone-number {
+        font-size: 2.1rem;
+    }
+
+}
+
+
+
+/* 767px - 1025px width for lower links */
+/* under 767px is dialog corner menu */
 

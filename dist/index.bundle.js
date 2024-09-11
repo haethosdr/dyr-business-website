@@ -171,17 +171,20 @@ html, body {
     color: inherit;
 }
 
-.head-link-item > a {
+.head-link-item > a,
+#nav-srvc-menu a {
     box-sizing: border-box;
     text-decoration: none;
  }
 
-.head-link-item > .unselected {
+.head-link-item > .unselected,
+.head-link-item.unselected {
     color: rgba(1, 36, 86, 1);
     font-size: 20px;
 }
 
-.head-link-item > .unselected:hover {
+.head-link-item > .unselected:hover,
+.head-link-item > .unselected:active {
     color: rgba(219, 153, 36, 1);
 }
 
@@ -248,6 +251,146 @@ html, body {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 18px;
+}
+
+/* MOBILE MENU */
+.mobile-header {
+    display: none;
+    flex-direction: row;
+}
+
+.mobile-btn-wrap {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    z-index: 20;
+}
+
+#mobile-nav-btn {
+    display: inline-flex;
+    align-items: center;  
+    justify-content: center;
+    padding: 0; 
+    width: 35px; 
+    height: 35px; 
+    border: 1px solid black;
+    border-radius: 5px;
+    background: rgba(14, 165, 233, .9);
+    fill: rgba(234, 179, 8, 1);
+    cursor: pointer;
+}
+
+/* nav overlay dialog menu */
+#mobile-dialog {
+    display: none;
+    position: fixed; /* Position fixed to cover the whole screen  */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(1, 36, 86, 0.4);
+    backdrop-filter: blur(7px);
+    z-index: 1000;
+    border: none;
+    outline: none;
+}
+
+#mobile-dialog > nav {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.nav-cls-btn-wrp {
+    position: absolute;
+    box-sizing: border-box;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: end;
+    /* border: 1px solid pink; */
+    /* padding: 3px; */
+    width: 100%;
+}
+
+.dialog-lnks-wrap {
+    /* border: 1px solid black; */
+    min-height: 300px;
+}
+
+.dialog-lnks-wrap > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-close-btn {
+    display: inline-flex; /* Use flex to center SVG */
+    align-items: center;   /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 0; /* Remove default padding */
+    width: 35px; /* Set desired width */
+    height: 35px; /* Set desired height */
+    border: 1px solid white;
+    border-radius: 5px;
+    fill: white;
+    background: rgba(1, 1, 1, .4);
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.dialog-lnks-wrap .head-link-item > .unselected,
+.dialog-lnks-wrap .head-link-item.unselected {
+    /* color: rgba(1, 36, 86, 1); */
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.dialog-lnks-wrap .head-link-item > .unselected:hover,
+.dialog-lnks-wrap .head-link-item > .unselected:active,
+#nav-srvc-menu .unselected:active {
+    color: rgba(219, 153, 36, 1);
+    font-size: 28px;
+}
+
+.dialog-lnks-wrap .head-link-item > .selected-link {
+    color: rgba(219, 153, 36, 1);
+    font-size: 28px;
+    background: inherit;
+}
+
+#nav-srvc-menu {
+    display: none;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    /* border: 1px solid black; */
+}
+
+#nav-srvc-menu a {
+    color: rgba(219, 153, 36, 1);
+    /* background: rgba(1, 36, 86, .3); */
+    background: rgba(14, 165, 233, .4);
+    border-radius: 5px;
+    padding: 4px 10px;
 }
 
 
@@ -623,30 +766,34 @@ html, body {
 /* FOOTER SECTION */
 
 .index-footer {
-    height: 400px;
+    min-height: 400px;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     /* background: rgba(2, 6, 23, .8); */
     /* background: rgba(217, 119, 6, .7); */
     background: rgba(14, 165, 233, .9);
 }
  
 .logo-foot-wrap {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding-right: 18px;
-    padding-left: 22px;
+    padding-right: 20px;
+    padding-left: 20px;
     width: 100%;
 }
 
 .foot-contact-left {
-    width: 400px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 400px;
 }
 
 .foot-contact-left > span {
-    font-size: 10px;
+    font-size: .6rem;
 }
  
 .footer-logo {
@@ -654,11 +801,15 @@ html, body {
     background-size: cover; /* or cover? */
     background-repeat: no-repeat;
     background-color: rgba(234, 179, 8, .9);
-    box-sizing: border-box;
-    width: 460px;
-    height: 300px;
-    border: 1px solid black;
-    /* border-radius: 125px; */
+
+    display: block;
+    aspect-ratio: 1.53 / 1;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border: 1px solid rgba(234, 179, 8, .9);
+    border-radius: 5px;
+    object-fit: contain;
 }
 
 .logo-foot-wrap > div > h2 {
@@ -674,7 +825,7 @@ html, body {
 }
 
 #phone-number {
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 #phone-number > a {
@@ -691,13 +842,121 @@ html, body {
     color: inherit;
     /* color: rgba(1, 36, 86, 0.94); */
     color: rgba(219, 153, 36, 1);
-    font-size: 15px;
+    font-size: 1rem;
 }
- 
+
+
+/* MEDIA QUERIES */
+
+/* works for far */
+@media screen and (width < 741px) {
+    /* section > .about-cont-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 310px;
+        padding-top: 20px;
+
+    } */
+
+    #top-landing-page {
+        justify-content: end;
+    }
+
+    .sub-content {
+        height: 50%;
+    }
+
+/* footer */
+    .logo-foot-wrap {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .foot-contact-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30px;
+        /* border: 1px solid black; */
+    }
+
+    #phone-number {
+        margin: 0;
+        padding: 5px;
+    }
+
+    #phone-number > a:active {
+        color: rgba(219, 153, 36, 1);
+    }
+
+    .foot-links {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .footer-logo {
+        display: block;
+        aspect-ratio: 1.53 / 1;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        border: 1px solid rgba(234, 179, 8, .9);
+        border-radius: 5px;
+        object-fit: contain;
+    }
+
+/* non-mobile-header */
+    .top-main {
+        display: none;
+    }
+
+ /* MOBILE NAV MENU */
+    .mobile-header {
+        position: absolute;
+        top: 0;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .head-logo {
+        width: 200px;
+        height: 130px;
+    }
+}
+
+@media screen and (width < 401px) { 
+
+
+    /* equvalent would be sub-content */
+    section > .about-cont-wrap {
+        padding-right: .5rem;
+        padding-left: .5rem;
+        border: 1px solid red;
+    }
+
+    /* header  */
+    .foot-link > a {
+        font-size: .8rem;
+    }
+
+    #phone-number {
+        font-size: 2.1rem;
+    }
+
+}
 
 
 
-`, "",{"version":3,"sources":["webpack://./src/styles/index.css"],"names":[],"mappings":"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","sourcesContent":["/* index.css */\n\n:root {\n    --ffff-ffff: rgb(1, 1, 1);\n}\n\n* {\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\nhtml, body {\n    margin: 0;\n    padding: 0;\n    background: #e0f2fe;\n    font-size: 16px;\n    /* background: rgba(33, 80, 173, .1); ORIGINAL */\n    /* background: rgba(240, 233, 221, 1); */\n    /* background: #99f6e4; lean away from*/\n    /* background: #dbeafe; */\n    /* background: rgba(207, 250, 254, .3); */\n    /* background: #ffe4e6; */\n    /* background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */\n    /* background: #f0f9ff; 4 */\n    /* background: #a5f3fc; 5  not for contact page */\n}\n\n\n/* TOP LANDING SECTION */\n.top-landing-page {\n    background-image: url('../images/top_background.jpeg');\n    background-size: cover; /* or contain? */\n    background-attachment: fixed;\n    background-position: center;\n    background-repeat: no-repeat;\n    background-color: inherit;\n    width: 100%;\n    height: 100vh;\n\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n\n.sub-content {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n}\n\n.top-quote {\n    max-width: 500px;\n    text-align: center;\n    color: rgba(3, 6, 51, 1);\n    font-size: 30px;\n}\n\n.request-button {\n    inset: all;\n    border: none;\n    box-sizing: border-box;\n    cursor: pointer;\n    font-family: tahoma;\n    font-size: 12px;\n    border-radius: 25px;\n    padding: 10px 13px;\n    color: #EFC506;\n    background: rgba(1, 36, 86, 0.8392156862745098);\n}\n\n.request-button:hover {\n    color: rgba(219, 153, 36, 1);\n    background: rgba(33, 80, 173, 1);\n}\n\n.top-mid-quote {\n    text-align: center;\n    color: rgba(3, 6, 51, 1);\n    /* font-family: s; */\n    font-size: 24px;\n    font-weight: 500;\n}\n\n\n/* HEADER */\n.top-main {\n    position: absolute;\n    width: 100vw;\n    height: auto;\n    padding-top: 10px;\n\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    /* background-color: rgba(219, 153, 36, .3); */\n}\n\n.header-links {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    box-sizing: border-box;\n    gap: 5px;\n\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n.head-link-item {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-sizing: border-box;\n   \n    padding: 8px 8px;\n    margin: 0;\n    height: min-content;\n    /* border: 1px solid black; */\n    /* links should be dark blue, with a yellow hover. font should be mild bold. */\n};\n\n.head-logo {\n    text-decoration: none;\n    color: inherit;\n}\n\n.head-link-item > a {\n    box-sizing: border-box;\n    text-decoration: none;\n }\n\n.head-link-item > .unselected {\n    color: rgba(1, 36, 86, 1);\n    font-size: 20px;\n}\n\n.head-link-item > .unselected:hover {\n    color: rgba(219, 153, 36, 1);\n}\n\n.head-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: contain; /* or contain? */\n    background-repeat: no-repeat;\n    position: relative;\n\n    width: 150px;\n    height: 100px;\n}\n\n.head-logo a {\n    position: absolute;  /* Positioning the link within the container */\n    top: 0;\n    left: 0;\n    width: 100%; /* Ensures the link covers the full container */\n    height: 100%;\n    z-index: 10;\n}\n\n/* #services {\n    border: 1px solid black;\n} */\n\n/* DROPDOWN MENU */\n#dropdown-menu {\n    display: none;\n    flex-direction: column;\n    position: absolute;\n    box-sizing: border-box;\n    width: 200px;\n    height: auto;\n    /* background: rgba(14, 165, 233, .8); */\n    background: rgba(1, 36, 86, .9);\n    /* border: 1px solid rgba(219, 153, 36, 1); */\n    /* rgba(2, 132, 199, */\n    padding: 5px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */\n    /* transform: translateY(-10px); Initial transform state */\n    /* pointer-events: none; */\n    z-index: 2;\n}\n\n#dropdown-menu > a {\n    box-sizing: border-box;\n    text-decoration: none;\n    padding: 7px;\n    color: white;\n    z-index: 10;\n}\n\n#dropdown-menu > a:hover {\n    box-sizing: border-box;\n    text-decoration: none;\n    color: rgba(219, 153, 36, 1);\n}\n\n#dropdown-menu span {\n    box-sizing: border-box;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    font-size: 18px;\n}\n\n\n/* Serve main Quote */\n.sec-quote {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: center;\n    box-sizing: border-box;\n    height: 115px;\n}\n\n.serv-main-quote {\n    font-size: 30px;\n    padding: 10px;\n    text-align: center;\n    /* color: rgba(16, 28, 86, 1); */\n    color: rgba(3, 6, 51, .9);\n    letter-spacing: .1rem;\n}\n\n/* SERVICES SECTION */\n.services-main {\n    display: grid;\n    grid-template-rows: repeat(4, 300px);\n    padding-top: 40px;\n    padding-bottom: 40px;\n}\n\n.service-wrap {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.subservice-wrap-desc {\n    max-width: 350px; \n}\n\n.subservice-wrap-desc > p {\n    color: rgba(16, 28, 86, .8);\n}\n\n.serv-lrn-butn {\n    all: unset;\n    border: 1px solid black;\n    border-radius: 3px;\n    padding: 7px 30px;\n    color: rgba(232, 123, 11, 1);\n    background: rgba(33, 80, 173, .1);\n}\n\n.serv-lrn-butn:hover {\n    background: rgba(33, 80, 173, 1);\n}\n\n#win-wash-wrap {\n    width: 343px;\n    height: 260px;\n    background: url(../images/dylan-cleanwindow-v1.png);\n    background-size: contain; /* or contain? */\n    /* background-attachment: fixed; */\n    background-repeat: no-repeat;\n}\n\n#roofgut-img-wrap {\n    width: 334px;\n    height: 260px;\n    background: url(../images/debris-roof-main_page.png);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n#pwrwash-img-wrap {\n    width: 324px;\n    height: 260px;\n    background: url(../images/power-wash.jpeg);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n#solrp-img-wrap {\n    width: 324px;\n    height: 260px;\n    background: url(../images/new-solar-dylan.jpeg);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n/* quote-request-section */\n\n/* FIX BLACK upperbar */\n\n.quote-request-section {\n    background: url(../images/main-page-supp.png);\n    background-size: cover;\n    background-repeat: no-repeat;\n    background-position: left;\n    /* transform: rotate(90deg); */\n    min-height: 500px;\n    /* position: relative; */\n}\n\n.req-sec-overlay {\n    background: rgba(220, 220, 220, 0.3);\n    backdrop-filter: blur(5px);\n    width: 100%;\n    min-height: 500px;\n\n    display: flex;\n    flex-direction: column;\n    align-items: start;\n    justify-content: center;\n}\n\n.req-content-wrap {\n    display: flex;\n    flex-direction: column;\n    align-items: start;\n    gap: 15px;\n    padding: 30px;\n    padding-top: 25px;\n    /* border: 1px solid red; */\n    border-radius: 300px;\n    max-width: 300px;\n    /* background:  rgba(219, 153, 240, .3); */\n}\n\n.sub-req-wrp {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 15px;\n    padding: 15px;\n    min-width: 250px;\n    border-radius: 300px;\n    min-height: 250px;\n    background:  rgba(219, 153, 240, .3);\n}\n\n.req-logo-wrap {\n    background-image: url('../images/rwags-logo.png');\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-color: none;\n\n    width: 200px;\n    height: 135px;\n    /* border: 1px solid red; */\n    /* background: rgba(219, 153, 36, .3); */\n}\n\n.req-content-wrap  > span {\n    font-size: 24px;\n    font-weight: 500;\n    /* color: rgba(232, 123, 11, 1); */\n    color: rgba(1, 36, 86, 1);\n}\n\n.req-button {\n    all: unset;\n    border: 1px solid black;\n    /* border-radius: 20px; */\n    padding: 7px 20px;\n    color: rgba(232, 123, 11, 1);\n    background: rgba(33, 80, 173, .7);\n    font-size: 16px;\n}\n\n.req-button:hover {\n    background: rgba(33, 80, 173, 1);\n}\n\n\n/* QUOTE SCROLL SECTION */\n\n#quote-slider-wrap {\n    height: 480px;\n\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n}\n\n.divider-wrap {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    box-sizing: border-box;\n    height: 35px;\n    min-width: 100%;\n}\n\n.divider-spn {\n    width: 70%;\n    height: 2.5px;\n    background: rgba(1, 36, 86, 0.94);\n}\n\n.slider-title {\n    padding: 5px;\n    font-size: 30px;\n    letter-spacing: .1rem;\n}\n\n.slider {\n    box-sizing: border-box;\n    height: 250px;\n    width: 470px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n\n    border: 1px solid black;\n    border-radius: 4px;\n    background: rgba(33, 80, 173, .1);\n    position: relative;\n    overflow: hidden;\n}\n\n#slide-frame {\n    box-sizing: border-box;\n    height: 250px;\n    width: 470px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    padding-left: 5px;\n\n    border-radius: 4px;\n    /* font-size: 1.4vw;\n    max-width: 100%; */\n}\n\n.quote-slide {\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    padding-left: 35px;\n    padding-right: 35px;\n    \n}\n\n.quote-slide span:first-child {\n    /* font-size: 1.4vw; */\n    letter-spacing: .1rem;\n    padding-bottom: 7px;\n    width: 390px;\n}\n\n.scroll-slider {\n    position: absolute;\n    height: 50px;\n    width: 40px;\n    border: none;\n    padding: 2px;\n    background: none;\n    z-index: 5;\n}\n\n.scroll-l {\n    left: 0;\n}\n\n.scroll-r {\n    right: 0;\n}\n\n#Capa_r {\n    width: 100%;\n    height: 100%;\n    transform: rotate(90deg);\n}\n\n#Capa_l {\n    width: 100%;\n    height: 100%;\n    transform: rotate(270deg);\n}\n\n/* LOWER INTRO SECTION  */\n\n.intro-wrap {\n    min-height: 635px;\n    /* border: 1px solid blueviolet; */\n\n    display: grid;\n    grid-template-columns: repeat(2, minmax(315px, 415px));\n    justify-content: center;\n    box-sizing: border-box;\n    gap: 20px;\n    padding-top: 40px;\n    padding-bottom: 100px;\n    padding-left: 25px;\n    padding-right: 25px;\n}\n\n.description-left {\n    grid-column: 1 / 2;\n\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    padding: 10px;\n}\n\n.description-left > h3 {\n    margin: 0;\n    padding: 0;\n    padding-bottom: 10px;\n    padding-left: 10px;\n}\n\n.description-left > p,\n.description-left > h4 {\n    line-height: 1.1rem;\n    padding: 5px;\n    margin: 0;\n}\n\n.description-left > p {\n    padding-bottom: 15px;\n}\n\n.low-intro-title {\n    font-size: 24px;\n    font-family: Verdana, Geneva, Tahoma, sans-serif;\n}\n\n.intro-img-right {\n    grid-column: 2 / 3;\n    background-image: url(../images/main-page-about.png);\n    background-size: contain; /* or contain? */\n    /* background-attachment: fixed; */\n    background-repeat: no-repeat;\n    background-color: inherit;\n\n    max-width: 95%;\n}\n\n.req-link {\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.contact-lower-button {\n    inset: all;\n    border: none;\n    box-sizing: border-box;\n    font-family: tahoma;\n    cursor: pointer;\n    font-size: 12px;\n    border-radius: 3px;\n    padding: 10px 30px;\n    color: #EFC506;\n    background: rgba(1, 36, 86, 0.8392156862745098);\n}\n\n.contact-lower-button:hover {\n    color: rgba(219, 153, 36, 1);\n    background: rgba(33, 80, 173, 1);\n}\n\n/* FOOTER SECTION */\n\n.index-footer {\n    height: 400px;\n    display: flex;\n    justify-content: end;\n    /* background: rgba(2, 6, 23, .8); */\n    /* background: rgba(217, 119, 6, .7); */\n    background: rgba(14, 165, 233, .9);\n}\n \n.logo-foot-wrap {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding-right: 18px;\n    padding-left: 22px;\n    width: 100%;\n}\n\n.foot-contact-left {\n    width: 400px;\n}\n\n.foot-contact-left > span {\n    font-size: 10px;\n}\n \n.footer-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: cover; /* or cover? */\n    background-repeat: no-repeat;\n    background-color: rgba(234, 179, 8, .9);\n    box-sizing: border-box;\n    width: 460px;\n    height: 300px;\n    border: 1px solid black;\n    /* border-radius: 125px; */\n}\n\n.logo-foot-wrap > div > h2 {\n    color: rgba(240, 233, 221, 1);\n}\n\n.foot-links {\n    display: flex;\n    gap: 12px;\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n#phone-number {\n    font-size: 40px;\n}\n\n#phone-number > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n}\n\n#phone-number > a:hover {\n    color: rgba(219, 153, 36, .8);\n}\n\n.foot-link > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n    /* color: rgba(1, 36, 86, 0.94); */\n    color: rgba(219, 153, 36, 1);\n    font-size: 15px;\n}\n \n\n\n\n"],"sourceRoot":""}]);
+/* 767px - 1025px width for lower links */
+/* under 767px is dialog corner menu */
+
+`, "",{"version":3,"sources":["webpack://./src/styles/index.css"],"names":[],"mappings":"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","sourcesContent":["/* index.css */\n\n:root {\n    --ffff-ffff: rgb(1, 1, 1);\n}\n\n* {\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\nhtml, body {\n    margin: 0;\n    padding: 0;\n    background: #e0f2fe;\n    font-size: 16px;\n    /* background: rgba(33, 80, 173, .1); ORIGINAL */\n    /* background: rgba(240, 233, 221, 1); */\n    /* background: #99f6e4; lean away from*/\n    /* background: #dbeafe; */\n    /* background: rgba(207, 250, 254, .3); */\n    /* background: #ffe4e6; */\n    /* background: rgb(238,174,202);\n    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */\n    /* background: #f0f9ff; 4 */\n    /* background: #a5f3fc; 5  not for contact page */\n}\n\n\n/* TOP LANDING SECTION */\n.top-landing-page {\n    background-image: url('../images/top_background.jpeg');\n    background-size: cover; /* or contain? */\n    background-attachment: fixed;\n    background-position: center;\n    background-repeat: no-repeat;\n    background-color: inherit;\n    width: 100%;\n    height: 100vh;\n\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n\n.sub-content {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n}\n\n.top-quote {\n    max-width: 500px;\n    text-align: center;\n    color: rgba(3, 6, 51, 1);\n    font-size: 30px;\n}\n\n.request-button {\n    inset: all;\n    border: none;\n    box-sizing: border-box;\n    cursor: pointer;\n    font-family: tahoma;\n    font-size: 12px;\n    border-radius: 25px;\n    padding: 10px 13px;\n    color: #EFC506;\n    background: rgba(1, 36, 86, 0.8392156862745098);\n}\n\n.request-button:hover {\n    color: rgba(219, 153, 36, 1);\n    background: rgba(33, 80, 173, 1);\n}\n\n.top-mid-quote {\n    text-align: center;\n    color: rgba(3, 6, 51, 1);\n    /* font-family: s; */\n    font-size: 24px;\n    font-weight: 500;\n}\n\n\n/* HEADER */\n.top-main {\n    position: absolute;\n    width: 100vw;\n    height: auto;\n    padding-top: 10px;\n\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    /* background-color: rgba(219, 153, 36, .3); */\n}\n\n.header-links {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    box-sizing: border-box;\n    gap: 5px;\n\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n.head-link-item {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-sizing: border-box;\n   \n    padding: 8px 8px;\n    margin: 0;\n    height: min-content;\n    /* border: 1px solid black; */\n    /* links should be dark blue, with a yellow hover. font should be mild bold. */\n};\n\n.head-logo {\n    text-decoration: none;\n    color: inherit;\n}\n\n.head-link-item > a,\n#nav-srvc-menu a {\n    box-sizing: border-box;\n    text-decoration: none;\n }\n\n.head-link-item > .unselected,\n.head-link-item.unselected {\n    color: rgba(1, 36, 86, 1);\n    font-size: 20px;\n}\n\n.head-link-item > .unselected:hover,\n.head-link-item > .unselected:active {\n    color: rgba(219, 153, 36, 1);\n}\n\n.head-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: contain; /* or contain? */\n    background-repeat: no-repeat;\n    position: relative;\n\n    width: 150px;\n    height: 100px;\n}\n\n.head-logo a {\n    position: absolute;  /* Positioning the link within the container */\n    top: 0;\n    left: 0;\n    width: 100%; /* Ensures the link covers the full container */\n    height: 100%;\n    z-index: 10;\n}\n\n/* #services {\n    border: 1px solid black;\n} */\n\n/* DROPDOWN MENU */\n#dropdown-menu {\n    display: none;\n    flex-direction: column;\n    position: absolute;\n    box-sizing: border-box;\n    width: 200px;\n    height: auto;\n    /* background: rgba(14, 165, 233, .8); */\n    background: rgba(1, 36, 86, .9);\n    /* border: 1px solid rgba(219, 153, 36, 1); */\n    /* rgba(2, 132, 199, */\n    padding: 5px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */\n    /* transform: translateY(-10px); Initial transform state */\n    /* pointer-events: none; */\n    z-index: 2;\n}\n\n#dropdown-menu > a {\n    box-sizing: border-box;\n    text-decoration: none;\n    padding: 7px;\n    color: white;\n    z-index: 10;\n}\n\n#dropdown-menu > a:hover {\n    box-sizing: border-box;\n    text-decoration: none;\n    color: rgba(219, 153, 36, 1);\n}\n\n#dropdown-menu span {\n    box-sizing: border-box;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    font-size: 18px;\n}\n\n/* MOBILE MENU */\n.mobile-header {\n    display: none;\n    flex-direction: row;\n}\n\n.mobile-btn-wrap {\n    position: fixed;\n    top: 15px;\n    left: 15px;\n\n    box-sizing: border-box;\n    padding: 0;\n    margin: 0;\n    z-index: 20;\n}\n\n#mobile-nav-btn {\n    display: inline-flex;\n    align-items: center;  \n    justify-content: center;\n    padding: 0; \n    width: 35px; \n    height: 35px; \n    border: 1px solid black;\n    border-radius: 5px;\n    background: rgba(14, 165, 233, .9);\n    fill: rgba(234, 179, 8, 1);\n    cursor: pointer;\n}\n\n/* nav overlay dialog menu */\n#mobile-dialog {\n    display: none;\n    position: fixed; /* Position fixed to cover the whole screen  */\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    width: 100vw;\n    height: 100vh;\n    background: rgba(1, 36, 86, 0.4);\n    backdrop-filter: blur(7px);\n    z-index: 1000;\n    border: none;\n    outline: none;\n}\n\n#mobile-dialog > nav {\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    height: 100%;\n    width: 100%;\n    /* border: 1px solid red; */\n    position: relative;\n}\n\n.nav-cls-btn-wrp {\n    position: absolute;\n    box-sizing: border-box;\n    top: 10px;\n    right: 10px;\n    display: flex;\n    justify-content: end;\n    /* border: 1px solid pink; */\n    /* padding: 3px; */\n    width: 100%;\n}\n\n.dialog-lnks-wrap {\n    /* border: 1px solid black; */\n    min-height: 300px;\n}\n\n.dialog-lnks-wrap > ul {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n.nav-close-btn {\n    display: inline-flex; /* Use flex to center SVG */\n    align-items: center;   /* Center vertically */\n    justify-content: center; /* Center horizontally */\n    padding: 0; /* Remove default padding */\n    width: 35px; /* Set desired width */\n    height: 35px; /* Set desired height */\n    border: 1px solid white;\n    border-radius: 5px;\n    fill: white;\n    background: rgba(1, 1, 1, .4);\n    cursor: pointer; /* Change cursor to pointer */\n}\n\n.dialog-lnks-wrap .head-link-item > .unselected,\n.dialog-lnks-wrap .head-link-item.unselected {\n    /* color: rgba(1, 36, 86, 1); */\n    color: white;\n    font-size: 28px;\n    cursor: pointer;\n}\n\n.dialog-lnks-wrap .head-link-item > .unselected:hover,\n.dialog-lnks-wrap .head-link-item > .unselected:active,\n#nav-srvc-menu .unselected:active {\n    color: rgba(219, 153, 36, 1);\n    font-size: 28px;\n}\n\n.dialog-lnks-wrap .head-link-item > .selected-link {\n    color: rgba(219, 153, 36, 1);\n    font-size: 28px;\n    background: inherit;\n}\n\n#nav-srvc-menu {\n    display: none;\n    width: 70%;\n    flex-direction: column;\n    align-items: center;\n    gap: 4px;\n    padding-top: 7px;\n    padding-bottom: 7px;\n    /* border: 1px solid black; */\n}\n\n#nav-srvc-menu a {\n    color: rgba(219, 153, 36, 1);\n    /* background: rgba(1, 36, 86, .3); */\n    background: rgba(14, 165, 233, .4);\n    border-radius: 5px;\n    padding: 4px 10px;\n}\n\n\n/* Serve main Quote */\n.sec-quote {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: center;\n    box-sizing: border-box;\n    height: 115px;\n}\n\n.serv-main-quote {\n    font-size: 30px;\n    padding: 10px;\n    text-align: center;\n    /* color: rgba(16, 28, 86, 1); */\n    color: rgba(3, 6, 51, .9);\n    letter-spacing: .1rem;\n}\n\n/* SERVICES SECTION */\n.services-main {\n    display: grid;\n    grid-template-rows: repeat(4, 300px);\n    padding-top: 40px;\n    padding-bottom: 40px;\n}\n\n.service-wrap {\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.subservice-wrap-desc {\n    max-width: 350px; \n}\n\n.subservice-wrap-desc > p {\n    color: rgba(16, 28, 86, .8);\n}\n\n.serv-lrn-butn {\n    all: unset;\n    border: 1px solid black;\n    border-radius: 3px;\n    padding: 7px 30px;\n    color: rgba(232, 123, 11, 1);\n    background: rgba(33, 80, 173, .1);\n}\n\n.serv-lrn-butn:hover {\n    background: rgba(33, 80, 173, 1);\n}\n\n#win-wash-wrap {\n    width: 343px;\n    height: 260px;\n    background: url(../images/dylan-cleanwindow-v1.png);\n    background-size: contain; /* or contain? */\n    /* background-attachment: fixed; */\n    background-repeat: no-repeat;\n}\n\n#roofgut-img-wrap {\n    width: 334px;\n    height: 260px;\n    background: url(../images/debris-roof-main_page.png);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n#pwrwash-img-wrap {\n    width: 324px;\n    height: 260px;\n    background: url(../images/power-wash.jpeg);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n#solrp-img-wrap {\n    width: 324px;\n    height: 260px;\n    background: url(../images/new-solar-dylan.jpeg);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n/* quote-request-section */\n\n/* FIX BLACK upperbar */\n\n.quote-request-section {\n    background: url(../images/main-page-supp.png);\n    background-size: cover;\n    background-repeat: no-repeat;\n    background-position: left;\n    /* transform: rotate(90deg); */\n    min-height: 500px;\n    /* position: relative; */\n}\n\n.req-sec-overlay {\n    background: rgba(220, 220, 220, 0.3);\n    backdrop-filter: blur(5px);\n    width: 100%;\n    min-height: 500px;\n\n    display: flex;\n    flex-direction: column;\n    align-items: start;\n    justify-content: center;\n}\n\n.req-content-wrap {\n    display: flex;\n    flex-direction: column;\n    align-items: start;\n    gap: 15px;\n    padding: 30px;\n    padding-top: 25px;\n    /* border: 1px solid red; */\n    border-radius: 300px;\n    max-width: 300px;\n    /* background:  rgba(219, 153, 240, .3); */\n}\n\n.sub-req-wrp {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 15px;\n    padding: 15px;\n    min-width: 250px;\n    border-radius: 300px;\n    min-height: 250px;\n    background:  rgba(219, 153, 240, .3);\n}\n\n.req-logo-wrap {\n    background-image: url('../images/rwags-logo.png');\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-color: none;\n\n    width: 200px;\n    height: 135px;\n    /* border: 1px solid red; */\n    /* background: rgba(219, 153, 36, .3); */\n}\n\n.req-content-wrap  > span {\n    font-size: 24px;\n    font-weight: 500;\n    /* color: rgba(232, 123, 11, 1); */\n    color: rgba(1, 36, 86, 1);\n}\n\n.req-button {\n    all: unset;\n    border: 1px solid black;\n    /* border-radius: 20px; */\n    padding: 7px 20px;\n    color: rgba(232, 123, 11, 1);\n    background: rgba(33, 80, 173, .7);\n    font-size: 16px;\n}\n\n.req-button:hover {\n    background: rgba(33, 80, 173, 1);\n}\n\n\n/* QUOTE SCROLL SECTION */\n\n#quote-slider-wrap {\n    height: 480px;\n\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n}\n\n.divider-wrap {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    box-sizing: border-box;\n    height: 35px;\n    min-width: 100%;\n}\n\n.divider-spn {\n    width: 70%;\n    height: 2.5px;\n    background: rgba(1, 36, 86, 0.94);\n}\n\n.slider-title {\n    padding: 5px;\n    font-size: 30px;\n    letter-spacing: .1rem;\n}\n\n.slider {\n    box-sizing: border-box;\n    height: 250px;\n    width: 470px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n\n    border: 1px solid black;\n    border-radius: 4px;\n    background: rgba(33, 80, 173, .1);\n    position: relative;\n    overflow: hidden;\n}\n\n#slide-frame {\n    box-sizing: border-box;\n    height: 250px;\n    width: 470px;\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    padding-left: 5px;\n\n    border-radius: 4px;\n    /* font-size: 1.4vw;\n    max-width: 100%; */\n}\n\n.quote-slide {\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    padding-left: 35px;\n    padding-right: 35px;\n    \n}\n\n.quote-slide span:first-child {\n    /* font-size: 1.4vw; */\n    letter-spacing: .1rem;\n    padding-bottom: 7px;\n    width: 390px;\n}\n\n.scroll-slider {\n    position: absolute;\n    height: 50px;\n    width: 40px;\n    border: none;\n    padding: 2px;\n    background: none;\n    z-index: 5;\n}\n\n.scroll-l {\n    left: 0;\n}\n\n.scroll-r {\n    right: 0;\n}\n\n#Capa_r {\n    width: 100%;\n    height: 100%;\n    transform: rotate(90deg);\n}\n\n#Capa_l {\n    width: 100%;\n    height: 100%;\n    transform: rotate(270deg);\n}\n\n/* LOWER INTRO SECTION  */\n\n.intro-wrap {\n    min-height: 635px;\n    /* border: 1px solid blueviolet; */\n\n    display: grid;\n    grid-template-columns: repeat(2, minmax(315px, 415px));\n    justify-content: center;\n    box-sizing: border-box;\n    gap: 20px;\n    padding-top: 40px;\n    padding-bottom: 100px;\n    padding-left: 25px;\n    padding-right: 25px;\n}\n\n.description-left {\n    grid-column: 1 / 2;\n\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    padding: 10px;\n}\n\n.description-left > h3 {\n    margin: 0;\n    padding: 0;\n    padding-bottom: 10px;\n    padding-left: 10px;\n}\n\n.description-left > p,\n.description-left > h4 {\n    line-height: 1.1rem;\n    padding: 5px;\n    margin: 0;\n}\n\n.description-left > p {\n    padding-bottom: 15px;\n}\n\n.low-intro-title {\n    font-size: 24px;\n    font-family: Verdana, Geneva, Tahoma, sans-serif;\n}\n\n.intro-img-right {\n    grid-column: 2 / 3;\n    background-image: url(../images/main-page-about.png);\n    background-size: contain; /* or contain? */\n    /* background-attachment: fixed; */\n    background-repeat: no-repeat;\n    background-color: inherit;\n\n    max-width: 95%;\n}\n\n.req-link {\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.contact-lower-button {\n    inset: all;\n    border: none;\n    box-sizing: border-box;\n    font-family: tahoma;\n    cursor: pointer;\n    font-size: 12px;\n    border-radius: 3px;\n    padding: 10px 30px;\n    color: #EFC506;\n    background: rgba(1, 36, 86, 0.8392156862745098);\n}\n\n.contact-lower-button:hover {\n    color: rgba(219, 153, 36, 1);\n    background: rgba(33, 80, 173, 1);\n}\n\n/* FOOTER SECTION */\n\n.index-footer {\n    min-height: 400px;\n    display: flex;\n    justify-content: center;\n    /* background: rgba(2, 6, 23, .8); */\n    /* background: rgba(217, 119, 6, .7); */\n    background: rgba(14, 165, 233, .9);\n}\n \n.logo-foot-wrap {\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    padding-right: 20px;\n    padding-left: 20px;\n    width: 100%;\n}\n\n.foot-contact-left {\n    box-sizing: border-box;\n    padding-left: 10px;\n    padding-right: 10px;\n    max-width: 400px;\n}\n\n.foot-contact-left > span {\n    font-size: .6rem;\n}\n \n.footer-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: cover; /* or cover? */\n    background-repeat: no-repeat;\n    background-color: rgba(234, 179, 8, .9);\n\n    display: block;\n    aspect-ratio: 1.53 / 1;\n    width: 90%;\n    max-width: 400px;\n    height: auto;\n    border: 1px solid rgba(234, 179, 8, .9);\n    border-radius: 5px;\n    object-fit: contain;\n}\n\n.logo-foot-wrap > div > h2 {\n    color: rgba(240, 233, 221, 1);\n}\n\n.foot-links {\n    display: flex;\n    gap: 12px;\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n#phone-number {\n    font-size: 2.5rem;\n}\n\n#phone-number > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n}\n\n#phone-number > a:hover {\n    color: rgba(219, 153, 36, .8);\n}\n\n.foot-link > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n    /* color: rgba(1, 36, 86, 0.94); */\n    color: rgba(219, 153, 36, 1);\n    font-size: 1rem;\n}\n\n\n/* MEDIA QUERIES */\n\n/* works for far */\n@media screen and (width < 741px) {\n    /* section > .about-cont-wrap {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        min-width: 310px;\n        padding-top: 20px;\n\n    } */\n\n    #top-landing-page {\n        justify-content: end;\n    }\n\n    .sub-content {\n        height: 50%;\n    }\n\n/* footer */\n    .logo-foot-wrap {\n        flex-direction: column;\n        padding-top: 20px;\n        padding-bottom: 30px;\n    }\n\n    .foot-contact-left {\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        padding-bottom: 30px;\n        /* border: 1px solid black; */\n    }\n\n    #phone-number {\n        margin: 0;\n        padding: 5px;\n    }\n\n    #phone-number > a:active {\n        color: rgba(219, 153, 36, 1);\n    }\n\n    .foot-links {\n        padding-top: 5px;\n        padding-bottom: 5px;\n    }\n\n    .footer-logo {\n        display: block;\n        aspect-ratio: 1.53 / 1;\n        width: 90%;\n        max-width: 400px;\n        height: auto;\n        border: 1px solid rgba(234, 179, 8, .9);\n        border-radius: 5px;\n        object-fit: contain;\n    }\n\n/* non-mobile-header */\n    .top-main {\n        display: none;\n    }\n\n /* MOBILE NAV MENU */\n    .mobile-header {\n        position: absolute;\n        top: 0;\n        padding-top: 20px;\n        display: flex;\n        flex-direction: row;\n        justify-content: center;\n        width: 100%;\n    }\n\n    .head-logo {\n        width: 200px;\n        height: 130px;\n    }\n}\n\n@media screen and (width < 401px) { \n\n\n    /* equvalent would be sub-content */\n    section > .about-cont-wrap {\n        padding-right: .5rem;\n        padding-left: .5rem;\n        border: 1px solid red;\n    }\n\n    /* header  */\n    .foot-link > a {\n        font-size: .8rem;\n    }\n\n    #phone-number {\n        font-size: 2.1rem;\n    }\n\n}\n\n\n\n/* 767px - 1025px width for lower links */\n/* under 767px is dialog corner menu */\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1455,10 +1714,36 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('dropDownMenu: mouseover');
     });
 
-// img slider functionality:
+    // img slider functionality:
     const quotescrollBtn = [...document.querySelectorAll('.scroll-slider')];
     quotescrollBtn[0].addEventListener('click', scrollLeft);
     quotescrollBtn[1].addEventListener('click', scrollRight);
+
+    // nav overlay opening
+    const navOpenBtn = document.querySelector('#mobile-nav-btn');
+    const navDialog = document.querySelector('#mobile-dialog');
+    const closeDiaNav = document.querySelector('.nav-close-btn');
+    
+    navOpenBtn.addEventListener('click', () => {
+        navDialog.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+    
+    closeDiaNav.addEventListener('click', () => {
+        subNavDisplay.style.display = 'none';
+        document.body.style.overflow = '';
+        navDialog.style.display = 'none';
+    });
+    
+    // nav subservice menu opening
+    const subNavbtn = document.querySelector('#services-nav');
+    const subNavDisplay = document.querySelector('#nav-srvc-menu');
+    subNavbtn.addEventListener('click', () => {
+        if (subNavDisplay.style.display === 'none') {
+            subNavDisplay.style.display = 'flex';
+        } else subNavDisplay.style.display = 'none';
+    });
+    
 });
 
 

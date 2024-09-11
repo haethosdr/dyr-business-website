@@ -53,9 +53,35 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('dropDownMenu: mouseover');
     });
 
-// img slider functionality:
+    // img slider functionality:
     const quotescrollBtn = [...document.querySelectorAll('.scroll-slider')];
     quotescrollBtn[0].addEventListener('click', scrollLeft);
     quotescrollBtn[1].addEventListener('click', scrollRight);
+
+    // nav overlay opening
+    const navOpenBtn = document.querySelector('#mobile-nav-btn');
+    const navDialog = document.querySelector('#mobile-dialog');
+    const closeDiaNav = document.querySelector('.nav-close-btn');
+    
+    navOpenBtn.addEventListener('click', () => {
+        navDialog.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+    
+    closeDiaNav.addEventListener('click', () => {
+        subNavDisplay.style.display = 'none';
+        document.body.style.overflow = '';
+        navDialog.style.display = 'none';
+    });
+    
+    // nav subservice menu opening
+    const subNavbtn = document.querySelector('#services-nav');
+    const subNavDisplay = document.querySelector('#nav-srvc-menu');
+    subNavbtn.addEventListener('click', () => {
+        if (subNavDisplay.style.display === 'none') {
+            subNavDisplay.style.display = 'flex';
+        } else subNavDisplay.style.display = 'none';
+    });
+    
 });
 

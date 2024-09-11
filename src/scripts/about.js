@@ -13,7 +13,6 @@ const elems = (prop, par) => (par || document).querySelectorAll(prop);
 // need WIDTH = slideFrame.getBoundingClientRect().width / (images.length - 1);
 
 let sliderIndex = 0;
-const WIDTH = 350;
 
 const nextImg = function () {
     const images = elems('.img-cont');
@@ -34,7 +33,6 @@ const prevImg = function () {
 const shiftImage = function (ms = 400) {
     const slideFrame = elem('#img-content');
     const images = elems('.img-cont');
-    console.log(slideFrame.getBoundingClientRect());
     const newWIDTH = slideFrame.getBoundingClientRect().width / (images.length);
     console.log(newWIDTH);
     slideFrame.style.transitionDuration = `${ms}ms`;
@@ -76,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     imgSlideButtons[0].addEventListener('click', prevImg);
     imgSlideButtons[1].addEventListener('click', nextImg);
 
+
+    // nav overlay opening
     const navOpenBtn = elem('#mobile-nav-btn');
     const navDialog = elem('#mobile-dialog');
     const closeDiaNav = elem('.nav-close-btn');
@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navDialog.style.display = 'none';
     });
 
+    // nav subservice menu opening
     const subNavbtn = elem('#services-nav');
     const subNavDisplay = elem('#nav-srvc-menu');
     subNavbtn.addEventListener('click', () => {
