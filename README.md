@@ -1,3 +1,5 @@
+Page 1
+
 # Dylan Business Website
 Website for dylans service business.
 
@@ -47,12 +49,14 @@ benefits of : "service"
 9/10
 1. Need to shift background picture properly when resizing (done)
 2. create proper dialog that envelopes whole space and prevents scrolling. (done)
-3. make footer left textarea resize properly. 
+3. make footer left textarea resize properly. (mostly done)
 4. make fonts adjustable by using rem w/ base html font size set to 16px; (do later/post-release)
-5. create adjustable slider/carousel
+5. create adjustable slider/carousel (done)
 6. copy footer and header mobile functionality to other pages
+   - then --> make mobile home page.
 7. get mobile version of widow washing and then transfer to other pages
 8. make mobile nav/dialog / services / subservices close when reseting dialog (done)
 9. need overlay to close if it is outside media query range. (do later/post-release)
-10. styles for media screen sub 401px;
+10. styles for media screen sub 401px; (mostly done for down to 320px on about page)
 11. for home, to indicate it is home, highlight circle behind logo yellow (do later/post-release)
+

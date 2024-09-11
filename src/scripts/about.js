@@ -38,7 +38,7 @@ const shiftImage = function (ms = 400) {
     const newWIDTH = slideFrame.getBoundingClientRect().width / (images.length);
     console.log(newWIDTH);
     slideFrame.style.transitionDuration = `${ms}ms`;
-    slideFrame.style.transform = `translateX(${-WIDTH * sliderIndex}px)`;
+    slideFrame.style.transform = `translateX(${-newWIDTH * sliderIndex}px)`;
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -102,3 +102,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
