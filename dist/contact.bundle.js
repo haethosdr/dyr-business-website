@@ -41,12 +41,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* contact.css */
 html, body {
     margin: 0;
     padding: 0;
+    font-size: 16px;
+    background: #e0f2fe;
     /* background: rgba(240, 233, 221, 1); */
     /* background: #99f6e4; */
     /* background: #dbeafe;
     background: #e0f2fe; */
     /* background: rgba(207, 250, 254, .3); */
-    background: #ffe4e6;
+    /* background: #ffe4e6; */
     /* background: #f0f9ff; 4 */
     /* background: #a5f3fc; 5  not for contact page */
 }
@@ -62,13 +64,14 @@ html, body {
     background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
     background-size: cover; /* or contain? */
     background-repeat: no-repeat;
+    background-position: center;
     
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    height: 100vh;
+    height: 84vh;
     width: 100%;
 }
 
@@ -79,11 +82,10 @@ html, body {
     flex-direction: column;
 }
 
-
 .about-top-sub-cont > h1 {
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 60px;
+    font-size: 4rem;
     padding-top: 10px;
     padding-bottom: 10px;
     margin: 0;
@@ -95,8 +97,11 @@ html, body {
     /* color: rgba(234, 179, 8, .9); */
     /* color: rgba(207, 93, 23, .9); */
     /* color: rgba(1, 36, 86, 1); */
-    color: rgba(219, 153, 36, 1);
+    /* color: rgba(219, 153, 36, 1); */
+    /* color: rgba(14, 165, 233, .7); */
+    color: rgba(219, 153, 36, .7);
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.7rem;
 }
 
 
@@ -144,17 +149,20 @@ html, body {
     color: inherit;
 }
 
-.head-link-item > a {
+.head-link-item > a,
+#nav-srvc-menu a {
     box-sizing: border-box;
     text-decoration: none;
  }
 
-.head-link-item > .unselected {
+.head-link-item > .unselected,
+.head-link-item.unselected {
     color: rgba(1, 36, 86, 1);
     font-size: 20px;
 }
 
-.head-link-item > .unselected:hover {
+.head-link-item > .unselected:hover,
+.head-link-item > .unselected:active {
     color: rgba(219, 153, 36, 1);
 }
 
@@ -163,9 +171,8 @@ html, body {
     background-size: contain; /* or contain? */
     background-repeat: no-repeat;
     position: relative;
-
     width: 150px;
-    height: 100px;
+    height: 99px;
 }
 
 .head-logo a {
@@ -177,9 +184,14 @@ html, body {
     z-index: 10;
 }
 
-/* #services {
-    border: 1px solid black;
-} */
+
+/* HEADER: SELECTED PAGE LINK */
+.selected-link {
+    color: rgba(219, 153, 36, 1);
+    font-size: 23px;
+    border-bottom: 3px solid rgba(14, 165, 233, .4);
+}
+
 
 /* DROPDOWN MENU */
 #dropdown-menu {
@@ -223,15 +235,147 @@ html, body {
     font-size: 18px;
 }
 
-/* HEADER: SELECTED PAGE LINK */
+/* MOBILE MENU */
+.mobile-header {
+    display: none;
+    flex-direction: row;
+}
 
-.selected-link {
+.mobile-btn-wrap {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    z-index: 20;
+}
+
+#mobile-nav-btn {
+    display: inline-flex;
+    align-items: center;  
+    justify-content: center;
+    padding: 0; 
+    width: 35px; 
+    height: 35px; 
+    border: 1px solid black;
+    border-radius: 5px;
+    background: rgba(14, 165, 233, .9);
+    fill: rgba(234, 179, 8, 1);
+    cursor: pointer;
+}
+
+
+/* nav overlay dialog menu */
+#mobile-dialog {
+    display: none;
+    position: fixed; /* Position fixed to cover the whole screen  */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(1, 36, 86, 0.4);
+    backdrop-filter: blur(7px);
+    z-index: 1000;
+    border: none;
+    outline: none;
+}
+
+#mobile-dialog > nav {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.nav-cls-btn-wrp {
+    position: absolute;
+    box-sizing: border-box;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: end;
+    /* border: 1px solid pink; */
+    /* padding: 3px; */
+    width: 100%;
+}
+
+.dialog-lnks-wrap {
+    /* border: 1px solid black; */
+    min-height: 300px;
+}
+
+.dialog-lnks-wrap > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-close-btn {
+    display: inline-flex; /* Use flex to center SVG */
+    align-items: center;   /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 0; /* Remove default padding */
+    width: 35px; /* Set desired width */
+    height: 35px; /* Set desired height */
+    border: 1px solid white;
+    border-radius: 5px;
+    fill: white;
+    background: rgba(1, 1, 1, .4);
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.dialog-lnks-wrap .head-link-item > .unselected,
+.dialog-lnks-wrap .head-link-item.unselected {
+    /* color: rgba(1, 36, 86, 1); */
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.dialog-lnks-wrap .head-link-item > .unselected:hover,
+.dialog-lnks-wrap .head-link-item > .unselected:active,
+#nav-srvc-menu .unselected:active {
     color: rgba(219, 153, 36, 1);
-    font-size: 23px;
+    font-size: 28px;
+}
+
+.dialog-lnks-wrap .head-link-item > .selected-link {
+    color: rgba(219, 153, 36, 1);
+    font-size: 28px;
+    background: inherit;
+}
+
+#nav-srvc-menu {
+    display: none;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    /* border: 1px solid black; */
+}
+
+#nav-srvc-menu a {
+    color: rgba(219, 153, 36, 1);
     /* background: rgba(1, 36, 86, .3); */
     background: rgba(14, 165, 233, .4);
-    border-radius: 3px;
+    border-radius: 5px;
+    padding: 4px 10px;
 }
+
 
 /* CONTACT INFO AREA */
 
@@ -246,33 +390,40 @@ section > .contact-info-wrap {
     align-items: center;
 
     /* border: 1px solid black; */
-    height: 400px;
-    padding-top: 15px;
+    /* min-height: 400px; */
+    padding: 15px;
+    padding-bottom: 15px;
 }
 
 .info-subwrap {
-    /* border: 1px solid black; */
-    padding-top: 10px;
+    /* display: flex;
+    flex-direction: column; */
+
     padding-bottom: 30px;
     padding-right: 20px;
     padding-left: 25px;
+    /* border: 1px solid red; */
 }
 
 .cont-into-title {
-    font-size: 25px;
-    height: 50px;
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: .1rem;
+    /* height: 50px; */
     color: rgba(1, 36, 86, 1);
+    /* border: 1px solid green; */
 }
 
 /* upper divider */
 .divider-wrap {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 
     box-sizing: border-box;
     height: 35px;
     min-width: 100%;
+    /* border: 1px solid black; */
 }
 
 .divider-spn {
@@ -280,32 +431,28 @@ section > .contact-info-wrap {
     height: 2.5px;
     background: #0369a1;
 }
-/* ---------- */
 
 .contact-subwrap {
     display: flex;
-    /* grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 150px; */
     /* border: 1px solid black; */
 }
 
 .cont-into-box {
-    /* border: 1px solid green; */
     padding: 15px;
 }
 
 .cont-into-box > h3 {
+    margin: 0;
+    padding-bottom: 12px;
     color: rgba(219, 153, 36, 1);
-    font-size: 23px;
-    /* color: rgba(1, 36, 86, .9); */
+    font-size: 22px;
+    width: max-content;
 }
 
 .email-num-cont {
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     gap: 2px;
-
 }
 
 .cont-into-box p {
@@ -346,7 +493,7 @@ section > .contact-info-wrap {
     align-items: center;
 
     box-sizing: border-box;
-    min-width: 45px;
+    width: 5%;
     /* border: 1px solid black; */
 }
 
@@ -363,11 +510,17 @@ section > .contact-info-wrap {
 .map-wrap {
     display: flex;
     justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-/* #goog-map {
 
-} */
+#goog-map {
+    width: 700px;
+    height: 380px;
+}
 
+
+/* Form */
 .form-wrap {
     display: flex;
     flex-direction: column;
@@ -375,18 +528,24 @@ section > .contact-info-wrap {
     align-items: center;
     /* border: 1px solid black; */
     padding-bottom: 50px;
+    gap: 5px;
 }
 
 .form-section-title {
+    margin: 0;
+    padding: 8px;
+    padding-top: 23px;
     font-size: 22px;
-    /* border: 1px solid black; */
     text-align: center;
-    padding: 13px;
+
+    
 }
 
 #contact-form {
     width: 85%;
-    border: 1px solid red;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -413,13 +572,18 @@ section > .contact-info-wrap {
 
 #form-submit {
     all: unset;
+    text-align: center;
     border: 1px solid black;
-    padding: 8px 35px;
+    border-radius: 3px;
+    padding: 7px 30px;
+    color: rgba(232, 123, 11, 1);
+    background: rgba(33, 80, 173, 1);
+    width: 15%;
 }
 
 #form-submit:hover {
-    background: #0369a1;
-    color: rgba(219, 153, 36, 1);
+    background: rgba(16, 28, 86, 1);
+    /* border: 1px solid rgba(232, 123, 11, 1); */
 }
 
 textarea.form-input-field {
@@ -430,43 +594,52 @@ textarea.form-input-field {
 
 
 /* FOOTER SECTION */
+
 .index-footer {
-    height: 400px;
+    min-height: 400px;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     /* background: rgba(2, 6, 23, .8); */
     /* background: rgba(217, 119, 6, .7); */
     background: rgba(14, 165, 233, .9);
 }
  
 .logo-foot-wrap {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding-right: 18px;
-    padding-left: 22px;
+    padding-right: 20px;
+    padding-left: 20px;
     width: 100%;
 }
 
 .foot-contact-left {
-    width: 400px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 400px;
 }
 
 .foot-contact-left > span {
-    font-size: 10px;
+    font-size: .6rem;
 }
  
 .footer-logo {
     background-image: url(${___CSS_LOADER_URL_REPLACEMENT_1___});
     background-size: cover; /* or cover? */
     background-repeat: no-repeat;
-    background-color: yellow;
-    box-sizing: border-box;
-    width: 460px;
-    height: 300px;
-    border: 1px solid black;
-    /* border-radius: 125px; */
+    background-color: rgba(234, 179, 8, .9);
+
+    display: block;
+    aspect-ratio: 1.53 / 1;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border: 1px solid rgba(234, 179, 8, .9);
+    border-radius: 5px;
+    object-fit: contain;
 }
 
 .logo-foot-wrap > div > h2 {
@@ -482,7 +655,7 @@ textarea.form-input-field {
 }
 
 #phone-number {
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 #phone-number > a {
@@ -499,10 +672,136 @@ textarea.form-input-field {
     color: inherit;
     /* color: rgba(1, 36, 86, 0.94); */
     color: rgba(219, 153, 36, 1);
-    font-size: 15px;
+    font-size: 1rem;
 }
- 
-`, "",{"version":3,"sources":["webpack://./src/styles/contact.css"],"names":[],"mappings":"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","sourcesContent":["/* contact.css */\n\n:root {\n    --ffff-ffff: rgb(1, 1, 1);\n}\n\n* {\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\nhtml, body {\n    margin: 0;\n    padding: 0;\n    /* background: rgba(240, 233, 221, 1); */\n    /* background: #99f6e4; */\n    /* background: #dbeafe;\n    background: #e0f2fe; */\n    /* background: rgba(207, 250, 254, .3); */\n    background: #ffe4e6;\n    /* background: #f0f9ff; 4 */\n    /* background: #a5f3fc; 5  not for contact page */\n}\n\n/* MAIN/WRAP */\n#about-main-body {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ABOUT TOP LANDING */\n#landing-wrap {\n    background-image: url('../images/contact-img3.png');\n    background-size: cover; /* or contain? */\n    background-repeat: no-repeat;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n\n    height: 100vh;\n    width: 100%;\n}\n\n.about-top-sub-cont {\n    max-width: 400px;\n    text-align: center;\n    display: flex;\n    flex-direction: column;\n}\n\n\n.about-top-sub-cont > h1 {\n    color: white;\n    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\n    font-size: 60px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    margin: 0;\n    /* border: 1px solid red; */\n}\n\n.about-top-sub-cont > h3 {\n    /* color: rgba(219, 153, 36, 1); */\n    /* color: rgba(234, 179, 8, .9); */\n    /* color: rgba(207, 93, 23, .9); */\n    /* color: rgba(1, 36, 86, 1); */\n    color: rgba(219, 153, 36, 1);\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n\n/* HEADER */\n.top-main {\n    position: absolute;\n    width: 100vw;\n    height: auto;\n    padding-top: 10px;\n\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    /* background-color: rgba(219, 153, 36, .3); */\n}\n\n.header-links {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    box-sizing: border-box;\n    gap: 5px;\n\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n.head-link-item {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-sizing: border-box;\n   \n    padding: 8px 8px;\n    margin: 0;\n    height: min-content;\n    /* border: 1px solid black; */\n    /* links should be dark blue, with a yellow hover. font should be mild bold. */\n};\n\n.head-logo {\n    text-decoration: none;\n    color: inherit;\n}\n\n.head-link-item > a {\n    box-sizing: border-box;\n    text-decoration: none;\n }\n\n.head-link-item > .unselected {\n    color: rgba(1, 36, 86, 1);\n    font-size: 20px;\n}\n\n.head-link-item > .unselected:hover {\n    color: rgba(219, 153, 36, 1);\n}\n\n.head-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: contain; /* or contain? */\n    background-repeat: no-repeat;\n    position: relative;\n\n    width: 150px;\n    height: 100px;\n}\n\n.head-logo a {\n    position: absolute;  /* Positioning the link within the container */\n    top: 0;\n    left: 0;\n    width: 100%; /* Ensures the link covers the full container */\n    height: 100%;\n    z-index: 10;\n}\n\n/* #services {\n    border: 1px solid black;\n} */\n\n/* DROPDOWN MENU */\n#dropdown-menu {\n    display: none;\n    flex-direction: column;\n    position: absolute;\n    box-sizing: border-box;\n    width: 200px;\n    height: auto;\n    /* background: rgba(14, 165, 233, .8); */\n    background: rgba(1, 36, 86, .9);\n    /* border: 1px solid rgba(219, 153, 36, 1); */\n    /* rgba(2, 132, 199, */\n    padding: 5px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */\n    /* transform: translateY(-10px); Initial transform state */\n    /* pointer-events: none; */\n    z-index: 2;\n}\n\n#dropdown-menu > a {\n    box-sizing: border-box;\n    text-decoration: none;\n    padding: 7px;\n    color: white;\n    z-index: 10;\n}\n\n#dropdown-menu > a:hover {\n    box-sizing: border-box;\n    text-decoration: none;\n    color: rgba(219, 153, 36, 1);\n}\n\n#dropdown-menu span {\n    box-sizing: border-box;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    font-size: 18px;\n}\n\n/* HEADER: SELECTED PAGE LINK */\n\n.selected-link {\n    color: rgba(219, 153, 36, 1);\n    font-size: 23px;\n    /* background: rgba(1, 36, 86, .3); */\n    background: rgba(14, 165, 233, .4);\n    border-radius: 3px;\n}\n\n/* CONTACT INFO AREA */\n\n.contact-info-wrap {\n    display: flex;\n}\n\nsection > .contact-info-wrap {\n    display: flex;\n    flex-direction: column;\n    /* justify-content: center; */\n    align-items: center;\n\n    /* border: 1px solid black; */\n    height: 400px;\n    padding-top: 15px;\n}\n\n.info-subwrap {\n    /* border: 1px solid black; */\n    padding-top: 10px;\n    padding-bottom: 30px;\n    padding-right: 20px;\n    padding-left: 25px;\n}\n\n.cont-into-title {\n    font-size: 25px;\n    height: 50px;\n    color: rgba(1, 36, 86, 1);\n}\n\n/* upper divider */\n.divider-wrap {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    box-sizing: border-box;\n    height: 35px;\n    min-width: 100%;\n}\n\n.divider-spn {\n    width: 75%;\n    height: 2.5px;\n    background: #0369a1;\n}\n/* ---------- */\n\n.contact-subwrap {\n    display: flex;\n    /* grid-template-columns: repeat(3, 1fr);\n    grid-template-rows: 150px; */\n    /* border: 1px solid black; */\n}\n\n.cont-into-box {\n    /* border: 1px solid green; */\n    padding: 15px;\n}\n\n.cont-into-box > h3 {\n    color: rgba(219, 153, 36, 1);\n    font-size: 23px;\n    /* color: rgba(1, 36, 86, .9); */\n}\n\n.email-num-cont {\n    /* border: 1px solid black; */\n    display: flex;\n    flex-direction: column;\n    gap: 2px;\n\n}\n\n.cont-into-box p {\n    padding: 0;\n    margin: 0;\n    /* color: rgba(1, 36, 86, 1); */\n    color: #0369a1;\n    font-size: 16px;\n    font-weight: 500;\n}\n\n.email-num-cont > p {\n    /* border: 1px solid black; */\n    border-radius: 5px;\n    padding: 6px 8px;\n}\n\n.email-num-cont > p:hover {\n    border-radius: 5px;\n    background: #0369a1;\n    color: rgba(219, 153, 36, 1);\n}\n\n.email-num-cont a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n    height: 100%;\n    width: 100%;\n    /* border: 1px solid black;\n    border-radius: 5px; */\n    /* padding: 5px 5px; */\n}\n\n/* divider */\n.divider-wrap-lower {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    box-sizing: border-box;\n    min-width: 45px;\n    /* border: 1px solid black; */\n}\n\n.divider-spn-lower {\n    width: 2.5px;\n    height: 60%;\n    /* background: #0f172a; */\n    background: rgba(1, 36, 86, 0.94);\n    /* padding: 2px 5px; */\n}\n\n\n/* MAP SECTION */\n.map-wrap {\n    display: flex;\n    justify-content: center;\n}\n/* #goog-map {\n\n} */\n\n.form-wrap {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    /* border: 1px solid black; */\n    padding-bottom: 50px;\n}\n\n.form-section-title {\n    font-size: 22px;\n    /* border: 1px solid black; */\n    text-align: center;\n    padding: 13px;\n}\n\n#contact-form {\n    width: 85%;\n    border: 1px solid red;\n    display: flex;\n    flex-direction: column;\n    gap: 3px;\n}\n\n/* .sub-input-group {\n    display: flex;\n    flex-direction: column;\n    border: 1px solid yellow;\n    gap: 2px;\n} */\n\n.form-input-field {\n    border: 1px solid black;\n    padding: 7px;\n}\n\n.name-group {\n    display: flex;\n    flex-direction: row;\n    border: 1px solid green;\n    gap: 8px;\n}\n\n#form-submit {\n    all: unset;\n    border: 1px solid black;\n    padding: 8px 35px;\n}\n\n#form-submit:hover {\n    background: #0369a1;\n    color: rgba(219, 153, 36, 1);\n}\n\ntextarea.form-input-field {\n    resize: vertical;\n    min-height: 100px;\n    max-width: 100%;\n}\n\n\n/* FOOTER SECTION */\n.index-footer {\n    height: 400px;\n    display: flex;\n    justify-content: end;\n    /* background: rgba(2, 6, 23, .8); */\n    /* background: rgba(217, 119, 6, .7); */\n    background: rgba(14, 165, 233, .9);\n}\n \n.logo-foot-wrap {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding-right: 18px;\n    padding-left: 22px;\n    width: 100%;\n}\n\n.foot-contact-left {\n    width: 400px;\n}\n\n.foot-contact-left > span {\n    font-size: 10px;\n}\n \n.footer-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: cover; /* or cover? */\n    background-repeat: no-repeat;\n    background-color: yellow;\n    box-sizing: border-box;\n    width: 460px;\n    height: 300px;\n    border: 1px solid black;\n    /* border-radius: 125px; */\n}\n\n.logo-foot-wrap > div > h2 {\n    color: rgba(240, 233, 221, 1);\n}\n\n.foot-links {\n    display: flex;\n    gap: 12px;\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n#phone-number {\n    font-size: 40px;\n}\n\n#phone-number > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n}\n\n#phone-number > a:hover {\n    color: rgba(219, 153, 36, .8);\n}\n\n.foot-link > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n    /* color: rgba(1, 36, 86, 0.94); */\n    color: rgba(219, 153, 36, 1);\n    font-size: 15px;\n}\n \n"],"sourceRoot":""}]);
+
+
+
+/* works for far */
+@media screen and (width < 741px) {
+    /* section > .about-cont-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 310px;
+        padding-top: 20px;
+
+    } */
+#landing-wrap {
+    justify-content: end;
+}
+
+.about-top-sub-cont {
+    height: 65%;
+}
+
+/* contact section */
+.contact-subwrap {
+    flex-direction: column;
+}
+
+/* dividers for contact */
+.divider-wrap-lower {
+    justify-content: start;
+    width: 100%;
+    height: 20px;
+    /* border: 1px solid black; */
+} 
+
+.divider-spn-lower {
+    width: 50%;
+    height: 2.5px;
+    background: rgba(1, 36, 86, 0.94);
+}
+
+/* footer */
+.logo-foot-wrap {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.foot-contact-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+#phone-number {
+    margin: 0;
+    padding: 5px;
+}
+
+#phone-number > a:active {
+    color: rgba(219, 153, 36, 1);
+}
+
+.foot-links {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.footer-logo {
+    display: block;
+    aspect-ratio: 1.53 / 1;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border: 1px solid rgba(234, 179, 8, .9);
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+/* non-mobile-header */
+.top-main {
+    display: none;
+}
+
+ /* MOBILE NAV MENU */
+    .mobile-header {
+        position: absolute;
+        top: 0;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .head-logo {
+        width: 200px;
+        height: 130px;
+    }
+}
+
+@media screen and (width < 401px) { 
+    /* section > .about-cont-wrap {
+        padding-right: .5rem;
+        padding-left: .5rem;
+        border: 1px solid red;
+    } */
+
+
+    /* footer  */
+    .foot-link > a {
+        font-size: .8rem;
+    }
+
+    #phone-number {
+        font-size: 2.1rem;
+    }
+
+    .foot-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+    }
+}
+
+`, "",{"version":3,"sources":["webpack://./src/styles/contact.css"],"names":[],"mappings":"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","sourcesContent":["/* contact.css */\n\n:root {\n    --ffff-ffff: rgb(1, 1, 1);\n}\n\n* {\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\nhtml, body {\n    margin: 0;\n    padding: 0;\n    font-size: 16px;\n    background: #e0f2fe;\n    /* background: rgba(240, 233, 221, 1); */\n    /* background: #99f6e4; */\n    /* background: #dbeafe;\n    background: #e0f2fe; */\n    /* background: rgba(207, 250, 254, .3); */\n    /* background: #ffe4e6; */\n    /* background: #f0f9ff; 4 */\n    /* background: #a5f3fc; 5  not for contact page */\n}\n\n/* MAIN/WRAP */\n#about-main-body {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ABOUT TOP LANDING */\n#landing-wrap {\n    background-image: url('../images/contact-img3.png');\n    background-size: cover; /* or contain? */\n    background-repeat: no-repeat;\n    background-position: center;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n\n    height: 84vh;\n    width: 100%;\n}\n\n.about-top-sub-cont {\n    max-width: 400px;\n    text-align: center;\n    display: flex;\n    flex-direction: column;\n}\n\n.about-top-sub-cont > h1 {\n    color: white;\n    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\n    font-size: 4rem;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    margin: 0;\n    /* border: 1px solid red; */\n}\n\n.about-top-sub-cont > h3 {\n    /* color: rgba(219, 153, 36, 1); */\n    /* color: rgba(234, 179, 8, .9); */\n    /* color: rgba(207, 93, 23, .9); */\n    /* color: rgba(1, 36, 86, 1); */\n    /* color: rgba(219, 153, 36, 1); */\n    /* color: rgba(14, 165, 233, .7); */\n    color: rgba(219, 153, 36, .7);\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 1.7rem;\n}\n\n\n/* HEADER */\n.top-main {\n    position: absolute;\n    width: 100vw;\n    height: auto;\n    padding-top: 10px;\n\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    /* background-color: rgba(219, 153, 36, .3); */\n}\n\n.header-links {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    box-sizing: border-box;\n    gap: 5px;\n\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n.head-link-item {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-sizing: border-box;\n   \n    padding: 8px 8px;\n    margin: 0;\n    height: min-content;\n    /* border: 1px solid black; */\n    /* links should be dark blue, with a yellow hover. font should be mild bold. */\n};\n\n.head-logo {\n    text-decoration: none;\n    color: inherit;\n}\n\n.head-link-item > a,\n#nav-srvc-menu a {\n    box-sizing: border-box;\n    text-decoration: none;\n }\n\n.head-link-item > .unselected,\n.head-link-item.unselected {\n    color: rgba(1, 36, 86, 1);\n    font-size: 20px;\n}\n\n.head-link-item > .unselected:hover,\n.head-link-item > .unselected:active {\n    color: rgba(219, 153, 36, 1);\n}\n\n.head-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: contain; /* or contain? */\n    background-repeat: no-repeat;\n    position: relative;\n    width: 150px;\n    height: 99px;\n}\n\n.head-logo a {\n    position: absolute;  /* Positioning the link within the container */\n    top: 0;\n    left: 0;\n    width: 100%; /* Ensures the link covers the full container */\n    height: 100%;\n    z-index: 10;\n}\n\n\n/* HEADER: SELECTED PAGE LINK */\n.selected-link {\n    color: rgba(219, 153, 36, 1);\n    font-size: 23px;\n    border-bottom: 3px solid rgba(14, 165, 233, .4);\n}\n\n\n/* DROPDOWN MENU */\n#dropdown-menu {\n    display: none;\n    flex-direction: column;\n    position: absolute;\n    box-sizing: border-box;\n    width: 200px;\n    height: auto;\n    /* background: rgba(14, 165, 233, .8); */\n    background: rgba(1, 36, 86, .9);\n    /* border: 1px solid rgba(219, 153, 36, 1); */\n    /* rgba(2, 132, 199, */\n    padding: 5px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */\n    /* transform: translateY(-10px); Initial transform state */\n    /* pointer-events: none; */\n    z-index: 2;\n}\n\n#dropdown-menu > a {\n    box-sizing: border-box;\n    text-decoration: none;\n    padding: 7px;\n    color: white;\n    z-index: 10;\n}\n\n#dropdown-menu > a:hover {\n    box-sizing: border-box;\n    text-decoration: none;\n    color: rgba(219, 153, 36, 1);\n}\n\n#dropdown-menu span {\n    box-sizing: border-box;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    font-size: 18px;\n}\n\n/* MOBILE MENU */\n.mobile-header {\n    display: none;\n    flex-direction: row;\n}\n\n.mobile-btn-wrap {\n    position: fixed;\n    top: 15px;\n    left: 15px;\n\n    box-sizing: border-box;\n    padding: 0;\n    margin: 0;\n    z-index: 20;\n}\n\n#mobile-nav-btn {\n    display: inline-flex;\n    align-items: center;  \n    justify-content: center;\n    padding: 0; \n    width: 35px; \n    height: 35px; \n    border: 1px solid black;\n    border-radius: 5px;\n    background: rgba(14, 165, 233, .9);\n    fill: rgba(234, 179, 8, 1);\n    cursor: pointer;\n}\n\n\n/* nav overlay dialog menu */\n#mobile-dialog {\n    display: none;\n    position: fixed; /* Position fixed to cover the whole screen  */\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    width: 100vw;\n    height: 100vh;\n    background: rgba(1, 36, 86, 0.4);\n    backdrop-filter: blur(7px);\n    z-index: 1000;\n    border: none;\n    outline: none;\n}\n\n#mobile-dialog > nav {\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    height: 100%;\n    width: 100%;\n    /* border: 1px solid red; */\n    position: relative;\n}\n\n.nav-cls-btn-wrp {\n    position: absolute;\n    box-sizing: border-box;\n    top: 10px;\n    right: 10px;\n    display: flex;\n    justify-content: end;\n    /* border: 1px solid pink; */\n    /* padding: 3px; */\n    width: 100%;\n}\n\n.dialog-lnks-wrap {\n    /* border: 1px solid black; */\n    min-height: 300px;\n}\n\n.dialog-lnks-wrap > ul {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n.nav-close-btn {\n    display: inline-flex; /* Use flex to center SVG */\n    align-items: center;   /* Center vertically */\n    justify-content: center; /* Center horizontally */\n    padding: 0; /* Remove default padding */\n    width: 35px; /* Set desired width */\n    height: 35px; /* Set desired height */\n    border: 1px solid white;\n    border-radius: 5px;\n    fill: white;\n    background: rgba(1, 1, 1, .4);\n    cursor: pointer; /* Change cursor to pointer */\n}\n\n.dialog-lnks-wrap .head-link-item > .unselected,\n.dialog-lnks-wrap .head-link-item.unselected {\n    /* color: rgba(1, 36, 86, 1); */\n    color: white;\n    font-size: 28px;\n    cursor: pointer;\n}\n\n.dialog-lnks-wrap .head-link-item > .unselected:hover,\n.dialog-lnks-wrap .head-link-item > .unselected:active,\n#nav-srvc-menu .unselected:active {\n    color: rgba(219, 153, 36, 1);\n    font-size: 28px;\n}\n\n.dialog-lnks-wrap .head-link-item > .selected-link {\n    color: rgba(219, 153, 36, 1);\n    font-size: 28px;\n    background: inherit;\n}\n\n#nav-srvc-menu {\n    display: none;\n    width: 70%;\n    flex-direction: column;\n    align-items: center;\n    gap: 4px;\n    padding-top: 7px;\n    padding-bottom: 7px;\n    /* border: 1px solid black; */\n}\n\n#nav-srvc-menu a {\n    color: rgba(219, 153, 36, 1);\n    /* background: rgba(1, 36, 86, .3); */\n    background: rgba(14, 165, 233, .4);\n    border-radius: 5px;\n    padding: 4px 10px;\n}\n\n\n/* CONTACT INFO AREA */\n\n.contact-info-wrap {\n    display: flex;\n}\n\nsection > .contact-info-wrap {\n    display: flex;\n    flex-direction: column;\n    /* justify-content: center; */\n    align-items: center;\n\n    /* border: 1px solid black; */\n    /* min-height: 400px; */\n    padding: 15px;\n    padding-bottom: 15px;\n}\n\n.info-subwrap {\n    /* display: flex;\n    flex-direction: column; */\n\n    padding-bottom: 30px;\n    padding-right: 20px;\n    padding-left: 25px;\n    /* border: 1px solid red; */\n}\n\n.cont-into-title {\n    text-align: center;\n    font-size: 26px;\n    letter-spacing: .1rem;\n    /* height: 50px; */\n    color: rgba(1, 36, 86, 1);\n    /* border: 1px solid green; */\n}\n\n/* upper divider */\n.divider-wrap {\n    display: flex;\n    justify-content: center;\n    align-items: end;\n\n    box-sizing: border-box;\n    height: 35px;\n    min-width: 100%;\n    /* border: 1px solid black; */\n}\n\n.divider-spn {\n    width: 75%;\n    height: 2.5px;\n    background: #0369a1;\n}\n\n.contact-subwrap {\n    display: flex;\n    /* border: 1px solid black; */\n}\n\n.cont-into-box {\n    padding: 15px;\n}\n\n.cont-into-box > h3 {\n    margin: 0;\n    padding-bottom: 12px;\n    color: rgba(219, 153, 36, 1);\n    font-size: 22px;\n    width: max-content;\n}\n\n.email-num-cont {\n    display: flex;\n    flex-direction: column;\n    gap: 2px;\n}\n\n.cont-into-box p {\n    padding: 0;\n    margin: 0;\n    /* color: rgba(1, 36, 86, 1); */\n    color: #0369a1;\n    font-size: 16px;\n    font-weight: 500;\n}\n\n.email-num-cont > p {\n    /* border: 1px solid black; */\n    border-radius: 5px;\n    padding: 6px 8px;\n}\n\n.email-num-cont > p:hover {\n    border-radius: 5px;\n    background: #0369a1;\n    color: rgba(219, 153, 36, 1);\n}\n\n.email-num-cont a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n    height: 100%;\n    width: 100%;\n    /* border: 1px solid black;\n    border-radius: 5px; */\n    /* padding: 5px 5px; */\n}\n\n/* divider */\n.divider-wrap-lower {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    box-sizing: border-box;\n    width: 5%;\n    /* border: 1px solid black; */\n}\n\n.divider-spn-lower {\n    width: 2.5px;\n    height: 60%;\n    /* background: #0f172a; */\n    background: rgba(1, 36, 86, 0.94);\n    /* padding: 2px 5px; */\n}\n\n\n/* MAP SECTION */\n.map-wrap {\n    display: flex;\n    justify-content: center;\n    padding-left: 10px;\n    padding-right: 10px;\n}\n\n#goog-map {\n    width: 700px;\n    height: 380px;\n}\n\n\n/* Form */\n.form-wrap {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    /* border: 1px solid black; */\n    padding-bottom: 50px;\n    gap: 5px;\n}\n\n.form-section-title {\n    margin: 0;\n    padding: 8px;\n    padding-top: 23px;\n    font-size: 22px;\n    text-align: center;\n\n    \n}\n\n#contact-form {\n    width: 85%;\n    border: 1px solid black;\n    border-radius: 5px;\n    padding: 5px;\n    display: flex;\n    flex-direction: column;\n    gap: 3px;\n}\n\n/* .sub-input-group {\n    display: flex;\n    flex-direction: column;\n    border: 1px solid yellow;\n    gap: 2px;\n} */\n\n.form-input-field {\n    border: 1px solid black;\n    padding: 7px;\n}\n\n.name-group {\n    display: flex;\n    flex-direction: row;\n    border: 1px solid green;\n    gap: 8px;\n}\n\n#form-submit {\n    all: unset;\n    text-align: center;\n    border: 1px solid black;\n    border-radius: 3px;\n    padding: 7px 30px;\n    color: rgba(232, 123, 11, 1);\n    background: rgba(33, 80, 173, 1);\n    width: 15%;\n}\n\n#form-submit:hover {\n    background: rgba(16, 28, 86, 1);\n    /* border: 1px solid rgba(232, 123, 11, 1); */\n}\n\ntextarea.form-input-field {\n    resize: vertical;\n    min-height: 100px;\n    max-width: 100%;\n}\n\n\n/* FOOTER SECTION */\n\n.index-footer {\n    min-height: 400px;\n    display: flex;\n    justify-content: center;\n    /* background: rgba(2, 6, 23, .8); */\n    /* background: rgba(217, 119, 6, .7); */\n    background: rgba(14, 165, 233, .9);\n}\n \n.logo-foot-wrap {\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    padding-right: 20px;\n    padding-left: 20px;\n    width: 100%;\n}\n\n.foot-contact-left {\n    box-sizing: border-box;\n    padding-left: 10px;\n    padding-right: 10px;\n    max-width: 400px;\n}\n\n.foot-contact-left > span {\n    font-size: .6rem;\n}\n \n.footer-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: cover; /* or cover? */\n    background-repeat: no-repeat;\n    background-color: rgba(234, 179, 8, .9);\n\n    display: block;\n    aspect-ratio: 1.53 / 1;\n    width: 90%;\n    max-width: 400px;\n    height: auto;\n    border: 1px solid rgba(234, 179, 8, .9);\n    border-radius: 5px;\n    object-fit: contain;\n}\n\n.logo-foot-wrap > div > h2 {\n    color: rgba(240, 233, 221, 1);\n}\n\n.foot-links {\n    display: flex;\n    gap: 12px;\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n#phone-number {\n    font-size: 2.5rem;\n}\n\n#phone-number > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n}\n\n#phone-number > a:hover {\n    color: rgba(219, 153, 36, .8);\n}\n\n.foot-link > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n    /* color: rgba(1, 36, 86, 0.94); */\n    color: rgba(219, 153, 36, 1);\n    font-size: 1rem;\n}\n\n\n\n/* works for far */\n@media screen and (width < 741px) {\n    /* section > .about-cont-wrap {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        min-width: 310px;\n        padding-top: 20px;\n\n    } */\n#landing-wrap {\n    justify-content: end;\n}\n\n.about-top-sub-cont {\n    height: 65%;\n}\n\n/* contact section */\n.contact-subwrap {\n    flex-direction: column;\n}\n\n/* dividers for contact */\n.divider-wrap-lower {\n    justify-content: start;\n    width: 100%;\n    height: 20px;\n    /* border: 1px solid black; */\n} \n\n.divider-spn-lower {\n    width: 50%;\n    height: 2.5px;\n    background: rgba(1, 36, 86, 0.94);\n}\n\n/* footer */\n.logo-foot-wrap {\n    flex-direction: column;\n    padding-top: 20px;\n    padding-bottom: 30px;\n}\n\n.foot-contact-left {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    padding-bottom: 30px;\n}\n\n#phone-number {\n    margin: 0;\n    padding: 5px;\n}\n\n#phone-number > a:active {\n    color: rgba(219, 153, 36, 1);\n}\n\n.foot-links {\n    padding-top: 5px;\n    padding-bottom: 5px;\n}\n\n.footer-logo {\n    display: block;\n    aspect-ratio: 1.53 / 1;\n    width: 90%;\n    max-width: 400px;\n    height: auto;\n    border: 1px solid rgba(234, 179, 8, .9);\n    border-radius: 5px;\n    object-fit: contain;\n}\n\n/* non-mobile-header */\n.top-main {\n    display: none;\n}\n\n /* MOBILE NAV MENU */\n    .mobile-header {\n        position: absolute;\n        top: 0;\n        padding-top: 20px;\n        display: flex;\n        flex-direction: row;\n        justify-content: center;\n        width: 100%;\n    }\n\n    .head-logo {\n        width: 200px;\n        height: 130px;\n    }\n}\n\n@media screen and (width < 401px) { \n    /* section > .about-cont-wrap {\n        padding-right: .5rem;\n        padding-left: .5rem;\n        border: 1px solid red;\n    } */\n\n\n    /* footer  */\n    .foot-link > a {\n        font-size: .8rem;\n    }\n\n    #phone-number {\n        font-size: 2.1rem;\n    }\n\n    .foot-links {\n        flex-wrap: wrap;\n        justify-content: center;\n        align-items: center;\n        gap: 9px;\n    }\n}\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1151,6 +1450,9 @@ __webpack_require__.r(__webpack_exports__);
 
 console.log("from contact.js");
 
+const elem = (prop, par) => (par || document).querySelector(prop);
+// const elems = (prop, par) => (par || document).querySelectorAll(prop);
+
 document.addEventListener('DOMContentLoaded', () => {
     const page = document.querySelector('#contact');
     page.childNodes[0].classList.remove('unselected');
@@ -1180,6 +1482,32 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleMenuDisplay();
         console.log('dropDownMenu: mouseover');
     });
+
+       // nav overlay opening
+    const navOpenBtn = elem('#mobile-nav-btn');
+    const navDialog = elem('#mobile-dialog');
+    const closeDiaNav = elem('.nav-close-btn');
+
+    navOpenBtn.addEventListener('click', () => {
+        navDialog.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeDiaNav.addEventListener('click', () => {
+        subNavDisplay.style.display = 'none';
+        document.body.style.overflow = '';
+        navDialog.style.display = 'none';
+    });
+
+    // nav subservice menu opening
+    const subNavbtn = elem('#services-nav');
+    const subNavDisplay = elem('#nav-srvc-menu');
+    subNavbtn.addEventListener('click', () => {
+        if (subNavDisplay.style.display === 'none') {
+            subNavDisplay.style.display = 'flex';
+        } else subNavDisplay.style.display = 'none';
+    });
+
 });
 
 

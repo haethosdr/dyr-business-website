@@ -60,3 +60,11 @@ benefits of : "service"
 10. styles for media screen sub 401px; (mostly done for down to 320px on about page)
 11. for home, to indicate it is home, highlight circle behind logo yellow (do later/post-release)
 
+9/11
+1. finished mobile versions (90%) for both home page and contact page.
+   -small details still need to be refined
+
+9/12
+1. 
+
+

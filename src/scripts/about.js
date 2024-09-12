@@ -100,7 +100,5 @@ document.addEventListener('DOMContentLoaded', () => {
         } else subNavDisplay.style.display = 'none';
     });
 
-
-
 });
 

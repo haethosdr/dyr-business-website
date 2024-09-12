@@ -172,9 +172,8 @@ html, body {
 .selected-link {
     color: rgba(219, 153, 36, 1);
     font-size: 23px;
-    /* background: rgba(1, 36, 86, .3); */
-    /* background: rgba(14, 165, 233, .4); */
-    border-radius: 4px;
+    border-bottom: 3px solid rgba(14, 165, 233, .4);
+    
 }
 
 /* DROPDOWN MENU */
@@ -406,19 +405,16 @@ section > .about-cont-wrap {
 /* IMG / slider section */
 .but-img-mast-wrap {
     box-sizing: border-box;
-    /* border: 1px solid purple; */
     height: max-content;  
     width: 350px;
-    height: 486px; /* recently added */
+    height: 486px;
     position: relative;
 }
 
 .img-slider-wrap {
     box-sizing: border-box;
-    /* height: 468px;
-    width: 350px; */ 
-    width: 100%; /* recently added */
-    height: 100%; /* recently added */
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
@@ -682,45 +678,44 @@ section > .about-cont-wrap {
     }
 
 /* footer */
-    .logo-foot-wrap {
-        flex-direction: column;
-        padding-top: 20px;
-        padding-bottom: 30px;
-    }
+.logo-foot-wrap {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
 
-    .foot-contact-left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 30px;
-        /* border: 1px solid black; */
-    }
+.foot-contact-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
 
-    #phone-number {
-        margin: 0;
-        padding: 5px;
-    }
+#phone-number {
+    margin: 0;
+    padding: 5px;
+}
 
-    #phone-number > a:active {
-        color: rgba(219, 153, 36, 1);
-    }
+#phone-number > a:active {
+    color: rgba(219, 153, 36, 1);
+}
 
-    .foot-links {
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
+.foot-links {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
-    .footer-logo {
-        display: block;
-        aspect-ratio: 1.53 / 1;
-        width: 90%;
-        max-width: 400px;
-        height: auto;
-        border: 1px solid rgba(234, 179, 8, .9);
-        border-radius: 5px;
-        object-fit: contain;
-    }
+.footer-logo {
+    display: block;
+    aspect-ratio: 1.53 / 1;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border: 1px solid rgba(234, 179, 8, .9);
+    border-radius: 5px;
+    object-fit: contain;
+}
 
 /* non-mobile-header */
     .top-main {
@@ -784,7 +779,12 @@ section > .about-cont-wrap {
 
     .foot-links {
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
     }
+
+    
 
 }
 

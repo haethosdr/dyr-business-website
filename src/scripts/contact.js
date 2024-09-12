@@ -4,6 +4,9 @@ import '../styles/contact.css';
 
 console.log("from contact.js");
 
+const elem = (prop, par) => (par || document).querySelector(prop);
+// const elems = (prop, par) => (par || document).querySelectorAll(prop);
+
 document.addEventListener('DOMContentLoaded', () => {
     const page = document.querySelector('#contact');
     page.childNodes[0].classList.remove('unselected');
@@ -33,6 +36,32 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleMenuDisplay();
         console.log('dropDownMenu: mouseover');
     });
+
+       // nav overlay opening
+    const navOpenBtn = elem('#mobile-nav-btn');
+    const navDialog = elem('#mobile-dialog');
+    const closeDiaNav = elem('.nav-close-btn');
+
+    navOpenBtn.addEventListener('click', () => {
+        navDialog.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeDiaNav.addEventListener('click', () => {
+        subNavDisplay.style.display = 'none';
+        document.body.style.overflow = '';
+        navDialog.style.display = 'none';
+    });
+
+    // nav subservice menu opening
+    const subNavbtn = elem('#services-nav');
+    const subNavDisplay = elem('#nav-srvc-menu');
+    subNavbtn.addEventListener('click', () => {
+        if (subNavDisplay.style.display === 'none') {
+            subNavDisplay.style.display = 'flex';
+        } else subNavDisplay.style.display = 'none';
+    });
+
 });
 
 

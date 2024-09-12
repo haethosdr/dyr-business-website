@@ -27,6 +27,7 @@ html, body {
     background-image: url('../images/testimonials-background.png');
     background-size: cover; /* or contain? */
     background-repeat: no-repeat;
+    background-position: center;
     
     display: flex;
     flex-direction: column;
