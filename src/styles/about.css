@@ -773,13 +773,17 @@ section > .about-cont-wrap {
         width: 300px;
     }
 
-    /* header  */
+    /* footer  */
     .foot-link > a {
         font-size: .8rem;
     }
 
     #phone-number {
         font-size: 2.1rem;
+    }
+
+    .foot-links {
+        flex-wrap: wrap;
     }
 
 }

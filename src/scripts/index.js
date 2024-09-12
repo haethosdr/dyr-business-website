@@ -5,7 +5,6 @@ import '../styles/index.css';
 console.log("from index.js");
 
 let slideIndex = 0;
-const WIDTH = 460;
 
 const scrollLeft = function () {
     if (slideIndex === 0) return;
@@ -22,15 +21,15 @@ const scrollRight = function () {
 
 const shiftPos = function (ms = 400) {
     const sliderWrap = document.querySelector('#slide-frame');
+    const calcWIDTH = sliderWrap.getBoundingClientRect().width;
     sliderWrap.style.transitionDuration = `${ms}ms`;
-    sliderWrap.style.transform = `translateX(${-WIDTH * slideIndex}px)`;
+    sliderWrap.style.transform = `translateX(${-calcWIDTH * slideIndex}px)`;
 };
 
 
 document.addEventListener('DOMContentLoaded', () => {
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
-    // serviceMenuLink.getBoundingClientRect();
 
     const toggleMenuDisplay = function () {
       dropDownMenu.style.top = `${serviceMenuLink.offsetTop + 40}px`;
@@ -82,6 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
             subNavDisplay.style.display = 'flex';
         } else subNavDisplay.style.display = 'none';
     });
-    
+
 });
 

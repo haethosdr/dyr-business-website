@@ -1,4 +1,17 @@
 /* index.css */
+@font-face {
+    font-family: 'Aboreto';
+    src: url('../fonts/Aboreto/Aboreto-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Abel';
+    src: url('../fonts/Abel/Abel-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
     --ffff-ffff: rgb(1, 1, 1);
@@ -49,6 +62,8 @@ html, body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
 }
 
 .top-quote {
@@ -56,6 +71,7 @@ html, body {
     text-align: center;
     color: rgba(3, 6, 51, 1);
     font-size: 30px;
+    box-sizing: border-box;
 }
 
 .request-button {
@@ -65,15 +81,20 @@ html, body {
     cursor: pointer;
     font-family: tahoma;
     font-size: 12px;
-    border-radius: 25px;
+    border-radius: 5px;
     padding: 10px 13px;
-    color: #EFC506;
-    background: rgba(1, 36, 86, 0.8392156862745098);
+    /* color: #EFC506; */
+    color: rgba(219, 153, 36, 1);
+    /* background: rgba(1, 36, 86, 0.8392156862745098); */
+    background: rgba(33, 80, 173, 1);
+    /* border: 1px solid rgba(3, 6, 51, 1); */
 }
 
 .request-button:hover {
-    color: rgba(219, 153, 36, 1);
-    background: rgba(33, 80, 173, 1);
+    /* color: rgba(219, 153, 36, 1);
+    background: rgba(33, 80, 173, 1); */
+    background: rgba(16, 28, 86, 1);
+    /* border: 1px solid white; */
 }
 
 .top-mid-quote {
@@ -154,6 +175,8 @@ html, body {
 
     width: 150px;
     height: 100px;
+    /* border-bottom: 2px solid rgba(219, 153, 36, 1);
+    border-bottom-width: 4px; */
 }
 
 .head-logo a {
@@ -367,7 +390,7 @@ html, body {
     padding: 10px;
     text-align: center;
     /* color: rgba(16, 28, 86, 1); */
-    color: rgba(3, 6, 51, .9);
+    color: rgba(1, 36, 86, 0.94);
     letter-spacing: .1rem;
 }
 
@@ -377,6 +400,7 @@ html, body {
     grid-template-rows: repeat(4, 300px);
     padding-top: 40px;
     padding-bottom: 40px;
+    box-sizing: border-box;
 }
 
 .service-wrap {
@@ -385,41 +409,57 @@ html, body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    box-sizing: border-box;
 }
 
 .subservice-wrap-desc {
+    display: flex;
+    flex-direction: column;
     max-width: 350px; 
 }
 
+.subservice-wrap-desc > h2 {
+    margin: 0;
+    color: rgba(3, 6, 51, .9);
+}
+
 .subservice-wrap-desc > p {
+    font-weight: 500;
+    font-family: 'Abel';
+    line-height: 1.2rem;
+    font-size: 1.2rem;
     color: rgba(16, 28, 86, .8);
 }
 
 .serv-lrn-butn {
     all: unset;
+    text-align: center;
     border: 1px solid black;
     border-radius: 3px;
     padding: 7px 30px;
     color: rgba(232, 123, 11, 1);
-    background: rgba(33, 80, 173, .1);
+    background: rgba(33, 80, 173, 1);
+    width: 30%;
 }
 
 .serv-lrn-butn:hover {
-    background: rgba(33, 80, 173, 1);
+    background: rgba(16, 28, 86, 1);
+}
+
+.srv-img {
+    height: 260px;
+    border-radius: 5px;
 }
 
 #win-wash-wrap {
     width: 343px;
-    height: 260px;
     background: url(../images/dylan-cleanwindow-v1.png);
-    background-size: contain; /* or contain? */
-    /* background-attachment: fixed; */
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
 #roofgut-img-wrap {
     width: 334px;
-    height: 260px;
     background: url(../images/debris-roof-main_page.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -427,7 +467,6 @@ html, body {
 
 #pwrwash-img-wrap {
     width: 324px;
-    height: 260px;
     background: url(../images/power-wash.jpeg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -435,7 +474,7 @@ html, body {
 
 #solrp-img-wrap {
     width: 324px;
-    height: 260px;
+    height: 265px;
     background: url(../images/new-solar-dylan.jpeg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -450,14 +489,12 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
-    /* transform: rotate(90deg); */
     min-height: 500px;
-    /* position: relative; */
 }
 
 .req-sec-overlay {
     background: rgba(220, 220, 220, 0.3);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(4px);
     width: 100%;
     min-height: 500px;
 
@@ -474,7 +511,7 @@ html, body {
     gap: 15px;
     padding: 30px;
     padding-top: 25px;
-    /* border: 1px solid red; */
+
     border-radius: 300px;
     max-width: 300px;
     /* background:  rgba(219, 153, 240, .3); */
@@ -500,7 +537,6 @@ html, body {
 
     width: 200px;
     height: 135px;
-    /* border: 1px solid red; */
     /* background: rgba(219, 153, 36, .3); */
 }
 
@@ -514,7 +550,6 @@ html, body {
 .req-button {
     all: unset;
     border: 1px solid black;
-    /* border-radius: 20px; */
     padding: 7px 20px;
     color: rgba(232, 123, 11, 1);
     background: rgba(33, 80, 173, .7);
@@ -529,12 +564,11 @@ html, body {
 /* QUOTE SCROLL SECTION */
 
 #quote-slider-wrap {
-    height: 480px;
-
+    min-height: 445px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    padding-bottom: 30px;
 }
 
 .divider-wrap {
@@ -554,21 +588,22 @@ html, body {
 }
 
 .slider-title {
+    text-align: center;
+    padding: 0;
     padding: 5px;
-    font-size: 30px;
+    font-size: 1.9rem;
     letter-spacing: .1rem;
 }
 
 .slider {
     box-sizing: border-box;
-    height: 250px;
+    height: 245px;
     width: 470px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
-    border: 1px solid black;
     border-radius: 4px;
     background: rgba(33, 80, 173, .1);
     position: relative;
@@ -577,16 +612,11 @@ html, body {
 
 #slide-frame {
     box-sizing: border-box;
-    height: 250px;
-    width: 470px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    padding-left: 5px;
-
     border-radius: 4px;
-    /* font-size: 1.4vw;
-    max-width: 100%; */
 }
 
 .quote-slide {
@@ -597,14 +627,15 @@ html, body {
     align-items: center;
     padding-left: 35px;
     padding-right: 35px;
-    
+    width: 100%;
 }
 
 .quote-slide span:first-child {
-    /* font-size: 1.4vw; */
     letter-spacing: .1rem;
+    box-sizing: border-box;
     padding-bottom: 7px;
-    width: 390px;
+    padding-left: 10px;
+    width: 400px;
 }
 
 .scroll-slider {
@@ -640,35 +671,30 @@ html, body {
 /* LOWER INTRO SECTION  */
 
 .intro-wrap {
-    min-height: 635px;
-    /* border: 1px solid blueviolet; */
-
-    display: grid;
-    grid-template-columns: repeat(2, minmax(315px, 415px));
-    justify-content: center;
-    box-sizing: border-box;
-    gap: 20px;
-    padding-top: 40px;
-    padding-bottom: 100px;
+    min-height: 650px;
+    padding-top: 30px;
     padding-left: 25px;
     padding-right: 25px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    gap: 20px;
 }
 
 .description-left {
-    grid-column: 1 / 2;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding: 10px;
+    padding: 8px;
+    max-width: 350px;
 }
 
-.description-left > h3 {
-    margin: 0;
-    padding: 0;
-    padding-bottom: 10px;
-    padding-left: 10px;
+.description-left > h4 {
+    color: rgba(1, 36, 86, 0.94);
 }
 
 .description-left > p,
@@ -683,19 +709,30 @@ html, body {
 }
 
 .low-intro-title {
-    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(3, 6, 51, .9);
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }
 
 .intro-img-right {
-    grid-column: 2 / 3;
     background-image: url(../images/main-page-about.png);
-    background-size: contain; /* or contain? */
-    /* background-attachment: fixed; */
+    background-size: contain;
     background-repeat: no-repeat;
     background-color: inherit;
 
-    max-width: 95%;
+    box-sizing: border-box;
+    display: block;
+    aspect-ratio: 1 / 1.22;
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+    object-fit: contain;
 }
 
 .req-link {
@@ -806,17 +843,7 @@ html, body {
 
 /* MEDIA QUERIES */
 
-/* works for far */
 @media screen and (width < 741px) {
-    /* section > .about-cont-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 310px;
-        padding-top: 20px;
-
-    } */
-
     #top-landing-page {
         justify-content: end;
     }
@@ -825,7 +852,64 @@ html, body {
         height: 50%;
     }
 
-/* footer */
+    /* main section */
+    .services-main {
+        grid-template-rows: repeat(4, 600px);
+    }
+
+    .service-wrap {
+        flex-direction: column;
+    }
+
+    .subservice-wrap-desc {
+        justify-content: center;
+        align-items: center;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding: 3px;
+    }
+
+    .subwinwash,
+    .subpwrwash  {
+        order: 2;
+    }
+    
+    .win-wash,
+    .pwr-wash {
+        order: 1;
+    }
+
+    /* quote slider */
+    .slider {
+        width: 400px;
+        height: max-content;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .quote-slide span:first-child {
+        width: 330px;
+    }
+
+    /* req img */
+    .slider-title {
+        font-size: 1.8rem;
+    }
+
+    .req-content-wrap {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    /* LOWER INTRO WRAP */
+    .intro-wrap {
+        /* display: flex; */
+        flex-direction: column;
+        min-width: 330px;
+        padding-bottom: 45px;
+    }
+
+    /* footer */
     .logo-foot-wrap {
         flex-direction: column;
         padding-top: 20px;
@@ -838,7 +922,6 @@ html, body {
         justify-content: center;
         align-items: center;
         padding-bottom: 30px;
-        /* border: 1px solid black; */
     }
 
     #phone-number {
@@ -889,16 +972,27 @@ html, body {
 }
 
 @media screen and (width < 401px) { 
-
-
-    /* equvalent would be sub-content */
-    section > .about-cont-wrap {
-        padding-right: .5rem;
-        padding-left: .5rem;
-        border: 1px solid red;
+    .serv-main-quote {
+        padding-top: 30px;
     }
 
-    /* header  */
+    /* quote-slider */
+    .slider-title {
+        font-size: 1.7rem;
+    }
+
+    .slider {
+        width: 300px;
+        height: max-content;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .quote-slide span:first-child {
+        width: 230px;
+    }
+
+    /* footer  */
     .foot-link > a {
         font-size: .8rem;
     }
@@ -907,10 +1001,11 @@ html, body {
         font-size: 2.1rem;
     }
 
+    .foot-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+    }
 }
-
-
-
-/* 767px - 1025px width for lower links */
-/* under 767px is dialog corner menu */
 
