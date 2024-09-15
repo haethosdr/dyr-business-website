@@ -65,6 +65,21 @@ benefits of : "service"
    -small details still need to be refined
 
 9/12
-1. 
+1. added font size and weight change to menus other than contact, home and about (done)
+2. services submenu needs something indicatng it expands like "+ Services" -->
+" - Services" (when open);
+3. add basic seo tags to index and about page. (done)
 
+9/13
+1. can add an "or check our google reviews" section at the bottom of testimonials.
+2. selected link doesnt needed to be coded in. Can just imput it in each pages html, as it wont change
+3. change services header menu link from an "a" to a "div" w/ curson pointer
 
+9/14
+1. CONTACT: for moble should remove the hover actons and just have text darkening of orange/color when pressed. (done/changed)
+2. CONTACT: can also do side border instead of dividers like on services pages. ()
+3. CONTACT: fix form intro side padding and make sure text is centered on mobile version. (done)
+4. CONTACT: look inteo darkening landing text, to make it pop properly
+5. get the image slider set up on window wahing, then multiple it to the other services and copy in the content
+6. need to select images for slider. (how to load images inline for the different services pages)
+7. SERVICES/ww DID: added basic img slider w/ buttons and javascript functionality. need to add resizing tomorrow and add 2 more test images. possibly dont need to crop much, ight just position within in different ways.

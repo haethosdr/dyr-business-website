@@ -16,6 +16,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({ 
             template: './src/pages/index.html',
+            favicon: './src/images/rwags-logo.ico',
             filename: 'index.html',
             inject: 'head',
             scriptLoading: 'defer',
@@ -23,6 +24,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({ 
           template: './src/pages/about.html',
+          favicon: './src/images/rwags-logo.ico',
           filename: 'about.html',
           inject: 'head',
           scriptLoading: 'defer',
@@ -30,6 +32,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({ 
           template: './src/pages/contact.html',
+          favicon: './src/images/rwags-logo.ico',
           filename: 'contact.html',
           inject: 'head',
           scriptLoading: 'defer',
@@ -37,6 +40,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({ 
           template: './src/pages/testimonials.html',
+          favicon: './src/images/rwags-logo.ico',
           filename: 'testimonials.html',
           inject: 'head',
           scriptLoading: 'defer',
@@ -44,6 +48,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({ 
           template: './src/pages/services/pressure-washing.html',
+          favicon: './src/images/rwags-logo.ico',
           filename: 'pressure-washing.html',
           inject: 'head',
           scriptLoading: 'defer',
@@ -51,6 +56,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({ 
           template: './src/pages/services/roof-gutter-clean.html',
+          favicon: './src/images/rwags-logo.ico',
           filename: 'roof-gutter-clean.html',
           inject: 'head',
           scriptLoading: 'defer',
@@ -58,6 +64,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({ 
           template: './src/pages/services/solar-panel-clean.html',
+          favicon: './src/images/rwags-logo.ico',
           filename: 'solar-panel-clean.html',
           inject: 'head',
           scriptLoading: 'defer',
@@ -65,6 +72,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({ 
           template: './src/pages/services/window-washing.html',
+          favicon: './src/images/rwags-logo.ico',
           filename: 'window-washing.html',
           inject: 'head',
           scriptLoading: 'defer',
@@ -83,7 +91,7 @@ module.exports = {
             use: ['style-loader', 'css-loader'],
           },
           {
-            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
             type: 'asset/resource',
           },
           {

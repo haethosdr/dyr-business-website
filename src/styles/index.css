@@ -63,7 +63,8 @@ html, body {
     justify-content: center;
     gap: 10px;
     box-sizing: border-box;
-    /* border: 1px solid black; */
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .top-quote {
@@ -159,7 +160,8 @@ html, body {
 .head-link-item > .unselected,
 .head-link-item.unselected {
     color: rgba(1, 36, 86, 1);
-    font-size: 20px;
+    font-size: 21px;
+    font-weight: 500;
 }
 
 .head-link-item > .unselected:hover,
@@ -173,8 +175,8 @@ html, body {
     background-repeat: no-repeat;
     position: relative;
 
-    width: 150px;
-    height: 100px;
+    width: 180px;
+    height: 120px;
     /* border-bottom: 2px solid rgba(219, 153, 36, 1);
     border-bottom-width: 4px; */
 }
@@ -750,12 +752,12 @@ html, body {
     border-radius: 3px;
     padding: 10px 30px;
     color: #EFC506;
-    background: rgba(1, 36, 86, 0.8392156862745098);
+    color: rgba(219, 153, 36, 1);
+    background: rgba(33, 80, 173, 1);
 }
 
 .contact-lower-button:hover {
-    color: rgba(219, 153, 36, 1);
-    background: rgba(33, 80, 173, 1);
+    background: rgb(16, 44, 100);
 }
 
 /* FOOTER SECTION */

@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
     imgSlideButtons[0].addEventListener('click', prevImg);
     imgSlideButtons[1].addEventListener('click', nextImg);
 
-
     // nav overlay opening
     const navOpenBtn = elem('#mobile-nav-btn');
     const navDialog = elem('#mobile-dialog');

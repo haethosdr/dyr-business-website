@@ -22,13 +22,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../images/testimonials-background.png */ "./src/images/testimonials-background.png"), __webpack_require__.b);
-var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../images/rwags-logo.png */ "./src/images/rwags-logo.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../fonts/Abel/Abel-Regular.ttf */ "./src/fonts/Abel/Abel-Regular.ttf"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../images/services-background.png */ "./src/images/services-background.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../images/rwags-logo.png */ "./src/images/rwags-logo.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `/* testimonials.css */
+
+@font-face {
+    font-family: 'Abel';
+    src: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
     --ffff-ffff: rgb(1, 1, 1);
@@ -41,7 +50,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* testimonials.css */
 html, body {
     margin: 0;
     padding: 0;
-    background: rgba(240, 233, 221, 1);
+    /* background: rgba(240, 233, 221, 1); */
+    font-size: 16px;
+    background: #e0f2fe;
 }
 
 
@@ -53,8 +64,9 @@ html, body {
 
 /* ABOUT TOP LANDING */
 #landing-wrap {
-    /* background-image: url('../images/services-background.png'); */
-    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+    /* background-image: url('../images/testimonials-background.png'); */
+    /* background-image: url('../images/ocean-view-rwags.jpeg'); */
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_1___});
     background-size: cover; /* or contain? */
     background-repeat: no-repeat;
     background-position: center;
@@ -64,8 +76,19 @@ html, body {
     align-items: center;
     justify-content: center;
 
-    height: 100vh;
+    height: 80vh;
     width: 100%;
+    z-index: 0;
+}
+
+.landing-overlay {
+    position: absolute;
+    height: 80vh;
+    width: 100%;
+    /* background: rgba(208, 203, 223, 0.5); */
+    background: rgba(215, 180, 150, 0.3);
+    backdrop-filter: blur(3px);
+    z-index: 1;
 }
 
 .about-top-sub-cont {
@@ -74,14 +97,20 @@ html, body {
 
     display: flex;
     flex-direction: column;
+
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+    z-index: 3;
 }
 
 .about-top-sub-cont > h1 {
-    color: white;
+    /* color: white; */
+    color:rgba(1, 36, 86, 1);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 60px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     margin: 0;
     /* border: 1px solid red; */
 }
@@ -107,6 +136,7 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    z-index: 3;
     /* background-color: rgba(219, 153, 36, .3); */
 }
 
@@ -141,28 +171,32 @@ html, body {
     color: inherit;
 }
 
-.head-link-item > a {
+.head-link-item > a,
+#nav-srvc-menu a {
     box-sizing: border-box;
     text-decoration: none;
  }
 
-.head-link-item > .unselected {
+.head-link-item > .unselected,
+.head-link-item.unselected {
     color: rgba(1, 36, 86, 1);
-    font-size: 20px;
+    font-size: 21px;
+    font-weight: 500;
 }
 
-.head-link-item > .unselected:hover {
+.head-link-item > .unselected:hover,
+.head-link-item > .unselected:active {
     color: rgba(219, 153, 36, 1);
 }
 
 .head-logo {
-    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_1___});
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_2___});
     background-size: contain; /* or contain? */
     background-repeat: no-repeat;
     position: relative;
 
-    width: 150px;
-    height: 100px;
+    width: 180px;
+    height: 120px;
 }
 
 .head-logo a {
@@ -173,10 +207,6 @@ html, body {
     height: 100%;
     z-index: 10;
 }
-
-/* #services {
-    border: 1px solid black;
-} */
 
 /* DROPDOWN MENU */
 #dropdown-menu {
@@ -196,7 +226,7 @@ html, body {
     /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */
     /* transform: translateY(-10px); Initial transform state */
     /* pointer-events: none; */
-    z-index: 2;
+    z-index: 3;
 }
 
 #dropdown-menu > a {
@@ -220,14 +250,155 @@ html, body {
     font-size: 18px;
 }
 
-/* HEADER: SELECTED PAGE LINK */
+/* MOBILE MENU */
+.mobile-header {
+    display: none;
+    flex-direction: row;
+}
 
+.mobile-btn-wrap {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    z-index: 20;
+}
+
+#mobile-nav-btn {
+    display: inline-flex;
+    align-items: center;  
+    justify-content: center;
+    padding: 0; 
+    width: 35px; 
+    height: 35px; 
+    border: 1px solid black;
+    border-radius: 5px;
+    background: rgba(14, 165, 233, .9);
+    fill: rgba(234, 179, 8, 1);
+    cursor: pointer;
+}
+
+/* nav overlay dialog menu */
+#mobile-dialog {
+    display: none;
+    position: fixed; /* Position fixed to cover the whole screen  */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(1, 36, 86, 0.4);
+    backdrop-filter: blur(7px);
+    z-index: 1000;
+    border: none;
+    outline: none;
+}
+
+#mobile-dialog > nav {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.nav-cls-btn-wrp {
+    position: absolute;
+    box-sizing: border-box;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: end;
+    /* border: 1px solid pink; */
+    /* padding: 3px; */
+    width: 100%;
+}
+
+.dialog-lnks-wrap {
+    /* border: 1px solid black; */
+    min-height: 300px;
+}
+
+.dialog-lnks-wrap > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-close-btn {
+    display: inline-flex; /* Use flex to center SVG */
+    align-items: center;   /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 0; /* Remove default padding */
+    width: 35px; /* Set desired width */
+    height: 35px; /* Set desired height */
+    border: 1px solid white;
+    border-radius: 5px;
+    fill: white;
+    background: rgba(1, 1, 1, .4);
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.dialog-lnks-wrap .head-link-item > .unselected,
+.dialog-lnks-wrap .head-link-item.unselected {
+    /* color: rgba(1, 36, 86, 1); */
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.dialog-lnks-wrap .head-link-item > .unselected:hover,
+.dialog-lnks-wrap .head-link-item > .unselected:active,
+#nav-srvc-menu .unselected:active {
+    color: rgba(219, 153, 36, 1);
+    font-size: 28px;
+}
+
+.dialog-lnks-wrap .head-link-item > .selected-link {
+    color: rgba(219, 153, 36, 1);
+    font-size: 28px;
+    background: inherit;
+}
+
+#nav-srvc-menu {
+    display: none;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    /* border: 1px solid black; */
+}
+
+#nav-srvc-menu a {
+    color: rgba(219, 153, 36, 1);
+    /* background: rgba(1, 36, 86, .3); */
+    background: rgba(14, 165, 233, .4);
+    border-radius: 5px;
+    padding: 4px 10px;
+}
+
+
+/* HEADER: SELECTED PAGE LINK */
 .selected-link {
     color: rgba(219, 153, 36, 1);
     font-size: 23px;
     /* background: rgba(1, 36, 86, .3); */
-    background: rgba(14, 165, 233, .4);
+    /* background: rgba(14, 165, 233, .4); */
     border-radius: 3px;
+    font-weight: 500;
 }
 
 
@@ -242,14 +413,21 @@ section > .quote-main-wrap {
     /* justify-content: center; */
     align-items: center;
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: auto;
-    padding-top: 30px;
+    padding-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
     padding-bottom: 50px;
 }
 
 .quote-main-intro {
-    max-width: 520px;
+    text-align: center;
+    max-width: 600px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgba(16, 28, 86, 1);
+    /* font-family: 'Abel'; */
 }
 
 
@@ -274,22 +452,12 @@ section > .quote-main-wrap {
 /* QUOTES SECTION */
 
 .slides {
-    display: grid;
-    grid-template-columns: auto;
-    padding-top: 20px;
-    gap: 10px;
-}
-
-/* #quote-slider-wrap {
-    /* grid-row: 3 / 4; */
-    /* border: 1px solid green;
-    min-height: 500px;
-
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-} */
+    
+    padding-top: 20px;
+    gap: 20px;
+}
 
 .slider-title {
     padding: 5px;
@@ -299,18 +467,19 @@ section > .quote-main-wrap {
 }
 
 .slider {
-    min-height: 250px;
-    width: 450px;
-    padding: 10px;
+    box-sizing: border-box;
+    max-height: max-content;
+    max-width: 500px;
+    padding: 20px;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    border: 1px solid black;
     border-radius: 4px;
     background: rgba(33, 80, 173, .1);
-    position: relative;
+    border-left: 3px solid green;
 }
 
 .quote-slide {
@@ -320,52 +489,59 @@ section > .quote-main-wrap {
     align-items: center;
 }
 
-.quote-slide span:first-child {
-    font-size: 15px;
+.quote-slide > p {
+    font-size: 1.1rem;
     letter-spacing: .1rem;
     padding-bottom: 7px;
-    width: 400px;
+    /* width: 430px; */
 }
 
 /* FOOTER SECTION */
-
 .index-footer {
-    height: 400px;
+    min-height: 400px;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     /* background: rgba(2, 6, 23, .8); */
     /* background: rgba(217, 119, 6, .7); */
     background: rgba(14, 165, 233, .9);
 }
  
 .logo-foot-wrap {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding-right: 18px;
-    padding-left: 22px;
+    padding-right: 20px;
+    padding-left: 20px;
     width: 100%;
 }
 
 .foot-contact-left {
-    width: 400px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 400px;
 }
 
 .foot-contact-left > span {
-    font-size: 10px;
+    font-size: .6rem;
 }
  
 .footer-logo {
-    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_1___});
+    background-image: url(${___CSS_LOADER_URL_REPLACEMENT_2___});
     background-size: cover; /* or cover? */
     background-repeat: no-repeat;
-    background-color: yellow;
-    box-sizing: border-box;
-    width: 460px;
-    height: 300px;
-    border: 1px solid black;
-    /* border-radius: 125px; */
+    background-color: rgba(234, 179, 8, .9);
+
+    display: block;
+    aspect-ratio: 1.53 / 1;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border: 1px solid rgba(234, 179, 8, .9);
+    border-radius: 5px;
+    object-fit: contain;
 }
 
 .logo-foot-wrap > div > h2 {
@@ -381,7 +557,7 @@ section > .quote-main-wrap {
 }
 
 #phone-number {
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 #phone-number > a {
@@ -398,13 +574,101 @@ section > .quote-main-wrap {
     color: inherit;
     /* color: rgba(1, 36, 86, 0.94); */
     color: rgba(219, 153, 36, 1);
-    font-size: 15px;
+    font-size: 1rem;
 }
- 
 
+@media screen and (width < 741px) { 
 
+    /* landing */
+    #landing-wrap {
+        justify-content: end;
+    }
+    
+    .about-top-sub-cont {
+        height: 65%;
+    }
 
-`, "",{"version":3,"sources":["webpack://./src/styles/testimonials.css"],"names":[],"mappings":"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","sourcesContent":["/* testimonials.css */\n\n:root {\n    --ffff-ffff: rgb(1, 1, 1);\n}\n\n* {\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\nhtml, body {\n    margin: 0;\n    padding: 0;\n    background: rgba(240, 233, 221, 1);\n}\n\n\n/* MAIN/WRAP */\n#about-main-body {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ABOUT TOP LANDING */\n#landing-wrap {\n    /* background-image: url('../images/services-background.png'); */\n    background-image: url('../images/testimonials-background.png');\n    background-size: cover; /* or contain? */\n    background-repeat: no-repeat;\n    background-position: center;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n\n    height: 100vh;\n    width: 100%;\n}\n\n.about-top-sub-cont {\n    max-width: 400px;\n    text-align: center;\n\n    display: flex;\n    flex-direction: column;\n}\n\n.about-top-sub-cont > h1 {\n    color: white;\n    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\n    font-size: 60px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    margin: 0;\n    /* border: 1px solid red; */\n}\n\n.about-top-sub-cont > h3 {\n    /* color: rgba(219, 153, 36, 1); */\n    /* color: rgba(234, 179, 8, .9); */\n    /* color: rgba(207, 93, 23, .9); */\n    /* color: rgba(1, 36, 86, 1); */\n    color: rgba(219, 153, 36, 1);\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n\n\n/* HEADER */\n.top-main {\n    position: absolute;\n    width: 100vw;\n    height: auto;\n    padding-top: 10px;\n\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    /* background-color: rgba(219, 153, 36, .3); */\n}\n\n.header-links {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    box-sizing: border-box;\n    gap: 5px;\n\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n.head-link-item {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-sizing: border-box;\n   \n    padding: 8px 8px;\n    margin: 0;\n    height: min-content;\n    /* border: 1px solid black; */\n    /* links should be dark blue, with a yellow hover. font should be mild bold. */\n};\n\n.head-logo {\n    text-decoration: none;\n    color: inherit;\n}\n\n.head-link-item > a {\n    box-sizing: border-box;\n    text-decoration: none;\n }\n\n.head-link-item > .unselected {\n    color: rgba(1, 36, 86, 1);\n    font-size: 20px;\n}\n\n.head-link-item > .unselected:hover {\n    color: rgba(219, 153, 36, 1);\n}\n\n.head-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: contain; /* or contain? */\n    background-repeat: no-repeat;\n    position: relative;\n\n    width: 150px;\n    height: 100px;\n}\n\n.head-logo a {\n    position: absolute;  /* Positioning the link within the container */\n    top: 0;\n    left: 0;\n    width: 100%; /* Ensures the link covers the full container */\n    height: 100%;\n    z-index: 10;\n}\n\n/* #services {\n    border: 1px solid black;\n} */\n\n/* DROPDOWN MENU */\n#dropdown-menu {\n    display: none;\n    flex-direction: column;\n    position: absolute;\n    box-sizing: border-box;\n    width: 200px;\n    height: auto;\n    /* background: rgba(14, 165, 233, .8); */\n    background: rgba(1, 36, 86, .9);\n    /* border: 1px solid rgba(219, 153, 36, 1); */\n    /* rgba(2, 132, 199, */\n    padding: 5px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */\n    /* transform: translateY(-10px); Initial transform state */\n    /* pointer-events: none; */\n    z-index: 2;\n}\n\n#dropdown-menu > a {\n    box-sizing: border-box;\n    text-decoration: none;\n    padding: 7px;\n    color: white;\n    z-index: 10;\n}\n\n#dropdown-menu > a:hover {\n    box-sizing: border-box;\n    text-decoration: none;\n    color: rgba(219, 153, 36, 1);\n}\n\n#dropdown-menu span {\n    box-sizing: border-box;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    font-size: 18px;\n}\n\n/* HEADER: SELECTED PAGE LINK */\n\n.selected-link {\n    color: rgba(219, 153, 36, 1);\n    font-size: 23px;\n    /* background: rgba(1, 36, 86, .3); */\n    background: rgba(14, 165, 233, .4);\n    border-radius: 3px;\n}\n\n\n/* CONTACT INFO AREA */\n.quote-main-wrap {\n    display: flex;\n}\n\nsection > .quote-main-wrap {\n    display: flex;\n    flex-direction: column;\n    /* justify-content: center; */\n    align-items: center;\n\n    border: 1px solid black;\n    height: auto;\n    padding-top: 30px;\n    padding-bottom: 50px;\n}\n\n.quote-main-intro {\n    max-width: 520px;\n}\n\n\n/* Divider */\n.divider-wrap {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    box-sizing: border-box;\n    height: 45px;\n    min-width: 100%;\n}\n\n.divider-spn {\n    width: 70%;\n    height: 2.5px;\n    background: #0369a1;\n}\n\n\n/* QUOTES SECTION */\n\n.slides {\n    display: grid;\n    grid-template-columns: auto;\n    padding-top: 20px;\n    gap: 10px;\n}\n\n/* #quote-slider-wrap {\n    /* grid-row: 3 / 4; */\n    /* border: 1px solid green;\n    min-height: 500px;\n\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n} */\n\n.slider-title {\n    padding: 5px;\n    font-size: 30px;\n    /* font-weight: 600; */\n    letter-spacing: .1rem;\n}\n\n.slider {\n    min-height: 250px;\n    width: 450px;\n    padding: 10px;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n\n    border: 1px solid black;\n    border-radius: 4px;\n    background: rgba(33, 80, 173, .1);\n    position: relative;\n}\n\n.quote-slide {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.quote-slide span:first-child {\n    font-size: 15px;\n    letter-spacing: .1rem;\n    padding-bottom: 7px;\n    width: 400px;\n}\n\n/* FOOTER SECTION */\n\n.index-footer {\n    height: 400px;\n    display: flex;\n    justify-content: end;\n    /* background: rgba(2, 6, 23, .8); */\n    /* background: rgba(217, 119, 6, .7); */\n    background: rgba(14, 165, 233, .9);\n}\n \n.logo-foot-wrap {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding-right: 18px;\n    padding-left: 22px;\n    width: 100%;\n}\n\n.foot-contact-left {\n    width: 400px;\n}\n\n.foot-contact-left > span {\n    font-size: 10px;\n}\n \n.footer-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: cover; /* or cover? */\n    background-repeat: no-repeat;\n    background-color: yellow;\n    box-sizing: border-box;\n    width: 460px;\n    height: 300px;\n    border: 1px solid black;\n    /* border-radius: 125px; */\n}\n\n.logo-foot-wrap > div > h2 {\n    color: rgba(240, 233, 221, 1);\n}\n\n.foot-links {\n    display: flex;\n    gap: 12px;\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n#phone-number {\n    font-size: 40px;\n}\n\n#phone-number > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n}\n\n#phone-number > a:hover {\n    color: rgba(219, 153, 36, .8);\n}\n\n.foot-link > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n    /* color: rgba(1, 36, 86, 0.94); */\n    color: rgba(219, 153, 36, 1);\n    font-size: 15px;\n}\n \n\n\n\n"],"sourceRoot":""}]);
+    /* non-mobile-header */
+    .top-main {
+        display: none;
+    }
+
+    /* MOBILE NAV MENU */
+    .mobile-header {
+        position: absolute;
+        top: 0;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        z-index: 4;
+    }
+
+    .head-logo {
+        width: 200px;
+        height: 130px;
+    }
+
+    /* footer */
+    .logo-foot-wrap {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .foot-contact-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    #phone-number {
+        margin: 0;
+        padding: 5px;
+    }
+
+    #phone-number > a:active {
+        color: rgba(219, 153, 36, 1);
+    }
+
+    .foot-links {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .footer-logo {
+        display: block;
+        aspect-ratio: 1.53 / 1;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        border: 1px solid rgba(234, 179, 8, .9);
+        border-radius: 5px;
+        object-fit: contain;
+    }
+
+}
+
+@media screen and (width < 401px) {
+        /* footer  */
+    .foot-link > a {
+        font-size: .8rem;
+    }
+    
+    #phone-number {
+        font-size: 2.1rem;
+    }
+    
+    .foot-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+    }
+ }`, "",{"version":3,"sources":["webpack://./src/styles/testimonials.css"],"names":[],"mappings":"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","sourcesContent":["/* testimonials.css */\n\n@font-face {\n    font-family: 'Abel';\n    src: url('../fonts/Abel/Abel-Regular.ttf');\n    font-weight: normal;\n    font-style: normal;\n}\n\n:root {\n    --ffff-ffff: rgb(1, 1, 1);\n}\n\n* {\n    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\nhtml, body {\n    margin: 0;\n    padding: 0;\n    /* background: rgba(240, 233, 221, 1); */\n    font-size: 16px;\n    background: #e0f2fe;\n}\n\n\n/* MAIN/WRAP */\n#about-main-body {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ABOUT TOP LANDING */\n#landing-wrap {\n    /* background-image: url('../images/testimonials-background.png'); */\n    /* background-image: url('../images/ocean-view-rwags.jpeg'); */\n    background-image: url('../images/services-background.png');\n    background-size: cover; /* or contain? */\n    background-repeat: no-repeat;\n    background-position: center;\n    \n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n\n    height: 80vh;\n    width: 100%;\n    z-index: 0;\n}\n\n.landing-overlay {\n    position: absolute;\n    height: 80vh;\n    width: 100%;\n    /* background: rgba(208, 203, 223, 0.5); */\n    background: rgba(215, 180, 150, 0.3);\n    backdrop-filter: blur(3px);\n    z-index: 1;\n}\n\n.about-top-sub-cont {\n    max-width: 400px;\n    text-align: center;\n\n    display: flex;\n    flex-direction: column;\n\n    box-sizing: border-box;\n    padding-left: 8px;\n    padding-right: 8px;\n    z-index: 3;\n}\n\n.about-top-sub-cont > h1 {\n    /* color: white; */\n    color:rgba(1, 36, 86, 1);\n    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;\n    font-size: 60px;\n    padding-top: 8px;\n    padding-bottom: 8px;\n    margin: 0;\n    /* border: 1px solid red; */\n}\n\n.about-top-sub-cont > h3 {\n    /* color: rgba(219, 153, 36, 1); */\n    /* color: rgba(234, 179, 8, .9); */\n    /* color: rgba(207, 93, 23, .9); */\n    /* color: rgba(1, 36, 86, 1); */\n    color: rgba(219, 153, 36, 1);\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n\n\n/* HEADER */\n.top-main {\n    position: absolute;\n    width: 100vw;\n    height: auto;\n    padding-top: 10px;\n\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    z-index: 3;\n    /* background-color: rgba(219, 153, 36, .3); */\n}\n\n.header-links {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    box-sizing: border-box;\n    gap: 5px;\n\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n.head-link-item {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-sizing: border-box;\n   \n    padding: 8px 8px;\n    margin: 0;\n    height: min-content;\n    /* border: 1px solid black; */\n    /* links should be dark blue, with a yellow hover. font should be mild bold. */\n};\n\n.head-logo {\n    text-decoration: none;\n    color: inherit;\n}\n\n.head-link-item > a,\n#nav-srvc-menu a {\n    box-sizing: border-box;\n    text-decoration: none;\n }\n\n.head-link-item > .unselected,\n.head-link-item.unselected {\n    color: rgba(1, 36, 86, 1);\n    font-size: 21px;\n    font-weight: 500;\n}\n\n.head-link-item > .unselected:hover,\n.head-link-item > .unselected:active {\n    color: rgba(219, 153, 36, 1);\n}\n\n.head-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: contain; /* or contain? */\n    background-repeat: no-repeat;\n    position: relative;\n\n    width: 180px;\n    height: 120px;\n}\n\n.head-logo a {\n    position: absolute;  /* Positioning the link within the container */\n    top: 0;\n    left: 0;\n    width: 100%; /* Ensures the link covers the full container */\n    height: 100%;\n    z-index: 10;\n}\n\n/* DROPDOWN MENU */\n#dropdown-menu {\n    display: none;\n    flex-direction: column;\n    position: absolute;\n    box-sizing: border-box;\n    width: 200px;\n    height: auto;\n    /* background: rgba(14, 165, 233, .8); */\n    background: rgba(1, 36, 86, .9);\n    /* border: 1px solid rgba(219, 153, 36, 1); */\n    /* rgba(2, 132, 199, */\n    padding: 5px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */\n    /* transform: translateY(-10px); Initial transform state */\n    /* pointer-events: none; */\n    z-index: 3;\n}\n\n#dropdown-menu > a {\n    box-sizing: border-box;\n    text-decoration: none;\n    padding: 7px;\n    color: white;\n    z-index: 10;\n}\n\n#dropdown-menu > a:hover {\n    box-sizing: border-box;\n    text-decoration: none;\n    color: rgba(219, 153, 36, 1);\n}\n\n#dropdown-menu span {\n    box-sizing: border-box;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    font-size: 18px;\n}\n\n/* MOBILE MENU */\n.mobile-header {\n    display: none;\n    flex-direction: row;\n}\n\n.mobile-btn-wrap {\n    position: fixed;\n    top: 15px;\n    left: 15px;\n\n    box-sizing: border-box;\n    padding: 0;\n    margin: 0;\n    z-index: 20;\n}\n\n#mobile-nav-btn {\n    display: inline-flex;\n    align-items: center;  \n    justify-content: center;\n    padding: 0; \n    width: 35px; \n    height: 35px; \n    border: 1px solid black;\n    border-radius: 5px;\n    background: rgba(14, 165, 233, .9);\n    fill: rgba(234, 179, 8, 1);\n    cursor: pointer;\n}\n\n/* nav overlay dialog menu */\n#mobile-dialog {\n    display: none;\n    position: fixed; /* Position fixed to cover the whole screen  */\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    width: 100vw;\n    height: 100vh;\n    background: rgba(1, 36, 86, 0.4);\n    backdrop-filter: blur(7px);\n    z-index: 1000;\n    border: none;\n    outline: none;\n}\n\n#mobile-dialog > nav {\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    height: 100%;\n    width: 100%;\n    /* border: 1px solid red; */\n    position: relative;\n}\n\n.nav-cls-btn-wrp {\n    position: absolute;\n    box-sizing: border-box;\n    top: 10px;\n    right: 10px;\n    display: flex;\n    justify-content: end;\n    /* border: 1px solid pink; */\n    /* padding: 3px; */\n    width: 100%;\n}\n\n.dialog-lnks-wrap {\n    /* border: 1px solid black; */\n    min-height: 300px;\n}\n\n.dialog-lnks-wrap > ul {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n.nav-close-btn {\n    display: inline-flex; /* Use flex to center SVG */\n    align-items: center;   /* Center vertically */\n    justify-content: center; /* Center horizontally */\n    padding: 0; /* Remove default padding */\n    width: 35px; /* Set desired width */\n    height: 35px; /* Set desired height */\n    border: 1px solid white;\n    border-radius: 5px;\n    fill: white;\n    background: rgba(1, 1, 1, .4);\n    cursor: pointer; /* Change cursor to pointer */\n}\n\n.dialog-lnks-wrap .head-link-item > .unselected,\n.dialog-lnks-wrap .head-link-item.unselected {\n    /* color: rgba(1, 36, 86, 1); */\n    color: white;\n    font-size: 28px;\n    cursor: pointer;\n}\n\n.dialog-lnks-wrap .head-link-item > .unselected:hover,\n.dialog-lnks-wrap .head-link-item > .unselected:active,\n#nav-srvc-menu .unselected:active {\n    color: rgba(219, 153, 36, 1);\n    font-size: 28px;\n}\n\n.dialog-lnks-wrap .head-link-item > .selected-link {\n    color: rgba(219, 153, 36, 1);\n    font-size: 28px;\n    background: inherit;\n}\n\n#nav-srvc-menu {\n    display: none;\n    width: 70%;\n    flex-direction: column;\n    align-items: center;\n    gap: 4px;\n    padding-top: 7px;\n    padding-bottom: 7px;\n    /* border: 1px solid black; */\n}\n\n#nav-srvc-menu a {\n    color: rgba(219, 153, 36, 1);\n    /* background: rgba(1, 36, 86, .3); */\n    background: rgba(14, 165, 233, .4);\n    border-radius: 5px;\n    padding: 4px 10px;\n}\n\n\n/* HEADER: SELECTED PAGE LINK */\n.selected-link {\n    color: rgba(219, 153, 36, 1);\n    font-size: 23px;\n    /* background: rgba(1, 36, 86, .3); */\n    /* background: rgba(14, 165, 233, .4); */\n    border-radius: 3px;\n    font-weight: 500;\n}\n\n\n/* CONTACT INFO AREA */\n.quote-main-wrap {\n    display: flex;\n}\n\nsection > .quote-main-wrap {\n    display: flex;\n    flex-direction: column;\n    /* justify-content: center; */\n    align-items: center;\n\n    /* border: 1px solid black; */\n    height: auto;\n    padding-top: 50px;\n    padding-left: 25px;\n    padding-right: 25px;\n    padding-bottom: 50px;\n}\n\n.quote-main-intro {\n    text-align: center;\n    max-width: 600px;\n    font-size: 1.3rem;\n    font-weight: 500;\n    color: rgba(16, 28, 86, 1);\n    /* font-family: 'Abel'; */\n}\n\n\n/* Divider */\n.divider-wrap {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    box-sizing: border-box;\n    height: 45px;\n    min-width: 100%;\n}\n\n.divider-spn {\n    width: 70%;\n    height: 2.5px;\n    background: #0369a1;\n}\n\n\n/* QUOTES SECTION */\n\n.slides {\n    display: flex;\n    flex-direction: column;\n    \n    padding-top: 20px;\n    gap: 20px;\n}\n\n.slider-title {\n    padding: 5px;\n    font-size: 30px;\n    /* font-weight: 600; */\n    letter-spacing: .1rem;\n}\n\n.slider {\n    box-sizing: border-box;\n    max-height: max-content;\n    max-width: 500px;\n    padding: 20px;\n    \n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n\n    border-radius: 4px;\n    background: rgba(33, 80, 173, .1);\n    border-left: 3px solid green;\n}\n\n.quote-slide {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.quote-slide > p {\n    font-size: 1.1rem;\n    letter-spacing: .1rem;\n    padding-bottom: 7px;\n    /* width: 430px; */\n}\n\n/* FOOTER SECTION */\n.index-footer {\n    min-height: 400px;\n    display: flex;\n    justify-content: center;\n    /* background: rgba(2, 6, 23, .8); */\n    /* background: rgba(217, 119, 6, .7); */\n    background: rgba(14, 165, 233, .9);\n}\n \n.logo-foot-wrap {\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    padding-right: 20px;\n    padding-left: 20px;\n    width: 100%;\n}\n\n.foot-contact-left {\n    box-sizing: border-box;\n    padding-left: 10px;\n    padding-right: 10px;\n    max-width: 400px;\n}\n\n.foot-contact-left > span {\n    font-size: .6rem;\n}\n \n.footer-logo {\n    background-image: url('../images/rwags-logo.png');\n    background-size: cover; /* or cover? */\n    background-repeat: no-repeat;\n    background-color: rgba(234, 179, 8, .9);\n\n    display: block;\n    aspect-ratio: 1.53 / 1;\n    width: 90%;\n    max-width: 400px;\n    height: auto;\n    border: 1px solid rgba(234, 179, 8, .9);\n    border-radius: 5px;\n    object-fit: contain;\n}\n\n.logo-foot-wrap > div > h2 {\n    color: rgba(240, 233, 221, 1);\n}\n\n.foot-links {\n    display: flex;\n    gap: 12px;\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\n#phone-number {\n    font-size: 2.5rem;\n}\n\n#phone-number > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n}\n\n#phone-number > a:hover {\n    color: rgba(219, 153, 36, .8);\n}\n\n.foot-link > a {\n    text-decoration: none; /* Removes the underline */\n    color: inherit;\n    /* color: rgba(1, 36, 86, 0.94); */\n    color: rgba(219, 153, 36, 1);\n    font-size: 1rem;\n}\n\n@media screen and (width < 741px) { \n\n    /* landing */\n    #landing-wrap {\n        justify-content: end;\n    }\n    \n    .about-top-sub-cont {\n        height: 65%;\n    }\n\n    /* non-mobile-header */\n    .top-main {\n        display: none;\n    }\n\n    /* MOBILE NAV MENU */\n    .mobile-header {\n        position: absolute;\n        top: 0;\n        padding-top: 20px;\n        display: flex;\n        flex-direction: row;\n        justify-content: center;\n        width: 100%;\n        z-index: 4;\n    }\n\n    .head-logo {\n        width: 200px;\n        height: 130px;\n    }\n\n    /* footer */\n    .logo-foot-wrap {\n        flex-direction: column;\n        padding-top: 20px;\n        padding-bottom: 30px;\n    }\n\n    .foot-contact-left {\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        padding-bottom: 30px;\n    }\n\n    #phone-number {\n        margin: 0;\n        padding: 5px;\n    }\n\n    #phone-number > a:active {\n        color: rgba(219, 153, 36, 1);\n    }\n\n    .foot-links {\n        padding-top: 5px;\n        padding-bottom: 5px;\n    }\n\n    .footer-logo {\n        display: block;\n        aspect-ratio: 1.53 / 1;\n        width: 90%;\n        max-width: 400px;\n        height: auto;\n        border: 1px solid rgba(234, 179, 8, .9);\n        border-radius: 5px;\n        object-fit: contain;\n    }\n\n}\n\n@media screen and (width < 401px) {\n        /* footer  */\n    .foot-link > a {\n        font-size: .8rem;\n    }\n    \n    #phone-number {\n        font-size: 2.1rem;\n    }\n    \n    .foot-links {\n        flex-wrap: wrap;\n        justify-content: center;\n        align-items: center;\n        gap: 9px;\n    }\n }"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -884,6 +1148,16 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/fonts/Abel/Abel-Regular.ttf":
+/*!*****************************************!*\
+  !*** ./src/fonts/Abel/Abel-Regular.ttf ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "3843f456cf56d275baf6.ttf";
+
+/***/ }),
+
 /***/ "./src/images/rwags-logo.png":
 /*!***********************************!*\
   !*** ./src/images/rwags-logo.png ***!
@@ -894,13 +1168,13 @@ module.exports = __webpack_require__.p + "2eaa5bfc03bb51787044.png";
 
 /***/ }),
 
-/***/ "./src/images/testimonials-background.png":
-/*!************************************************!*\
-  !*** ./src/images/testimonials-background.png ***!
-  \************************************************/
+/***/ "./src/images/services-background.png":
+/*!********************************************!*\
+  !*** ./src/images/services-background.png ***!
+  \********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "5cdd47ed19860a63c1f9.png";
+module.exports = __webpack_require__.p + "c263e8b89e8f5b99f5d2.png";
 
 /***/ })
 
@@ -1081,6 +1355,31 @@ document.addEventListener('DOMContentLoaded', () => {
     dropDownMenu.addEventListener('mouseover', () => {
         toggleMenuDisplay();
         console.log('dropDownMenu: mouseover');
+    });
+
+        // nav overlay opening
+    const navOpenBtn = document.querySelector('#mobile-nav-btn');
+    const navDialog = document.querySelector('#mobile-dialog');
+    const closeDiaNav = document.querySelector('.nav-close-btn');
+    
+    navOpenBtn.addEventListener('click', () => {
+        navDialog.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+    
+    closeDiaNav.addEventListener('click', () => {
+        subNavDisplay.style.display = 'none';
+        document.body.style.overflow = '';
+        navDialog.style.display = 'none';
+    });
+    
+    // nav subservice menu opening
+    const subNavbtn = document.querySelector('#services-nav');
+    const subNavDisplay = document.querySelector('#nav-srvc-menu');
+    subNavbtn.addEventListener('click', () => {
+        if (subNavDisplay.style.display === 'none') {
+            subNavDisplay.style.display = 'flex';
+        } else subNavDisplay.style.display = 'none';
     });
 });
 /******/ })()

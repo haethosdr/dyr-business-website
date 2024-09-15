@@ -141,7 +141,8 @@ html, body {
 .head-link-item > .unselected,
 .head-link-item.unselected {
     color: rgba(1, 36, 86, 1);
-    font-size: 20px;
+    font-size: 21px;
+    font-weight: 500;
 }
 
 .head-link-item > .unselected:hover,
@@ -154,8 +155,8 @@ html, body {
     background-size: contain; /* or contain? */
     background-repeat: no-repeat;
     position: relative;
-    width: 150px;
-    height: 99px;
+    width: 180px;
+    height: 120px;
 }
 
 .head-logo a {
@@ -172,7 +173,8 @@ html, body {
 .selected-link {
     color: rgba(219, 153, 36, 1);
     font-size: 23px;
-    border-bottom: 3px solid rgba(14, 165, 233, .4);
+    font-weight: 500;
+    /* border-bottom: 3px solid rgba(14, 165, 233, .4); */
     
 }
 
@@ -533,23 +535,20 @@ section > .about-cont-wrap {
 }
 
 .about-botm-btn {
-    inset: all;
-    border: none;
-    /* border: 1px solid black; */
-    padding: 5px 10px;
-    background: #0369a1;
-    /* border-radius: 3px; */
-    color: white;
+    all: unset;
+    text-align: center;
     border: 1px solid black;
+    border-radius: 3px;
+    padding: 6px 15px;
+    color: rgba(232, 123, 11, 1);
+    background: rgba(33, 80, 173, 1);
+    /* width: 15%; */
 }
 
 .about-botm-btn:hover {
-    /* background: rgba(3, 105, 161, .9);
-    color: rgba(219, 153, 36, 1); */
-    /* border-radius: 5px; */
-    /* background: #0369a1; */
-    color: rgba(219, 153, 36, 1);
+    background: rgba(16, 28, 86, 1);
 }
+
 
 /* DIVIDER */
 
