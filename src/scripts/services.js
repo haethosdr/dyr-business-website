@@ -38,8 +38,9 @@ const shiftImage = function (ms = 400) {
 document.addEventListener('DOMContentLoaded', () => {
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
-    // serviceMenuLink.getBoundingClientRect();
     const imgSlideButtons = elems('.scroll-slider');
+
+    // const srvcDiv = elem('.menu-drop'); same effect.
 
     const toggleMenuDisplay = function () {
       dropDownMenu.style.top = `${serviceMenuLink.offsetTop + 40}px`;
@@ -57,10 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("mouseout");
     });
 
+    serviceMenuLink.addEventListener('click', () => {
+        if (dropDownMenu.style.display === 'flex') {
+            dropDownMenu.style.display = 'none';
+        } else toggleMenuDisplay();
+    });
+
     dropDownMenu.addEventListener('mouseover', () => {
         toggleMenuDisplay();
         console.log('dropDownMenu: mouseover');
     });
+
 
     // img slider functionality: //
     imgSlideButtons[0].addEventListener('click', prevImg);

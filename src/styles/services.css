@@ -115,6 +115,7 @@ html, body {
     padding: 8px 8px;
     margin: 0;
     height: min-content;
+    cursor: pointer;
     /* border: 1px solid black; */
     /* links should be dark blue, with a yellow hover. font should be mild bold. */
 };
@@ -392,10 +393,11 @@ html, body {
     align-items: center;
     /* justify-content: space-around; */
     padding-top: 30px;
-    padding-bottom: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-bottom: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
     gap: 15px;
+    /* border: 2px solid red; */
 }
 
 .about-cont-wrap {
@@ -414,8 +416,8 @@ section > .about-cont-wrap {
     /* border: 1px solid red; */
     gap: 8px;
     padding-top: 40px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
     padding-bottom: 10px;
     
 }
@@ -498,9 +500,27 @@ section > .about-cont-wrap {
     background-repeat: no-repeat;
 }
 
+#srvc-ww-img-2 {
+    background-image: url('../images/unnamed_pho44.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-color: black;
+}
+
+#srvc-ww-img-3 {
+    background-image: url('../images/ladder-worker.png');
+    background-size: cover;
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center;
+}
+
 
 /* img slider buttons */
 .scroll-slider {
+    box-sizing: border-box;
     position: absolute;
     height: 50px;
     width: 40px;
@@ -509,7 +529,7 @@ section > .about-cont-wrap {
     background: none;
     z-index: 5;
     /* top: 45%; */
-    top: 50%;
+    top: 43%;
 }
 
 .scroll-l {
@@ -524,30 +544,24 @@ section > .about-cont-wrap {
     width: 100%;
     height: 100%;
     transform: rotate(90deg);
-    fill: rgba(234, 179, 8, .9);
+    fill: rgba(234, 179, 8, 1);
 }
 
 #Capa_l {
     width: 100%;
     height: 100%;
     transform: rotate(270deg);
-    fill: rgba(14, 165, 233, .9);
+    /* fill: rgba(14, 165, 233, .9); */
+    fill: rgba(234, 179, 8, 1);
 }
-
 
 
 
 /* established */
-/* benefits section */
-.benefits-title {
-    text-align: center;
-    letter-spacing: .1rem;
-}
-
 .serv-lower-title {
     /* border: 1px solid black; */
     text-align: center;
-    padding: 10px;
+    padding: 7px;
     margin: 0;
     font-size: 1.4rem;
     color: rgba(3, 6, 51, .9);
@@ -572,26 +586,34 @@ section > .about-cont-wrap {
     color: inherit;
 }
 
-.points-desc-wrap {
-    /* min-width: 280px; */
-    display: flex;
-    padding-left: 10px;
-    padding-right: 10px;
-    /* border: 1px solid black; */
+/* benefits section */
+.benefits-title {
+    text-align: center;
+    letter-spacing: .1rem;
+    margin: 0;
+    padding-bottom: 8px;
+    padding-top: 5px;
+}
 
+.points-desc-wrap {
+    box-sizing: border-box;
+    min-width: 80%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    padding-right: 5px;
 }
 
 .serv-point-wrap {
-    width: 200px;
-    /* border: 1px solid black; */
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 250px;
     padding-left: 10px;
-    /* gap: 10px; */
 }
 
 .serv-point-wrap > h4 {
     margin: 0;
     padding: 0;
-
     padding-bottom: 10px;
     color: rgba(16, 28, 86, 1);
 }
@@ -729,10 +751,12 @@ section > .about-cont-wrap {
     .points-desc-wrap {
         flex-direction: column;
         gap: 10px;
+        max-width: 75%;
     }
 
+
     .serv-point-wrap {
-        width: 330px;
+        min-width: 100%;
         border-left: 3px solid green;
     }
 
@@ -812,7 +836,6 @@ section > .about-cont-wrap {
         padding-top: 20px;
         gap: 13px;
     }
-
 }
 
 
@@ -820,6 +843,21 @@ section > .about-cont-wrap {
     .about-top-sub-cont > h1 {
         font-size: 2.6rem;
     }
+
+    /* img slider */
+    .but-img-mast-wrap {
+        width: 300px;
+        height: 325.7px;
+    }
+
+    .img-cont {
+        width: 300px;
+        height: 325.7px;
+    }
+
+    /* .serv-point-wrap {
+        min-width: 250px;
+    } */
 
         /* footer  */
     .foot-link > a {
