@@ -1,4 +1,11 @@
 /* services.css */
+@font-face {
+    font-family: 'Alegreya SC';
+    src: url('../fonts/AlegreyaSC-Medium.ttf');
+    font-weight: medium;
+    font-style: normal;
+}
+
 
 :root {
     --ffff-ffff: rgb(1, 1, 1);
@@ -62,7 +69,7 @@ html, body {
 
 .about-top-sub-cont > h1 {
     color: rgba(3, 6, 51, 1);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Alegreya SC', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 4rem;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -77,6 +84,7 @@ html, body {
     font-size: 25px;
     margin: 0;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 
@@ -396,8 +404,21 @@ html, body {
     padding-bottom: 60px;
     padding-left: 15px;
     padding-right: 15px;
-    gap: 15px;
+    /* gap: 15px; */
     /* border: 2px solid red; */
+}
+
+.upper-descp {
+    box-sizing: border-box;
+    max-width: 750px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    margin: 0;
+    font-weight: 600;
+    color: rgba(16, 28, 86, .9);
+    font-size: 1.1rem;
 }
 
 .about-cont-wrap {
@@ -409,17 +430,16 @@ section > .about-cont-wrap {
     flex-direction: row;
     justify-content: center;
 
-    min-height: 430px; /* ADJUST THIS LATER with more content */
+    min-height: 400px; /* ADJUST THIS LATER with more content */
     max-height: max-content;
     /* min-width: 550px; */
     max-width: 100%;
     /* border: 1px solid red; */
     gap: 8px;
-    padding-top: 40px;
+    padding-top: 10px;
     padding-right: 5px;
     padding-left: 5px;
-    padding-bottom: 10px;
-    
+    /* padding-bottom: 10px; */
 }
 
 .content-left-wrap {
@@ -432,25 +452,27 @@ section > .about-cont-wrap {
     /* border: 1px solid red; */
 }
 
-.content-left-wrap > h4 {
+.content-left-wrap > h4,
+.intro-hwd-wrap > h4 {
     color: rgba(16, 28, 86, 1);
     margin: 0;
     /* padding-bottom: 5px; */
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.content-left-wrap > h2,
 .content-left-wrap > p {
     padding-top: 0;
     margin: 0;
+    border-left: 3px solid green;
+    padding-left: 8px;
 }
 
-.content-left-wrap > p {
-    padding-top: 10px;
+.content-left-wrap > p,
+.intro-hwd-wrap > p {
     font-weight: 500;
     color: rgba(16, 28, 86, .8);
-    padding-bottom: 20px;
-    /* border: 1px solid red; */
 }
 
 
@@ -462,8 +484,7 @@ section > .about-cont-wrap {
     width: 350px;
     height: 380px;
     position: relative;
-
-    border: 1px solid black;
+    /* border: 1px solid black; */
 } 
 
 .img-slider-wrap {
@@ -494,6 +515,7 @@ section > .about-cont-wrap {
     z-index: 0;
 }
 
+/* services: window washing images */
 #srvc-ww-img-1 {
     background-image: url('../images/window-cleaners.png');
     background-size: contain; /* or contain? */
@@ -511,10 +533,46 @@ section > .about-cont-wrap {
 #srvc-ww-img-3 {
     background-image: url('../images/ladder-worker.png');
     background-size: cover;
-    /* background-size: contain; */
     background-repeat: no-repeat;
     background-color: black;
     background-position: center;
+}
+
+/* services: roof and gutter cleaning */
+#srvc-rg-img-1 {
+    background-image: url('../images/\ roof_stuff.png');
+    background-size: contain; /* or contain? */
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+#srvc-rg-img-2 {
+    background-image: url('../images/gutter-clean-2.jpeg');
+    background-size: contain; /* or contain? */
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+/* services: pressure washing */
+#srvc-pw-img-1 {
+    background-image: url('../images/dad-spaying-apartment.png');
+    background-size: cover; /* or contain? */
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+#srvc-pw-img-2 {
+    background-image: url('../images/jim-powerwash.png');
+    background-size: cover; /* or contain? */
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+#srvc-pw-img-3 {
+    /* background-image: url('../images/dad-spaying-apartment.png'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
 }
 
 
@@ -555,6 +613,26 @@ section > .about-cont-wrap {
     fill: rgba(234, 179, 8, 1);
 }
 
+/* how we do it sub-section */
+.intro-hwd-wrap {
+    box-sizing: border-box;
+    /* min-width: 85%; */
+    max-width: 755px;
+    padding: 10px;
+    padding-top: 18px;
+    /* padding-bottom: 20px; */
+    /* border: 1px solid black; */
+}
+
+.intro-hwd-wrap > h4 {
+    margin: 0;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.intro-hwd-wrap > p {
+    margin: 0;
+}
 
 
 /* established */
@@ -564,7 +642,7 @@ section > .about-cont-wrap {
     padding: 7px;
     margin: 0;
     font-size: 1.4rem;
-    color: rgba(3, 6, 51, .9);
+    color: rgba(33, 80, 173, 1);
     letter-spacing: .1rem;
 }
 
@@ -574,14 +652,14 @@ section > .about-cont-wrap {
     border-radius: 3px;
     padding: 7px 30px;
     color: rgba(232, 123, 11, 1);
-    background: rgba(33, 80, 173, .1);
+    background: rgba(33, 80, 173, .4);
 }
 
 .contact-button:hover {
     background: rgba(33, 80, 173, 1);
 }
 
-.content-left-wrap > a {
+a {
     text-decoration: none; /* Removes the underline */
     color: inherit;
 }
@@ -591,8 +669,8 @@ section > .about-cont-wrap {
     text-align: center;
     letter-spacing: .1rem;
     margin: 0;
-    padding-bottom: 8px;
-    padding-top: 5px;
+    padding-bottom: 17px;
+    padding-top: 30px;
 }
 
 .points-desc-wrap {
@@ -624,7 +702,32 @@ section > .about-cont-wrap {
     font-size: 15px;
 }
 
-/* dividers */
+/* links */
+.srvc-descp-links {
+    color:rgba(234, 179, 8, 1);
+    text-decoration: underline;
+}
+
+/* divider upper */
+.divider-wrap-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    min-height: 40px;
+    width: 60%;
+    /* border: 1px solid red;; */
+}
+
+.divider-spn-top {
+    width: 100%;
+    height: 2.5px;
+    /* background: #0f172a; */
+    background: rgba(1, 36, 86, 0.94);
+}
+
+/* dividers lower*/
 .divider-wrap {
     display: flex;
     justify-content: center;
@@ -639,7 +742,7 @@ section > .about-cont-wrap {
     width: 2.5px;
     height: 60%;
     /* background: #0f172a; */
-    background: rgba(1, 36, 86, 0.94);;
+    background: rgba(1, 36, 86, 0.94);
     /* padding: 2px 5px; */
 }
 
@@ -737,12 +840,9 @@ section > .about-cont-wrap {
     .about-top-sub-cont > h3 {
         font-size: 1.5rem;
     }
-
  }
 
 @media screen and (width < 741px) { 
-    /* landing */
-
     /* non-mobile-header */
     .top-main {
         display: none;
@@ -753,7 +853,6 @@ section > .about-cont-wrap {
         gap: 10px;
         max-width: 75%;
     }
-
 
     .serv-point-wrap {
         min-width: 100%;
@@ -816,7 +915,6 @@ section > .about-cont-wrap {
         border-radius: 5px;
         object-fit: contain;
     }
-
 }
 
 @media screen and (width < 651px) { 
@@ -834,10 +932,13 @@ section > .about-cont-wrap {
         align-items: center;
         /* border: 1px solid black; */
         padding-top: 20px;
-        gap: 13px;
+        gap: 20px;
+    }
+
+    .intro-hwd-wrap {
+        max-width: 400px;
     }
 }
-
 
 @media screen and (width < 401px) {
     .about-top-sub-cont > h1 {
@@ -855,11 +956,7 @@ section > .about-cont-wrap {
         height: 325.7px;
     }
 
-    /* .serv-point-wrap {
-        min-width: 250px;
-    } */
-
-        /* footer  */
+    /* footer  */
     .foot-link > a {
         font-size: .8rem;
     }

@@ -1,6 +1,6 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
@@ -9,11 +9,14 @@ module.exports = {
       index: './src/scripts/index.js',  // Entry point for index.html
       about: './src/scripts/about.js',  // Entry point for about.html
       contact: './src/scripts/contact.js', // Entry point for contact.html
-      testimonials: './src/scripts/testimonials.js',
-      services: './src/scripts/services.js',
+      testimonials: './src/scripts/testimonials.js', // Entry point...
+      services: './src/scripts/services.js', // Entry point....
     },
     devtool: 'source-map',
     plugins: [
+        new MiniCssExtractPlugin({
+          filename: '[name].css',   // [name] will be replaced with the chunk name, such as main, page1, etc.
+        }),
         new HtmlWebpackPlugin({ 
             template: './src/pages/index.html',
             favicon: './src/images/rwags-logo.ico',
@@ -87,8 +90,11 @@ module.exports = {
     module: {
         rules: [
           {
-            test: /\.css$/i,
-            use: ['style-loader', 'css-loader'],
+            test: /\.css$/,
+            use: [
+              MiniCssExtractPlugin.loader,
+              'css-loader',
+            ],
           },
           {
             test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,

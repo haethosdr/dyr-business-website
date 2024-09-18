@@ -87,4 +87,19 @@ benefits of : "service"
 9/15
 1. add click event listener to dropdown menu (non mobile) on other pages other than services/windowwashing
 2. add pointer: curson on other pages other than ww/services.
-3. 
+
+9/16
+1. get delayed page loading figured out. (done)
+2. get form working (done)
+3. get formatting finalized for services/ww page. (done)
+
+9/17
+1. copy styling to other pages. (doone)
+2. change home pages log/button on as wrap under quotes
+3. Post it to github pages
+4. add SEO and related content.
+5. transfer domain name and setup hosting.
+
+9/18
+1. put bay area instead of south bay area on bages.
+2. finish power washing page

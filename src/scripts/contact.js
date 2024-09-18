@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     page.childNodes[0].classList.remove('unselected');
     page.childNodes[0].classList.add('selected-link');
 
+    const contactForm = document.querySelector('#contact-form');
+    const submitButton = document.querySelector('#form-submit');
+
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
     // serviceMenuLink.getBoundingClientRect();
@@ -60,6 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (subNavDisplay.style.display === 'none') {
             subNavDisplay.style.display = 'flex';
         } else subNavDisplay.style.display = 'none';
+    });
+
+    submitButton.addEventListener('submit', () => {
+        
+        contactForm.clear();
     });
 
 });

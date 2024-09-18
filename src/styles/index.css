@@ -13,6 +13,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Alegreya SC';
+    src: url('../fonts/AlegreyaSC-Medium.ttf');
+    font-weight: medium;
+    font-style: normal;
+}
+
 :root {
     --ffff-ffff: rgb(1, 1, 1);
 }
@@ -423,14 +430,16 @@ html, body {
 .subservice-wrap-desc > h2 {
     margin: 0;
     color: rgba(3, 6, 51, .9);
+    font-family: 'Alegreya SC';
+    letter-spacing: .1rem;
 }
 
 .subservice-wrap-desc > p {
     font-weight: 500;
-    font-family: 'Abel';
     line-height: 1.2rem;
     font-size: 1.2rem;
     color: rgba(16, 28, 86, .8);
+    font-family: 'Abel';
 }
 
 .serv-lrn-butn {

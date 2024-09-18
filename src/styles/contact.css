@@ -37,11 +37,13 @@ html, body {
     height: 80vh;
     width: 100%;
     z-index: 0;
+    max-height: 900px;
 }
 
 .landing-overlay {
     position: absolute;
     height: 80vh;
+    max-height: 900px;
     width: 100%;
     /* background: rgba(50, 36, 86, 0.3); */
     background: rgba(135, 121, 171, 0.3);
@@ -374,6 +376,8 @@ section > .contact-info-wrap {
     /* min-height: 400px; */
     /* padding: 15px; */
     padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     
 }
 
@@ -381,9 +385,9 @@ section > .contact-info-wrap {
     /* display: flex;
     flex-direction: column; */
 
-    padding-bottom: 30px;
+    /* padding-bottom: 30px;
     padding-right: 20px;
-    padding-left: 25px;
+    padding-left: 25px; */
     /* border: 1px solid red; */
 }
 
@@ -417,7 +421,8 @@ section > .contact-info-wrap {
 .contact-subwrap {
     display: flex;
     justify-content: center;
-    min-width: 85%;
+    box-sizing: border-box;
+    min-width: 91.5%;
     max-width: 700px;
     /* border-radius: 5px; */
     /* border: 1px solid black; */
@@ -514,17 +519,20 @@ section > .contact-info-wrap {
 
 /* MAP SECTION */
 .map-wrap {
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     /* padding-left: 10px;
     padding-right: 10px; */
     padding-top: 10px;
     padding-bottom: 5px;
+    min-width: 91.5%;
 }
 
 #goog-map {
-    width: 88%;
-    min-height: 320px;
+    width: 100%;
+    min-height: 340px;
+    box-sizing: border-box;
     border: none;
     border-left: 4px solid rgba(14, 165, 233, .9)
 }
@@ -613,12 +621,13 @@ section > .contact-info-wrap {
     border-radius: 3px;
     padding: 7px 30px;
     color: rgba(232, 123, 11, 1);
-    background: rgba(33, 80, 173, 1);
+    background: rgba(33, 80, 173, .9);
     width: 15%;
 }
 
 #form-submit:hover {
-    background: rgba(16, 28, 86, 1);
+    background: rgba(16, 28, 86, .9);
+    /* background: rgba(33, 80, 173, 1); */
     /* border: 1px solid rgba(232, 123, 11, 1); */
 }
 
@@ -732,10 +741,15 @@ textarea.form-input-field {
     height: 65%;
 }
 
-/* map */
-#goog-map {
-    width: 91%;
+.contact-subwrap {
+    min-width: 100%;
 }
+
+/* map */
+.map-wrap {
+    min-width: 100%
+}
+
 
 /* form */
 .form-label {
@@ -811,7 +825,11 @@ textarea.form-input-field {
     .contact-subwrap {
         flex-direction: column;
         align-items: start;
+        padding-left: 8px;
+        padding-right: 8px;
     }
+
+
 
     /* dividers for contact */
     .divider-wrap-lower {
@@ -839,11 +857,24 @@ textarea.form-input-field {
         padding-left: .5rem;
         border: 1px solid red;
     } */
+/* 
+    section > .contact-info-wrap {
+        width: 90%;
+    } */
+    /* .contact-subwrap {
+        width: 98%;
+    } */
+
 
     /* map */
-    #goog-map {
-        width: 95%;
+    /* .map-wrap {
+        padding-left: 8px;
+        padding-right: 8px;
     }
+
+    #goog-map {
+        width: 98%;
+    } */
 
     /* form */
     .form-label {
