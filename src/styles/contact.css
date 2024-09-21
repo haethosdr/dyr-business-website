@@ -1,5 +1,14 @@
 /* contact.css */
 
+
+@font-face {
+    font-family: 'Alegreya SC';
+    /* src: url('../fonts/AlegreyaSC-Medium.ttf'); */
+    src: url('../fonts/AlegreyaSC-Bold.ttf');
+    font-weight: medium;
+    font-style: normal;
+}
+
 :root {
     --ffff-ffff: rgb(1, 1, 1);
 }
@@ -13,6 +22,8 @@ html, body {
     padding: 0;
     font-size: 16px;
     background: #e0f2fe;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* MAIN/WRAP */
@@ -53,7 +64,7 @@ html, body {
 }
 
 .about-top-sub-cont {
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -64,7 +75,8 @@ html, body {
 .about-top-sub-cont > h1 {
     /* color: white; */
     color: rgba(1, 36, 86, 1);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Alegreya SC';
     font-size: 4rem;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -121,6 +133,7 @@ html, body {
     padding: 8px 8px;
     margin: 0;
     height: min-content;
+    cursor: pointer;
     /* border: 1px solid black; */
     /* links should be dark blue, with a yellow hover. font should be mild bold. */
 };
@@ -139,8 +152,8 @@ html, body {
 .head-link-item > .unselected,
 .head-link-item.unselected {
     color: rgba(1, 36, 86, 1);
-    font-size: 21px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 800;
 }
 
 .head-link-item > .unselected:hover,
@@ -171,7 +184,7 @@ html, body {
 .selected-link {
     color: rgba(219, 153, 36, 1);
     font-size: 23px;
-    font-weight: 500;
+    font-weight: 800;
     /* border-bottom: 3px solid rgba(14, 165, 233, .4); */
 }
 
@@ -382,13 +395,8 @@ section > .contact-info-wrap {
 }
 
 .info-subwrap {
-    /* display: flex;
-    flex-direction: column; */
-
-    /* padding-bottom: 30px;
-    padding-right: 20px;
-    padding-left: 25px; */
-    /* border: 1px solid red; */
+    min-width: 91.5%;
+    max-width: 700px;
 }
 
 .cont-into-title {
@@ -738,6 +746,7 @@ textarea.form-input-field {
 }
 
 .about-top-sub-cont {
+    max-width: 500px;
     height: 65%;
 }
 

@@ -5,10 +5,6 @@ import '../styles/testimonials.css';
 console.log("from testimonials.js");
 
 document.addEventListener('DOMContentLoaded', () => {
-    const page = document.querySelector('#testimonials');
-    page.childNodes[0].classList.remove('unselected');
-    page.childNodes[0].classList.add('selected-link');
-
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
     // serviceMenuLink.getBoundingClientRect();

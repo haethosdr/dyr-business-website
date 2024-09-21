@@ -101,5 +101,24 @@ benefits of : "service"
 5. transfer domain name and setup hosting.
 
 9/18
-1. put bay area instead of south bay area on bages.
-2. finish power washing page
+1. finish power washing page (done)
+
+9/19
+1. finish solar panel cleaning page (basically done)
+
+9/20
+1. make main font slightly bolder (done)
+1. put bay area instead of south bay area on pages. (mostly done)
+2. dropdown menu doesnt work properly with tablets. need to make sure the link doesnt work and it drops it down instead of it refreshing page (done)
+3. add photos to each service page (motly done except power washing page)
+4. remove or modify logo on index page solitiation section. (done)
+5. rewrite parts of the about page
+6. add all links on index page and others to be active w/ proper links. (done)
+7. copy SEO content to other pages.
+9. proofread and grammar check everything w/ chat gpt or claude
+10. fix mobile menu link selection for each page (clear redundant code if necessary.) (done)
+10. bold up the fotter at the end. anti-aliasing shrank some of the font size
+11. post dist folder to github pages
+12. make sure fonts have backups
+13. post 7pm soloring on screen adds a rishish overlay. find color w/ redish overlay + current color (background)
+8. add more quotes to index page

@@ -4,7 +4,8 @@
 /* services.css */
 @font-face {
     font-family: 'Alegreya SC';
-    src: url(3f7ae3d8836802392539.ttf);
+    /* src: url('../fonts/AlegreyaSC-Medium.ttf'); */
+    src: url(0f220b52f43e80d3c03f.ttf);
     font-weight: medium;
     font-style: normal;
 }
@@ -18,11 +19,18 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 html, body {
     margin: 0;
     padding: 0;
     background: rgba(245, 224, 224, 1);
     font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -57,27 +65,23 @@ html, body {
 }
 
 .about-top-sub-cont {
-    max-width: 600px;
+    max-width: max-content;
     height: 65%;
     text-align: center;
-
-    display: flex;
-    flex-direction: column;
-
     box-sizing: border-box;
     padding-left: 8px;
     padding-right: 8px;
-    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
 }
 
 .about-top-sub-cont > h1 {
     color: rgba(3, 6, 51, 1);
     font-family: 'Alegreya SC', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 4rem;
+    font-size: 4.5rem;
     padding-top: 8px;
     padding-bottom: 8px;
     margin: 0;
-    /* -webkit-font-smoothing: antialiased; */
     /* border: 1px solid red; */
 }
 
@@ -127,8 +131,6 @@ html, body {
     margin: 0;
     height: min-content;
     cursor: pointer;
-    /* border: 1px solid black; */
-    /* links should be dark blue, with a yellow hover. font should be mild bold. */
 };
 
 .head-logo {
@@ -145,8 +147,8 @@ html, body {
 .head-link-item > .unselected,
 .head-link-item.unselected {
     color: rgba(1, 36, 86, 1);
-    font-size: 21px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 800;
 }
 
 .head-link-item > .unselected:hover,
@@ -363,41 +365,10 @@ html, body {
     /* background: rgba(1, 36, 86, .3); */
     /* background: rgba(14, 165, 233, .4); */
     border-radius: 3px;
-    font-weight: 500;
+    font-weight: 800;
 }
-
-/* SERVICE SECTION */
-/* section > .service-section-wrap {
-    height: 700px;
-}
-
-.service-section-wrap {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-}
-
-.srv-sec {
-    display: flex;
-    justify-content: center;
-    border: 1px solid black;
-    font-size: 25px;
-    margin: 0;
-}
-
-.img-desc-wrap {
-    display: flex;
-    gap: 20px;
-}
-
-.img-desc-wrap > p {
-    max-width: 300px;
-    /padding: 20px;
-} */
-
 
 /* ABOUT INFO */
-
 #service-mid-wrap {
     display: flex;
     flex-direction: column;
@@ -534,7 +505,31 @@ section > .about-cont-wrap {
 }
 
 #srvc-ww-img-3 {
-    background-image: url(0c9297f79fea15fdb567.png);
+    background-image: url(d4b400384817ca88f923.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center;
+}
+
+#srvc-ww-img-4 {
+    background-image: url(801898bcc4bc0cd959bf.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: left;
+}
+ 
+#srvc-ww-img-5 {
+    background-image: url(0fedf3396b5cebfc59ae.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center;
+}
+
+#srvc-ww-img-6 {
+    background-image: url(c53511391f6a6f10b3d9.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-color: black;
@@ -543,18 +538,45 @@ section > .about-cont-wrap {
 
 /* services: roof and gutter cleaning */
 #srvc-rg-img-1 {
-    background-image: url(fe330b21d74abda6409e.png);
-    background-size: contain; /* or contain? */
+    background-image: url(72b1211c803f7339cd73.png);
+    background-size: cover;
     background-repeat: no-repeat;
-    background-color: black;
 }
 
 #srvc-rg-img-2 {
-    background-image: url(dd84557bc61b36168069.jpeg);
-    background-size: contain; /* or contain? */
+    background-image: url(5fbca8296e81df3d5e32.png);
+    background-size: cover;
     background-repeat: no-repeat;
-    background-color: black;
+    background-position: right;
 }
+
+#srvc-rg-img-3 {
+    background-image: url(1f51899ddad603d9d217.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#srvc-rg-img-4 {
+    background-image: url(96582817f3d99a411f16.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+#srvc-rg-img-5 {
+    background-image: url(9e6aac55da6c00f76dec.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#srvc-rg-img-6 {
+    background-image: url(73a1732a5023c7b77ef8.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
 /* services: pressure washing */
 #srvc-pw-img-1 {
@@ -571,13 +593,38 @@ section > .about-cont-wrap {
     background-color: black;
 }
 
-#srvc-pw-img-3 {
-    /* background-image: url('../images/dad-spaying-apartment.png'); */
+/* solar penel imgs */
+#srvc-spc-img-1 {
+    background-image: url(b9c674c3a8ed6c438a5b.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: black;
+    background-position: right;
 }
 
+#srvc-spc-img-2 {
+    background-image: url(f78e7d356b8264b1f3c6.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+#srvc-spc-img-3 {
+    background-image: url(70adc6c4cdc27865fb6e.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#srvc-spc-img-4 {
+    background-image: url(3bc568e14bd2eefe5a93.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#srvc-spc-img-5 {
+    background-image: url(dff5ce0e64013d07f17a.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 /* img slider buttons */
 .scroll-slider {
@@ -662,11 +709,6 @@ section > .about-cont-wrap {
     background: rgba(33, 80, 173, 1);
 }
 
-a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit;
-}
-
 /* benefits section */
 .benefits-title {
     text-align: center;
@@ -708,7 +750,7 @@ a {
 /* links */
 .srvc-descp-links {
     color:rgba(234, 179, 8, 1);
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 /* divider upper */
@@ -832,16 +874,12 @@ a {
 }
 
 @media screen and (width < 900px) {
-    .about-top-sub-cont {
-        max-width: 500px;
-    }
-    
     .about-top-sub-cont > h1 { 
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .about-top-sub-cont > h3 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
  }
 
@@ -926,7 +964,7 @@ a {
     }
 
     .about-top-sub-cont > h1 {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
     }
 
     section > .about-cont-wrap  {
@@ -945,7 +983,11 @@ a {
 
 @media screen and (width < 401px) {
     .about-top-sub-cont > h1 {
-        font-size: 2.6rem;
+        font-size: 3rem;
+    }
+
+    .about-top-sub-cont > h3 {
+        font-size: 1.2rem;
     }
 
     /* img slider */

@@ -69,10 +69,6 @@ const elem = (prop, par) => (par || document).querySelector(prop);
 // const elems = (prop, par) => (par || document).querySelectorAll(prop);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const page = document.querySelector('#contact');
-    page.childNodes[0].classList.remove('unselected');
-    page.childNodes[0].classList.add('selected-link');
-
     const contactForm = document.querySelector('#contact-form');
     const submitButton = document.querySelector('#form-submit');
 
@@ -127,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     submitButton.addEventListener('submit', () => {
-        
+
         contactForm.clear();
     });
 

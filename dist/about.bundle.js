@@ -101,13 +101,9 @@ const shiftImage = function (ms = 400) {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const page = document.querySelector('#about');
-    page.childNodes[0].classList.remove('unselected');
-    page.childNodes[0].classList.add('selected-link');
-
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
-    const imgSlideButtons = elems('.scroll-slider');
+    
     // serviceMenuLink.getBoundingClientRect();
 
     const toggleMenuDisplay = function () {
@@ -132,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // img slider functionality: //
+    const imgSlideButtons = elems('.scroll-slider');
     imgSlideButtons[0].addEventListener('click', prevImg);
     imgSlideButtons[1].addEventListener('click', nextImg);
 

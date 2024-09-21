@@ -38,7 +38,6 @@ const shiftImage = function (ms = 400) {
 document.addEventListener('DOMContentLoaded', () => {
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
-    const imgSlideButtons = elems('.scroll-slider');
 
     // const srvcDiv = elem('.menu-drop'); same effect.
 
@@ -58,11 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("mouseout");
     });
 
-    serviceMenuLink.addEventListener('click', () => {
-        if (dropDownMenu.style.display === 'flex') {
-            dropDownMenu.style.display = 'none';
-        } else toggleMenuDisplay();
-    });
+    // serviceMenuLink.addEventListener('click', () => {
+    //     if (dropDownMenu.style.display === 'flex') {
+    //         dropDownMenu.style.display = 'none';
+    //     } else toggleMenuDisplay();
+    // });
 
     dropDownMenu.addEventListener('mouseover', () => {
         toggleMenuDisplay();
@@ -71,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // img slider functionality: //
+    const imgSlideButtons = elems('.scroll-slider');
     imgSlideButtons[0].addEventListener('click', prevImg);
     imgSlideButtons[1].addEventListener('click', nextImg);
 
