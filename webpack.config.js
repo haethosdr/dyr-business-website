@@ -15,7 +15,7 @@ module.exports = {
     devtool: 'source-map',
     plugins: [
         new MiniCssExtractPlugin({
-          filename: '[name].css',   // [name] will be replaced with the chunk name, such as main, page1, etc.
+          filename: '[name].[contenthash].css',   // [name] will be replaced with the chunk name, such as main, page1, etc.
         }),
         new HtmlWebpackPlugin({ 
             template: './src/pages/index.html',
@@ -28,7 +28,7 @@ module.exports = {
         new HtmlWebpackPlugin({ 
           template: './src/pages/about.html',
           favicon: './src/images/rwags-logo.ico',
-          filename: 'about.html',
+          filename: 'about/index.html',
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['about'],
@@ -36,7 +36,7 @@ module.exports = {
         new HtmlWebpackPlugin({ 
           template: './src/pages/contact.html',
           favicon: './src/images/rwags-logo.ico',
-          filename: 'contact.html',
+          filename: 'contact/index.html',
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['contact'],
@@ -44,7 +44,7 @@ module.exports = {
         new HtmlWebpackPlugin({ 
           template: './src/pages/testimonials.html',
           favicon: './src/images/rwags-logo.ico',
-          filename: 'testimonials.html',
+          filename: 'testimonials/index.html',
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['testimonials'],
@@ -52,7 +52,7 @@ module.exports = {
         new HtmlWebpackPlugin({ 
           template: './src/pages/services/pressure-washing.html',
           favicon: './src/images/rwags-logo.ico',
-          filename: 'pressure-washing.html',
+          filename: 'pressure-washing/index.html',
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['services'],
@@ -60,7 +60,7 @@ module.exports = {
         new HtmlWebpackPlugin({ 
           template: './src/pages/services/roof-gutter-clean.html',
           favicon: './src/images/rwags-logo.ico',
-          filename: 'roof-gutter-clean.html',
+          filename: 'roof-gutter-clean/index.html',
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['services'],
@@ -68,7 +68,7 @@ module.exports = {
         new HtmlWebpackPlugin({ 
           template: './src/pages/services/solar-panel-clean.html',
           favicon: './src/images/rwags-logo.ico',
-          filename: 'solar-panel-clean.html',
+          filename: 'solar-panel-clean/index.html',
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['services'],
@@ -76,7 +76,7 @@ module.exports = {
         new HtmlWebpackPlugin({ 
           template: './src/pages/services/window-washing.html',
           favicon: './src/images/rwags-logo.ico',
-          filename: 'window-washing.html',
+          filename: 'window-washing/index.html',
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['services'],
@@ -89,6 +89,10 @@ module.exports = {
     },
     module: {
         rules: [
+          {
+            test: /\.html$/,
+            use: ['html-loader'],  // Process image paths in HTML
+          },
           {
             test: /\.css$/,
             use: [
@@ -105,5 +109,10 @@ module.exports = {
             type: 'asset/resource',
           },
         ],
-      }, 
+      },
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
+    }, 
 };

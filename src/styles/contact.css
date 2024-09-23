@@ -9,6 +9,11 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../fonts/Noto_Sans/NotoSans-VariableFont_wdth\,wght.ttf');
+}
+
 :root {
     --ffff-ffff: rgb(1, 1, 1);
 }
@@ -17,11 +22,18 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+a {
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+ }
+
 html, body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    background: #e0f2fe;
+    /* background: #e0f2fe; old */
+    background: rgba(201, 170, 180, .3);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -72,6 +84,10 @@ html, body {
     z-index: 3;
 }
 
+.about-top-sub-cont i {
+    color: rgba(219, 153, 36, .9);
+}
+
 .about-top-sub-cont > h1 {
     /* color: white; */
     color: rgba(1, 36, 86, 1);
@@ -91,8 +107,10 @@ html, body {
     /* color: rgba(1, 36, 86, 1); */
     /* color: rgba(219, 153, 36, 1); */
     /* color: rgba(14, 165, 233, .7); */
-    color: rgba(219, 153, 36, .9);
-    font-family: Arial, Helvetica, sans-serif;
+    /* color: rgba(219, 153, 36, .9); */
+    color: rgba(1, 36, 86, 1);
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Noto Sans';
     font-size: 1.7rem;
 }
 
@@ -162,9 +180,6 @@ html, body {
 }
 
 .head-logo {
-    background-image: url('../images/rwags-logo.png');
-    background-size: contain; /* or contain? */
-    background-repeat: no-repeat;
     position: relative;
     width: 180px;
     height: 120px;
@@ -176,7 +191,13 @@ html, body {
     left: 0;
     width: 100%; /* Ensures the link covers the full container */
     height: 100%;
-    z-index: 10;
+    z-index: 2;
+}
+
+.head-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 
@@ -207,7 +228,7 @@ html, body {
     /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */
     /* transform: translateY(-10px); Initial transform state */
     /* pointer-events: none; */
-    z-index: 2;
+    z-index: 3;
 }
 
 #dropdown-menu > a {
@@ -229,6 +250,7 @@ html, body {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 18px;
+    font-weight: 600;
 }
 
 /* MOBILE MENU */
@@ -655,13 +677,10 @@ textarea.form-input-field {
 
 
 /* FOOTER SECTION */
-
 .index-footer {
     min-height: 400px;
     display: flex;
     justify-content: center;
-    /* background: rgba(2, 6, 23, .8); */
-    /* background: rgba(217, 119, 6, .7); */
     background: rgba(14, 165, 233, .9);
 }
  
@@ -688,11 +707,8 @@ textarea.form-input-field {
 }
  
 .footer-logo {
-    background-image: url('../images/rwags-logo.png');
-    background-size: cover; /* or cover? */
-    background-repeat: no-repeat;
+    box-sizing: border-box;
     background-color: rgba(234, 179, 8, .9);
-
     display: block;
     aspect-ratio: 1.53 / 1;
     width: 90%;
@@ -700,6 +716,11 @@ textarea.form-input-field {
     height: auto;
     border: 1px solid rgba(234, 179, 8, .9);
     border-radius: 5px;
+}
+
+.footer-logo > img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -717,10 +738,10 @@ textarea.form-input-field {
 
 #phone-number {
     font-size: 2.5rem;
+    color: rgba(240, 233, 221, 1);
 }
 
 #phone-number > a {
-    text-decoration: none; /* Removes the underline */
     color: inherit;
 }
 
@@ -729,13 +750,10 @@ textarea.form-input-field {
 }
 
 .foot-link > a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit;
-    /* color: rgba(1, 36, 86, 0.94); */
     color: rgba(219, 153, 36, 1);
     font-size: 1rem;
+    font-weight: 500;
 }
-
 
 
 /* works for far */

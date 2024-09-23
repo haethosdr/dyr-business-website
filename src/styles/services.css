@@ -7,11 +7,6 @@
     font-style: normal;
 }
 
-
-:root {
-    --ffff-ffff: rgb(1, 1, 1);
-}
-
 * {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -154,11 +149,7 @@ html, body {
 }
 
 .head-logo {
-    background-image: url('../images/rwags-logo.png');
-    background-size: contain; /* or contain? */
-    background-repeat: no-repeat;
     position: relative;
-
     width: 180px;
     height: 120px;
 }
@@ -169,7 +160,13 @@ html, body {
     left: 0;
     width: 100%; /* Ensures the link covers the full container */
     height: 100%;
-    z-index: 10;
+    z-index: 2;
+}
+
+.head-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* DROPDOWN MENU */
@@ -212,6 +209,7 @@ html, body {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 18px;
+    font-weight: 600;
 }
 
 /* MOBILE MENU */
@@ -486,141 +484,32 @@ section > .about-cont-wrap {
     z-index: 0;
 }
 
+.img-cont > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 /* services: window washing images */
-#srvc-ww-img-1 {
-    background-image: url('../images/window-cleaners.png');
-    background-size: contain; /* or contain? */
-    background-repeat: no-repeat;
+#srvc-ww-img-1 > img {
+    object-fit: contain;
 }
 
-#srvc-ww-img-2 {
-    background-image: url('../images/unnamed_pho44.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* background-position: center; */
-    background-color: black;
+#srvc-ww-img-4 > img {
+    object-position: left;
 }
 
-#srvc-ww-img-3 {
-    background-image: url('../images/cleaning-image-1.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: black;
-    background-position: center;
-}
-
-#srvc-ww-img-4 {
-    background-image: url('../images/windows-clean-5.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: black;
-    background-position: left;
-}
- 
-#srvc-ww-img-5 {
-    background-image: url('../images/windw-cln-mg-9.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: black;
-    background-position: center;
-}
-
-#srvc-ww-img-6 {
-    background-image: url('../images/window-clean-8.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: black;
-    background-position: center;
-}
-
-/* services: roof and gutter cleaning */
-#srvc-rg-img-1 {
-    background-image: url('../images/\ roof_stuff.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#srvc-rg-img-2 {
-    background-image: url('../images/after-roof-w-pool-img.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
-}
-
-#srvc-rg-img-3 {
-    background-image: url('../images/gutter-clean-2.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#srvc-rg-img-4 {
-    background-image: url('../images/dad-cleaning-botm-gut.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
-}
-
-#srvc-rg-img-5 {
-    background-image: url('../images/spray-gutter.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#srvc-rg-img-6 {
-    background-image: url('../images/clean-roof-wet.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-
-/* services: pressure washing */
-#srvc-pw-img-1 {
-    background-image: url('../images/dad-spaying-apartment.png');
-    background-size: cover; /* or contain? */
-    background-repeat: no-repeat;
-    background-color: black;
-}
-
-#srvc-pw-img-2 {
-    background-image: url('../images/jim-powerwash.png');
-    background-size: cover; /* or contain? */
-    background-repeat: no-repeat;
-    background-color: black;
+/* roof and gutter cleaning */
+#srvc-rg-img-2 > img,
+#srvc-rg-img-4 > img {
+    object-position: right;
 }
 
 /* solar penel imgs */
-#srvc-spc-img-1 {
-    background-image: url('../images/dylan-solar-clean-roof-2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
-}
-
-#srvc-spc-img-2 {
-    background-image: url('../images/solar-panel-2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: right;
-}
-
-#srvc-spc-img-3 {
-    background-image: url('../images/solar-panel-field-1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#srvc-spc-img-4 {
-    background-image: url('../images/solar-panel-img-cln5.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#srvc-spc-img-5 {
-    background-image: url('../images/solar-panel-tiles-roof.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+#srvc-spc-img-1 > img,
+#srvc-spc-img-2 > img {
+    object-position: right;
 }
 
 /* img slider buttons */
@@ -794,8 +683,6 @@ section > .about-cont-wrap {
     min-height: 400px;
     display: flex;
     justify-content: center;
-    /* background: rgba(2, 6, 23, .8); */
-    /* background: rgba(217, 119, 6, .7); */
     background: rgba(14, 165, 233, .9);
 }
  
@@ -822,11 +709,8 @@ section > .about-cont-wrap {
 }
  
 .footer-logo {
-    background-image: url('../images/rwags-logo.png');
-    background-size: cover; /* or cover? */
-    background-repeat: no-repeat;
+    box-sizing: border-box;
     background-color: rgba(234, 179, 8, .9);
-
     display: block;
     aspect-ratio: 1.53 / 1;
     width: 90%;
@@ -834,6 +718,11 @@ section > .about-cont-wrap {
     height: auto;
     border: 1px solid rgba(234, 179, 8, .9);
     border-radius: 5px;
+}
+
+.footer-logo > img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -851,10 +740,10 @@ section > .about-cont-wrap {
 
 #phone-number {
     font-size: 2.5rem;
+    color: rgba(240, 233, 221, 1);
 }
 
 #phone-number > a {
-    text-decoration: none; /* Removes the underline */
     color: inherit;
 }
 
@@ -863,12 +752,11 @@ section > .about-cont-wrap {
 }
 
 .foot-link > a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit;
-    /* color: rgba(1, 36, 86, 0.94); */
     color: rgba(219, 153, 36, 1);
     font-size: 1rem;
+    font-weight: 500;
 }
+
 
 @media screen and (width < 900px) {
     .about-top-sub-cont > h1 { 

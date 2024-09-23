@@ -112,13 +112,32 @@ benefits of : "service"
 2. dropdown menu doesnt work properly with tablets. need to make sure the link doesnt work and it drops it down instead of it refreshing page (done)
 3. add photos to each service page (motly done except power washing page)
 4. remove or modify logo on index page solitiation section. (done)
-5. rewrite parts of the about page
+5. rewrite parts of the about page(done)
 6. add all links on index page and others to be active w/ proper links. (done)
-7. copy SEO content to other pages.
-9. proofread and grammar check everything w/ chat gpt or claude
 10. fix mobile menu link selection for each page (clear redundant code if necessary.) (done)
-10. bold up the fotter at the end. anti-aliasing shrank some of the font size
-11. post dist folder to github pages
-12. make sure fonts have backups
-13. post 7pm soloring on screen adds a rishish overlay. find color w/ redish overlay + current color (background)
-8. add more quotes to index page
+
+9/21
+0. proofread and grammar check everything w/ chat gpt or claude (mostly done except for solar panel and power washing pages)
+0. NOTE: add use deionized water for cleaning solar panels. (done)
+1. post 7pm soloring on screen adds a rishish overlay. find color w/ redish overlay + current color (background) (found closer to that. still need to tweak. good for now.)
+2. add more quotes to index page (done)
+3. bold up the font at the footer. anti-aliasing shrank some of the font size (decided not needed)
+4. make sure fonts have backups ()
+7. post dist folder to github pages (done)
+10. add google tag manager script on webpage head section to track SEO keywords
+11. need to try and add img element for SEO + add alt attributes (basically done)
+13. might need to move footer logo into img element (done)
+
+
+
+" for a brighter day. " on contact page part should be lighter blue
+
+9/22
+5. copy SEO content to other pages.
+6. clear out all unused fonts, images, selectors, elements that are not being used. (wait until dylan sees to asses this) 
+12. need to put in hidden info as display hidden. footer links to facebook and yelp. + footer telephone link. see crystal panes to understand.
+8. make xml map (need to do after site is live and hosted.)
+9. get domain info + sign up for digital ocean
+10. add google tag manager script on webpage head section to track SEO keywords
+
+14. use webpack plugins for seo/xmlsitemap/other

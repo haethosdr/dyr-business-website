@@ -2,8 +2,6 @@
 @font-face {
     font-family: 'Aboreto';
     src: url('../fonts/Aboreto/Aboreto-Regular.ttf');
-    /* font-weight: normal;
-    font-style: normal; */
 }
 
 @font-face {
@@ -15,7 +13,6 @@
 
 @font-face {
     font-family: 'Alegreya SC';
-    /* src: url('../fonts/AlegreyaSC-Medium.ttf'); */
     src: url('../fonts/AlegreyaSC-Bold.ttf');
     font-weight: medium;
     font-style: normal;
@@ -24,12 +21,6 @@
 @font-face {
     font-family: 'Noto Sans';
     src: url('../fonts/Noto_Sans/NotoSans-VariableFont_wdth\,wght.ttf');
-    /* font-weight: normal;
-    font-style: normal; */
-}
-
-:root {
-    --ffff-ffff: rgb(1, 1, 1);
 }
 
 * {
@@ -46,19 +37,16 @@ a {
 html, body {
     margin: 0;
     padding: 0;
-    background: #e0f2fe;
     font-size: 16px;
+    background: rgba(201, 170, 180, .3); /* can change red to 205 */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* background: rgba(33, 80, 173, .1); ORIGINAL */
-    /* background: rgba(240, 233, 221, 1); */
-    /* background: #99f6e4; lean away from*/
-    /* background: #dbeafe; */
-    /* background: rgba(207, 250, 254, .3); */
-    /* background: #ffe4e6; */
-    /* background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
-    /* background: #f0f9ff; 4 */
+    /* background: #fecdd3;  rose section. this could be used somehow */
+    /* background: #fda4af; rose section. possible? unsure here */
+    /* background: #ffedd5; nice color but adds excess of blusihness */
+    /* background: rgba(254, 190, 200, .5); sorta nice. getting closer */
+    /* background: rgba(224, 180, 190, .6); getting closer */
+    /* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
     /* background: #a5f3fc; 5  not for contact page */
 }
 
@@ -66,7 +54,7 @@ html, body {
 /* TOP LANDING SECTION */
 .top-landing-page {
     background-image: url('../images/top_background.jpeg');
-    background-size: cover; /* or contain? */
+    background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -100,6 +88,10 @@ html, body {
     font-size: 2.4rem;
 }
 
+.top-quote > i {
+    color: rgba(219, 153, 36, 1);
+}
+
 .request-button {
     inset: all;
     border: none;
@@ -109,24 +101,18 @@ html, body {
     font-size: 12px;
     border-radius: 5px;
     padding: 10px 13px;
-    /* color: #EFC506; */
     color: rgba(219, 153, 36, 1);
     /* background: rgba(1, 36, 86, 0.8392156862745098); */
     background: rgba(33, 80, 173, 1);
-    /* border: 1px solid rgba(3, 6, 51, 1); */
 }
 
 .request-button:hover {
-    /* color: rgba(219, 153, 36, 1);
-    background: rgba(33, 80, 173, 1); */
     background: rgba(16, 28, 86, 1);
-    /* border: 1px solid white; */
 }
 
 .top-mid-quote {
     text-align: center;
     color: rgba(3, 6, 51, 1);
-    /* font-family: s; */
     font-size: 24px;
     font-weight: 500;
 }
@@ -195,29 +181,25 @@ html, body {
 }
 
 .head-logo {
-    background-image: url('../images/rwags-logo.png');
-    background-size: contain; /* or contain? */
-    background-repeat: no-repeat;
     position: relative;
-
     width: 180px;
     height: 120px;
-    /* border-bottom: 2px solid rgba(219, 153, 36, 1);
-    border-bottom-width: 4px; */
 }
 
 .head-logo a {
-    position: absolute;  /* Positioning the link within the container */
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Ensures the link covers the full container */
+    width: 100%;
     height: 100%;
-    z-index: 10;
+    z-index: 2;
 }
 
-/* #services {
-    border: 1px solid black;
-} */
+.head-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
 /* DROPDOWN MENU */
 #dropdown-menu {
@@ -227,17 +209,11 @@ html, body {
     box-sizing: border-box;
     width: 200px;
     height: auto;
-    /* background: rgba(14, 165, 233, .8); */
     background: rgba(1, 36, 86, .9);
-    /* border: 1px solid rgba(219, 153, 36, 1); */
-    /* rgba(2, 132, 199, */
     padding: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */
-    /* transform: translateY(-10px); Initial transform state */
-    /* pointer-events: none; */
-    z-index: 2;
+    z-index: 3;
 }
 
 #dropdown-menu > a {
@@ -257,6 +233,7 @@ html, body {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 18px;
+    font-weight: 600;
 }
 
 /* MOBILE MENU */
@@ -293,7 +270,7 @@ html, body {
 /* nav overlay dialog menu */
 #mobile-dialog {
     display: none;
-    position: fixed; /* Position fixed to cover the whole screen  */
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -314,7 +291,6 @@ html, body {
     justify-content: center;
     height: 100%;
     width: 100%;
-    /* border: 1px solid red; */
     position: relative;
 }
 
@@ -325,13 +301,10 @@ html, body {
     right: 10px;
     display: flex;
     justify-content: end;
-    /* border: 1px solid pink; */
-    /* padding: 3px; */
     width: 100%;
 }
 
 .dialog-lnks-wrap {
-    /* border: 1px solid black; */
     min-height: 300px;
 }
 
@@ -361,7 +334,6 @@ html, body {
 
 .dialog-lnks-wrap .head-link-item > .unselected,
 .dialog-lnks-wrap .head-link-item.unselected {
-    /* color: rgba(1, 36, 86, 1); */
     color: white;
     font-size: 28px;
     cursor: pointer;
@@ -388,12 +360,10 @@ html, body {
     gap: 4px;
     padding-top: 7px;
     padding-bottom: 7px;
-    /* border: 1px solid black; */
 }
 
 #nav-srvc-menu a {
     color: rgba(219, 153, 36, 1);
-    /* background: rgba(1, 36, 86, .3); */
     background: rgba(14, 165, 233, .4);
     border-radius: 5px;
     padding: 4px 10px;
@@ -456,7 +426,6 @@ html, body {
     line-height: 1.2rem;
     font-size: 1rem;
     color: rgba(16, 28, 86, .8);
-    /* font-family: 'Abel'; */
 }
 
 .serv-lrn-butn {
@@ -466,7 +435,6 @@ html, body {
     border-radius: 3px;
     padding: 7px 30px;
     color: rgba(232, 123, 11, 1);
-    /* background: rgba(33, 80, 173, 1); */
     background: rgba(33, 80, 173, .8);
     min-width: max-content;
 }
@@ -477,49 +445,47 @@ html, body {
 
 .srv-img {
     height: 260px;
+}
+
+.srv-img > img {
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
 }
 
 #win-wash-wrap {
     width: 343px;
-    background: url(../images/dylan-cleanwindow-v1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 #roofgut-img-wrap {
     width: 334px;
-    background: url(../images/debris-roof-main_page.png);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 #pwrwash-img-wrap {
     width: 324px;
-    background: url(../images/power-wash.jpeg);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 #solrp-img-wrap {
     width: 324px;
     height: 265px;
-    background: url(../images/new-solar-dylan.jpeg);
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 /* quote-request-section */
 .quote-request-section {
-    background: url(../images/main-page-supp.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: left;
     min-height: 500px;
+    position: relative;
 }
 
+.quote-request-section > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+
 .req-sec-overlay {
-    /* background: rgba(220, 220, 220, 0.4); */
     background: rgba(1, 36, 86, .3);
     backdrop-filter: blur(4px);
     box-sizing: border-box;
@@ -531,6 +497,7 @@ html, body {
     flex-direction: column;
     align-items: start;
     justify-content: center;
+    z-index: 1;
 }
 
 .req-content-wrap {
@@ -541,7 +508,6 @@ html, body {
     gap: 13px;
     padding: 15px;
     max-width: 500px;
-    /* border: 1px solid red; */
 }
 
 .req-content-wrap  > span {
@@ -555,9 +521,7 @@ html, body {
 .req-button {
     all: unset;
     padding: 8px 20px;
-    /* border: 1px solid rgba(234, 179, 8, 1); */
     background: rgba(33, 80, 173, .9);
-    /* color: rgba(240, 233, 221, 1); */
     color: rgba(232, 123, 11, 1);
     font-size: 1rem;
 }
@@ -568,7 +532,6 @@ html, body {
 
 
 /* QUOTE SCROLL SECTION */
-
 #quote-slider-wrap {
     min-height: 445px;
     display: flex;
@@ -734,11 +697,6 @@ html, body {
 }
 
 .intro-img-right {
-    background-image: url(../images/main-page-about.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: inherit;
-
     box-sizing: border-box;
     display: block;
     aspect-ratio: 1 / 1.22;
@@ -746,6 +704,11 @@ html, body {
     max-width: 350px;
     height: auto;
     object-fit: contain;
+}
+
+.intro-img-right > img {
+    width: 100%;
+    height: 100%;
 }
 
 .req-link {
@@ -777,8 +740,6 @@ html, body {
     min-height: 400px;
     display: flex;
     justify-content: center;
-    /* background: rgba(2, 6, 23, .8); */
-    /* background: rgba(217, 119, 6, .7); */
     background: rgba(14, 165, 233, .9);
 }
  
@@ -805,11 +766,8 @@ html, body {
 }
  
 .footer-logo {
-    background-image: url('../images/rwags-logo.png');
-    background-size: cover; /* or cover? */
-    background-repeat: no-repeat;
+    box-sizing: border-box;
     background-color: rgba(234, 179, 8, .9);
-
     display: block;
     aspect-ratio: 1.53 / 1;
     width: 90%;
@@ -817,6 +775,11 @@ html, body {
     height: auto;
     border: 1px solid rgba(234, 179, 8, .9);
     border-radius: 5px;
+}
+
+.footer-logo > img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -846,16 +809,13 @@ html, body {
 }
 
 .foot-link > a {
-    /* text-decoration: none; 
-    color: inherit; */
-    /* color: rgba(1, 36, 86, 0.94); */
     color: rgba(219, 153, 36, 1);
     font-size: 1rem;
+    font-weight: 500;
 }
 
 
 /* MEDIA QUERIES */
-
 @media screen and (width < 741px) {
     #top-landing-page {
         justify-content: end;
@@ -921,7 +881,6 @@ html, body {
 
     /* LOWER INTRO WRAP */
     .intro-wrap {
-        /* display: flex; */
         flex-direction: column;
         min-width: 330px;
         padding-bottom: 45px;
@@ -1014,12 +973,10 @@ html, body {
     .req-sec-overlay {
         align-items: center;
         padding-left: 0px;
-
     }
 
     .req-content-wrap > span {
         font-size: 3rem;
-        
     }
 
     /* footer  */

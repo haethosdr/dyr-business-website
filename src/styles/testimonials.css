@@ -35,9 +35,9 @@ a {
 html, body {
     margin: 0;
     padding: 0;
-    /* background: rgba(240, 233, 221, 1); */
     font-size: 16px;
-    background: #e0f2fe;
+    /* background: #e0f2fe; */
+    background: rgba(201, 170, 180, .3);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -53,7 +53,8 @@ html, body {
 #landing-wrap {
     /* background-image: url('../images/testimonials-background.png'); */
     /* background-image: url('../images/ocean-view-rwags.jpeg'); */
-    background-image: url('../images/services-background.png');
+    /* background-image: url('../images/services-background.png'); */
+    background-image: url('../images/roof-window.png');
     background-size: cover; /* or contain? */
     background-repeat: no-repeat;
     background-position: center;
@@ -73,7 +74,7 @@ html, body {
     height: 80vh;
     width: 100%;
     /* background: rgba(208, 203, 223, 0.5); */
-    background: rgba(215, 180, 150, 0.3);
+    background: rgba(215, 180, 230, 0.3);
     backdrop-filter: blur(3px);
     z-index: 1;
 }
@@ -177,11 +178,7 @@ html, body {
 }
 
 .head-logo {
-    background-image: url('../images/rwags-logo.png');
-    background-size: contain; /* or contain? */
-    background-repeat: no-repeat;
     position: relative;
-
     width: 180px;
     height: 120px;
 }
@@ -192,7 +189,13 @@ html, body {
     left: 0;
     width: 100%; /* Ensures the link covers the full container */
     height: 100%;
-    z-index: 10;
+    z-index: 2;
+}
+
+.head-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* HEADER: SELECTED PAGE LINK */
@@ -245,6 +248,7 @@ html, body {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 18px;
+    font-weight: 600;
 }
 
 /* MOBILE MENU */
@@ -409,7 +413,7 @@ section > .quote-main-wrap {
 .quote-main-intro {
     font-family: 'Noto Sans';
     text-align: center;
-    max-width: 600px;
+    max-width: 750px;
     font-size: 1.2rem;
     font-weight: 600;
     color: rgba(16, 28, 86, 1);
@@ -429,7 +433,7 @@ section > .quote-main-wrap {
 }
 
 .divider-spn {
-    width: 70%;
+    width: 65%;
     height: 2.5px;
     background: #0369a1;
 }
@@ -482,13 +486,12 @@ section > .quote-main-wrap {
     /* width: 430px; */
 }
 
+
 /* FOOTER SECTION */
 .index-footer {
     min-height: 400px;
     display: flex;
     justify-content: center;
-    /* background: rgba(2, 6, 23, .8); */
-    /* background: rgba(217, 119, 6, .7); */
     background: rgba(14, 165, 233, .9);
 }
  
@@ -515,11 +518,8 @@ section > .quote-main-wrap {
 }
  
 .footer-logo {
-    background-image: url('../images/rwags-logo.png');
-    background-size: cover; /* or cover? */
-    background-repeat: no-repeat;
+    box-sizing: border-box;
     background-color: rgba(234, 179, 8, .9);
-
     display: block;
     aspect-ratio: 1.53 / 1;
     width: 90%;
@@ -527,6 +527,11 @@ section > .quote-main-wrap {
     height: auto;
     border: 1px solid rgba(234, 179, 8, .9);
     border-radius: 5px;
+}
+
+.footer-logo > img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -544,10 +549,10 @@ section > .quote-main-wrap {
 
 #phone-number {
     font-size: 2.5rem;
+    color: rgba(240, 233, 221, 1);
 }
 
 #phone-number > a {
-    text-decoration: none; /* Removes the underline */
     color: inherit;
 }
 
@@ -556,12 +561,11 @@ section > .quote-main-wrap {
 }
 
 .foot-link > a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit;
-    /* color: rgba(1, 36, 86, 0.94); */
     color: rgba(219, 153, 36, 1);
     font-size: 1rem;
+    font-weight: 500;
 }
+
 
 @media screen and (width < 741px) { 
 

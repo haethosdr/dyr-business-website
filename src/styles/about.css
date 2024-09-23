@@ -1,11 +1,4 @@
 /* about.css */
-/* @font-face {
-    font-family: 'Aboreto';
-    src: url('../fonts/Aboreto/Aboreto-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
-} */
-
 @font-face {
     font-family: 'Abel';
     src: url('../fonts/Abel/Abel-Regular.ttf');
@@ -15,7 +8,6 @@
 
 @font-face {
     font-family: 'Alegreya SC';
-    /* src: url('../fonts/AlegreyaSC-Medium.ttf'); */
     src: url('../fonts/AlegreyaSC-Bold.ttf');
     font-weight: medium;
     font-style: normal;
@@ -24,11 +16,6 @@
 @font-face {
     font-family: 'Noto Sans';
     src: url('../fonts/Noto_Sans/NotoSans-VariableFont_wdth\,wght.ttf');
-}
-
-
-:root {
-    --ffff-ffff: rgb(1, 1, 1);
 }
 
 * {
@@ -49,7 +36,7 @@ html, body {
     padding: 0;
     /* background: rgba(240, 233, 221, 1); */
     /* background: rgba(245, 224, 224, 1); */
-    background: #e0f2fe;
+    background: rgba(201, 170, 180, .3);
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -178,9 +165,6 @@ html, body {
 }
 
 .head-logo {
-    background-image: url('../images/rwags-logo.png');
-    background-size: contain; /* or contain? */
-    background-repeat: no-repeat;
     position: relative;
     width: 180px;
     height: 120px;
@@ -192,7 +176,13 @@ html, body {
     left: 0;
     width: 100%; /* Ensures the link covers the full container */
     height: 100%;
-    z-index: 10;
+    z-index: 2;
+}
+
+.head-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 
@@ -219,7 +209,7 @@ html, body {
     padding-bottom: 10px;
     /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */
     /* transform: translateY(-10px); Initial transform state */
-    z-index: 2;
+    z-index: 3;
 }
 
 #dropdown-menu > a {
@@ -241,6 +231,7 @@ html, body {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 18px;
+    font-weight: 600;
 }
 
 /* MOBILE MENU */
@@ -470,37 +461,14 @@ section > .about-cont-wrap {
     z-index: 0;
 }
 
-#img-1 {
-    background-image: url('../images/about0us-clean0img.png');
-    /* background-size: cover; */
-    background-size: contain;
-    background-repeat: no-repeat;
-    /* background-position: center; */
+.img-cont > img {
+    width: 100%;
+    height: 100%;
 }
 
-#img-2 {
-    background-image: url('../images/dylan_photo.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-#img-3 {
-    background-image: url('../images/dylan-windwgut.jpg');
-    background-size: contain; 
-    background-repeat: no-repeat;
-}
-
-#img-4 {
-    background-image: url('../images/about-us_dad-on-ladder-dealership.png');
-    background-size: contain; 
-    background-repeat: no-repeat;
-}
-
-#img-5 {
-    background-image: url('../images/aboutus-photo-dealer.png');
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center;
+#img-5 > img {
+    object-fit: cover;
+    object-position: center;
 }
 
 /* img slider buttons */
@@ -623,8 +591,6 @@ section > .about-cont-wrap {
     min-height: 400px;
     display: flex;
     justify-content: center;
-    /* background: rgba(2, 6, 23, .8); */
-    /* background: rgba(217, 119, 6, .7); */
     background: rgba(14, 165, 233, .9);
 }
  
@@ -651,11 +617,8 @@ section > .about-cont-wrap {
 }
  
 .footer-logo {
-    background-image: url('../images/rwags-logo.png');
-    background-size: cover; /* or cover? */
-    background-repeat: no-repeat;
+    box-sizing: border-box;
     background-color: rgba(234, 179, 8, .9);
-
     display: block;
     aspect-ratio: 1.53 / 1;
     width: 90%;
@@ -663,6 +626,11 @@ section > .about-cont-wrap {
     height: auto;
     border: 1px solid rgba(234, 179, 8, .9);
     border-radius: 5px;
+}
+
+.footer-logo > img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -683,7 +651,6 @@ section > .about-cont-wrap {
 }
 
 #phone-number > a {
-    text-decoration: none; /* Removes the underline */
     color: inherit;
 }
 
@@ -692,11 +659,9 @@ section > .about-cont-wrap {
 }
 
 .foot-link > a {
-    text-decoration: none; /* Removes the underline */
-    color: inherit;
-    /* color: rgba(1, 36, 86, 0.94); */
     color: rgba(219, 153, 36, 1);
     font-size: 1rem;
+    font-weight: 500;
 }
 
 /* MEDIA QUERIES */
@@ -785,7 +750,6 @@ section > .about-cont-wrap {
     section > .about-cont-wrap {
         padding-right: .5rem;
         padding-left: .5rem;
-        border: 1px solid red;
     }
 
     /* img slider */
