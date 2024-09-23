@@ -1,17 +1,5 @@
 /* index.css */
 @font-face {
-    font-family: 'Aboreto';
-    src: url('../fonts/Aboreto/Aboreto-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'Abel';
-    src: url('../fonts/Abel/Abel-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'Alegreya SC';
     src: url('../fonts/AlegreyaSC-Bold.ttf');
     font-weight: medium;
@@ -38,16 +26,9 @@ html, body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    background: rgba(201, 170, 180, .3); /* can change red to 205 */
+    background: rgba(201, 170, 180, .3);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* background: #fecdd3;  rose section. this could be used somehow */
-    /* background: #fda4af; rose section. possible? unsure here */
-    /* background: #ffedd5; nice color but adds excess of blusihness */
-    /* background: rgba(254, 190, 200, .5); sorta nice. getting closer */
-    /* background: rgba(224, 180, 190, .6); getting closer */
-    /* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
-    /* background: #a5f3fc; 5  not for contact page */
 }
 
 
@@ -102,7 +83,6 @@ html, body {
     border-radius: 5px;
     padding: 10px 13px;
     color: rgba(219, 153, 36, 1);
-    /* background: rgba(1, 36, 86, 0.8392156862745098); */
     background: rgba(33, 80, 173, 1);
 }
 
@@ -128,7 +108,6 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* background-color: rgba(219, 153, 36, .3); */
 }
 
 .header-links {
@@ -166,7 +145,6 @@ html, body {
     color: rgba(1, 36, 86, 1);
     font-size: 22px;
     font-weight: 800;
-    /* font-family: 'Alegreya SC'; */
 }
 
 .head-link-item > .unselected:hover,
@@ -319,17 +297,17 @@ html, body {
 }
 
 .nav-close-btn {
-    display: inline-flex; /* Use flex to center SVG */
-    align-items: center;   /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    padding: 0; /* Remove default padding */
-    width: 35px; /* Set desired width */
-    height: 35px; /* Set desired height */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 0; 
+    width: 35px;
+    height: 35px;
     border: 1px solid white;
     border-radius: 5px;
     fill: white;
     background: rgba(1, 1, 1, .4);
-    cursor: pointer; /* Change cursor to pointer */
+    cursor: pointer;
 }
 
 .dialog-lnks-wrap .head-link-item > .unselected,
@@ -369,7 +347,6 @@ html, body {
     padding: 4px 10px;
 }
 
-
 /* Serve main Quote */
 .sec-quote {
     display: flex;
@@ -384,7 +361,6 @@ html, body {
     font-size: 30px;
     padding: 10px;
     text-align: center;
-    /* color: rgba(16, 28, 86, 1); */
     color: rgba(1, 36, 86, 0.94);
     letter-spacing: .1rem;
 }
@@ -530,7 +506,6 @@ html, body {
     background: rgba(1, 36, 86, 1);
 }
 
-
 /* QUOTE SCROLL SECTION */
 #quote-slider-wrap {
     min-height: 445px;
@@ -639,7 +614,6 @@ html, body {
 }
 
 /* LOWER INTRO SECTION  */
-
 .intro-wrap {
     min-height: 650px;
     padding-top: 30px;
@@ -725,7 +699,6 @@ html, body {
     font-size: 12px;
     border-radius: 3px;
     padding: 10px 30px;
-    color: #EFC506;
     color: rgba(219, 153, 36, 1);
     background: rgba(33, 80, 173, 1);
 }
@@ -735,12 +708,22 @@ html, body {
 }
 
 /* FOOTER SECTION */
-
 .index-footer {
     min-height: 400px;
     display: flex;
     justify-content: center;
     background: rgba(14, 165, 233, .9);
+    position: relative;
+}
+
+#siteInfo {
+    display: none;
+    position: absolute;
+    top: 5;
+}
+
+#siteInfo > span {
+    color: rgba(255, 255, 255, .8);
 }
  
 .logo-foot-wrap {
@@ -899,6 +882,10 @@ html, body {
         justify-content: center;
         align-items: center;
         padding-bottom: 30px;
+    }
+
+    .foot-contact-left > h2 {
+        text-align: center;
     }
 
     #phone-number {

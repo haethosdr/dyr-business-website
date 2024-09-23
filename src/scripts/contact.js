@@ -5,7 +5,6 @@ import '../styles/contact.css';
 console.log("from contact.js");
 
 const elem = (prop, par) => (par || document).querySelector(prop);
-// const elems = (prop, par) => (par || document).querySelectorAll(prop);
 
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector('#contact-form');
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
-    // serviceMenuLink.getBoundingClientRect();
 
     const toggleMenuDisplay = function () {
       dropDownMenu.style.top = `${serviceMenuLink.offsetTop + 40}px`;
@@ -53,16 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // nav subservice menu opening
-    const subNavbtn = elem('#services-nav');
-    const subNavDisplay = elem('#nav-srvc-menu');
+    const subNavbtn = document.querySelector('#services-nav');
+    const subNavDisplay = document.querySelector('#nav-srvc-menu');
+    const servicesSymb = document.querySelector('.dia-menu-symb');
     subNavbtn.addEventListener('click', () => {
         if (subNavDisplay.style.display === 'none') {
             subNavDisplay.style.display = 'flex';
-        } else subNavDisplay.style.display = 'none';
+            servicesSymb.textContent = '-';
+        } else {
+            subNavDisplay.style.display = 'none';
+            servicesSymb.textContent = '+';
+        }
     });
 
     submitButton.addEventListener('submit', () => {
-
         contactForm.clear();
     });
 

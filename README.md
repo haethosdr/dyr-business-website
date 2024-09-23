@@ -128,16 +128,14 @@ benefits of : "service"
 11. need to try and add img element for SEO + add alt attributes (basically done)
 13. might need to move footer logo into img element (done)
 
-
+9/22
+1. copy SEO content to other pages.
+2. clear out all unused fonts, images, selectors, elements that are not being used. (wait until dylan sees to asses this) (mostly done. try npm package)
+3. need to put in hidden info as display hidden. footer links to facebook and yelp. + footer telephone link. see crystal panes to understand.
+4. make xml map (need to do after site is live and hosted.)
+5. get domain info + sign up for digital ocean
+6. add google tag manager script on webpage head section to track SEO keywords
+7. use webpack plugins for seo/xmlsitemap/other
 
 " for a brighter day. " on contact page part should be lighter blue
-
-9/22
-5. copy SEO content to other pages.
-6. clear out all unused fonts, images, selectors, elements that are not being used. (wait until dylan sees to asses this) 
-12. need to put in hidden info as display hidden. footer links to facebook and yelp. + footer telephone link. see crystal panes to understand.
-8. make xml map (need to do after site is live and hosted.)
-9. get domain info + sign up for digital ocean
-10. add google tag manager script on webpage head section to track SEO keywords
-
-14. use webpack plugins for seo/xmlsitemap/other
+cleared A Better View of Excellent Service from top-mid-quote class
