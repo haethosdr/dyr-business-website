@@ -137,10 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // nav subservice menu opening
     const subNavbtn = document.querySelector('#services-nav');
     const subNavDisplay = document.querySelector('#nav-srvc-menu');
+    const servicesSymb = document.querySelector('.dia-menu-symb');
     subNavbtn.addEventListener('click', () => {
         if (subNavDisplay.style.display === 'none') {
             subNavDisplay.style.display = 'flex';
-        } else subNavDisplay.style.display = 'none';
+            servicesSymb.textContent = '-';
+        } else {
+            subNavDisplay.style.display = 'none';
+            servicesSymb.textContent = '+';
+        }
     });
 
 });

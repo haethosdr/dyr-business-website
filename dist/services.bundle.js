@@ -100,8 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
 
-    // const srvcDiv = elem('.menu-drop'); same effect.
-
     const toggleMenuDisplay = function () {
       dropDownMenu.style.top = `${serviceMenuLink.offsetTop + 40}px`;
       dropDownMenu.style.left = `${serviceMenuLink.offsetLeft}px`;
@@ -117,12 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
         dropDownMenu.style.display = 'none';
         console.log("mouseout");
     });
-
-    // serviceMenuLink.addEventListener('click', () => {
-    //     if (dropDownMenu.style.display === 'flex') {
-    //         dropDownMenu.style.display = 'none';
-    //     } else toggleMenuDisplay();
-    // });
 
     dropDownMenu.addEventListener('mouseover', () => {
         toggleMenuDisplay();
@@ -154,10 +146,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // nav subservice menu opening
     const subNavbtn = document.querySelector('#services-nav');
     const subNavDisplay = document.querySelector('#nav-srvc-menu');
+    const servicesSymb = document.querySelector('.dia-menu-symb');
     subNavbtn.addEventListener('click', () => {
         if (subNavDisplay.style.display === 'none') {
             subNavDisplay.style.display = 'flex';
-        } else subNavDisplay.style.display = 'none';
+            servicesSymb.textContent = '-';
+        } else {
+            subNavDisplay.style.display = 'none';
+            servicesSymb.textContent = '+';
+        }
     });
 });
 /******/ })()

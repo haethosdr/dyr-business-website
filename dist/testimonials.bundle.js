@@ -68,7 +68,6 @@ console.log("from testimonials.js");
 document.addEventListener('DOMContentLoaded', () => {
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
-    // serviceMenuLink.getBoundingClientRect();
 
     const toggleMenuDisplay = function () {
       dropDownMenu.style.top = `${serviceMenuLink.offsetTop + 40}px`;
@@ -110,11 +109,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // nav subservice menu opening
     const subNavbtn = document.querySelector('#services-nav');
     const subNavDisplay = document.querySelector('#nav-srvc-menu');
+    const servicesSymb = document.querySelector('.dia-menu-symb');
     subNavbtn.addEventListener('click', () => {
         if (subNavDisplay.style.display === 'none') {
             subNavDisplay.style.display = 'flex';
-        } else subNavDisplay.style.display = 'none';
+            servicesSymb.textContent = '-';
+        } else {
+            subNavDisplay.style.display = 'none';
+            servicesSymb.textContent = '+';
+        }
     });
+
 });
 /******/ })()
 ;
