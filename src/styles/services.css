@@ -4,6 +4,7 @@
     src: url('../fonts/AlegreyaSC-Bold.ttf');
     font-weight: medium;
     font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -639,7 +640,7 @@ section > .about-cont-wrap {
     min-height: 400px;
     display: flex;
     justify-content: center;
-    background: rgba(14, 165, 233, .9);
+    background: rgba(14, 165, 233, 1);
 }
  
 .logo-foot-wrap {

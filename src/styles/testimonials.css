@@ -5,11 +5,13 @@
     src: url('../fonts/AlegreyaSC-Bold.ttf');
     font-weight: medium;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Noto Sans';
     src: url('../fonts/Noto_Sans/NotoSans-VariableFont_wdth\,wght.ttf');
+    font-display: swap;
 }
 
 * {
@@ -446,7 +448,7 @@ section > .quote-main-wrap {
     min-height: 400px;
     display: flex;
     justify-content: center;
-    background: rgba(14, 165, 233, .9);
+    background: rgba(14, 165, 233, 1);
 }
  
 .logo-foot-wrap {

@@ -129,13 +129,44 @@ benefits of : "service"
 13. might need to move footer logo into img element (done)
 
 9/22
-1. copy SEO content to other pages.
 2. clear out all unused fonts, images, selectors, elements that are not being used. (wait until dylan sees to asses this) (mostly done. try npm package)
-3. need to put in hidden info as display hidden. footer links to facebook and yelp. + footer telephone link. see crystal panes to understand.
-4. make xml map (need to do after site is live and hosted.)
-5. get domain info + sign up for digital ocean
-6. add google tag manager script on webpage head section to track SEO keywords
-7. use webpack plugins for seo/xmlsitemap/other
 
 " for a brighter day. " on contact page part should be lighter blue
-cleared A Better View of Excellent Service from top-mid-quote class
+cleared a Better View of Excellent Service from top-mid-quote class
+
+9/23
+1. copy SEO content to other pages.
+2. need to put in hidden info as display hidden. footer links to facebook and yelp. + footer telephone link. see crystal panes to understand.
+3. make xml map (need to do after site is live and hosted.) (or use npm/webpack)
+4. do SEO steps.
+5. add a few more backlinks on the different pages.
+6. make sure all alt text is available ofr everything. (basically done)
+5. get domain info + sign up for digital ocean
+6. add google tag manager script on webpage head section to track SEO keywords
+
+7. add descript "You dont need to be home unless you would like to be."
+and "
+8. italicise quote section
+
+For SEO:
+1. each title and description should be slightly different for each page. Hope page is one that will show on google.
+2. compress images. have different image sizes for different screen sized. THIS IS A MUST.
+3. Robots.txt
+4. use Google Chrome Lighthouse to text SEO, accesability, speed/performance, etc.
+5. add FAQ page that is hidden except in mobile menu?
+6. need to compress images to WebP or AVIF for last bit of performance.
+   -Q: webpack/npm plug-in for conversions?
+7. pages should have name in them: Bay Area Roof Cleaning, Bay Area Gutter and Roof Cleaning, San Carlos Solar Panel Cleaning, etc
+www.rwags.com/bay-area-window-cleaning
+www.rwags.com/bay-area-roof-gutter-cleaning   .. etc
+
+Each page description should have something diffferent. office hours, call us, etc
+8. get a nextdoor page so it shows up. put meta data in sight.
+9. post 3-5 videos w/ title on youtube.
+10. better business bureau profile.
+11. links to linked in, yelp, facebook instagram page somewhere hidden in footer
+12. mention countes. Santa Clara, San Mateo, etc.
+13. SSL/HTTPS certificate. Almost everyone uses it. make sure you use it. digital ocean should do.
+14. prevent dead links.
+15. have a usefull 404 page.
+16. "Serving the greater South Bay Area"

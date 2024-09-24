@@ -4,11 +4,13 @@
     src: url('../fonts/AlegreyaSC-Bold.ttf');
     font-weight: medium;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Noto Sans';
     src: url('../fonts/Noto_Sans/NotoSans-VariableFont_wdth\,wght.ttf');
+    font-display: swap;
 }
 
 * {
@@ -518,6 +520,8 @@ section > .about-cont-wrap {
     background: rgba(33, 80, 173, .8);
     max-width: 180px;
     cursor: pointer;
+    font-weight: 550;
+    font-size: 1rem;
 }
 
 .about-botm-btn:hover {
@@ -546,7 +550,7 @@ section > .about-cont-wrap {
     min-height: 400px;
     display: flex;
     justify-content: center;
-    background: rgba(14, 165, 233, .9);
+    background: rgba(14, 165, 233, 1);
 }
  
 .logo-foot-wrap {
