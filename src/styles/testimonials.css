@@ -30,6 +30,7 @@ html, body {
     background: rgba(201, 170, 180, .3);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 
@@ -41,7 +42,7 @@ html, body {
 
 /* ABOUT TOP LANDING */
 #landing-wrap {
-    background-image: url('../images/roof-window.png');
+    background-image: url('../images/roof-window.jpeg');
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: center;
@@ -442,13 +443,80 @@ section > .quote-main-wrap {
     padding-bottom: 7px;
 }
 
+/* preFooter */
+#preFooter {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+.svg-icon--list {
+    display: flex;
+    gap: 8px;
+    width: max-content;
+    height: max-content;
+    padding: 25px;
+}
+
+.svg-icon--list a {
+    color: rgb(16, 44, 100);
+    text-decoration: none;
+    background: transparent;
+    border-radius: 50%;
+}
+
+
+.svg-icon--wrapper {
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 0 0 2px inset;
+    border: none;
+}
+
+.svg-icon--social {
+    background-color: inherit;
+    color: #c9c9c9;
+    border-radius: 50%;
+}
+
+.facebook > .use--icon {
+    fill: white;
+}
+
+.yelp > .use--icon {
+    fill: red;
+}
+
+.use--mask {
+    fill: rgba(14, 165, 233, 1);
+    border-radius: 50%;
+}
+
+.yelp > .use--mask {
+    fill: transparent;
+}
+
 
 /* FOOTER SECTION */
 .index-footer {
-    min-height: 400px;
+    min-height: 430px;
     display: flex;
     justify-content: center;
     background: rgba(14, 165, 233, 1);
+    position: relative;
+}
+
+#siteInfo {
+    display: none;
+    position: absolute;
+    top: 5;
+}
+
+#siteInfo > span {
+    color: rgba(255, 255, 255, .8);
 }
  
 .logo-foot-wrap {
@@ -466,7 +534,20 @@ section > .quote-main-wrap {
     box-sizing: border-box;
     padding-left: 10px;
     padding-right: 10px;
-    max-width: 400px;
+    max-width: 430px;
+}
+
+.foot-contact-left > h2 {
+    margin: 0;
+    font-size: 1.7rem;
+}
+
+.foot-contact-left > h3 {
+    color: rgba(234, 179, 8, 1);
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Noto Sans';
 }
 
 .foot-contact-left > span {
@@ -501,11 +582,19 @@ section > .quote-main-wrap {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    padding-top: 25px;
+    padding-bottom: 5px;
 }
 
 #phone-number {
+    margin: 0;
+    padding: 0;
+    width: max-content;
     font-size: 2.5rem;
     color: rgba(240, 233, 221, 1);
+    border-bottom: .1px solid rgba(240, 233, 221, .4);
+    padding-bottom: 3px;
+    font-family: 'Noto Sans';
 }
 
 #phone-number > a {
@@ -516,9 +605,13 @@ section > .quote-main-wrap {
     color: rgba(219, 153, 36, .8);
 }
 
+.foot-link {
+    border-bottom: .1px solid rgba(240, 233, 221, .4);
+}
+
 .foot-link > a {
-    color: rgba(219, 153, 36, 1);
-    font-size: 1rem;
+    color: rgba(240, 233, 221, 1);
+    font-size: .9rem;
     font-weight: 500;
 }
 
@@ -578,17 +671,12 @@ section > .quote-main-wrap {
         text-align: center;
     }
 
-    #phone-number {
-        margin: 0;
-        padding: 5px;
-    }
-
     #phone-number > a:active {
         color: rgba(219, 153, 36, 1);
     }
 
     .foot-links {
-        padding-top: 5px;
+        padding-top: 35px;
         padding-bottom: 5px;
     }
 

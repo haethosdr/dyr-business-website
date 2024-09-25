@@ -136,7 +136,7 @@ cleared a Better View of Excellent Service from top-mid-quote class
 
 9/23
 1. copy SEO content to other pages.
-2. need to put in hidden info as display hidden. footer links to facebook and yelp. + footer telephone link. see crystal panes to understand.
+2. need to put in hidden info as display hidden. footer links to facebook and yelp. + footer telephone link.(done)
 3. make xml map (need to do after site is live and hosted.) (or use npm/webpack)
 4. do SEO steps.
 5. add a few more backlinks on the different pages.
@@ -146,7 +146,8 @@ cleared a Better View of Excellent Service from top-mid-quote class
 
 7. add descript "You dont need to be home unless you would like to be."
 and "
-8. italicise quote section
+8. italicise quote section (done)
+9. when i close menu, it needs to reset the service from - to + (done)
 
 For SEO:
 1. each title and description should be slightly different for each page. Hope page is one that will show on google.
@@ -164,9 +165,15 @@ Each page description should have something diffferent. office hours, call us, e
 8. get a nextdoor page so it shows up. put meta data in sight.
 9. post 3-5 videos w/ title on youtube.
 10. better business bureau profile.
-11. links to linked in, yelp, facebook instagram page somewhere hidden in footer
+11. links to linked in, yelp, facebook instagram page somewhere hidden in footer (done)
 12. mention countes. Santa Clara, San Mateo, etc.
 13. SSL/HTTPS certificate. Almost everyone uses it. make sure you use it. digital ocean should do.
 14. prevent dead links.
 15. have a usefull 404 page.
-16. "Serving the greater South Bay Area"
+16. "Serving the greater South Bay Area" (done ?)
+
+9/24
+1. get dev server to test links /w no index.html in them
+2. copy SEO manually. dont worry about npm/webpack packages
+3. still slightly unhappy about About page colors/look
+4. Q: cani modify content on website, etc without it affecting anything with google?
