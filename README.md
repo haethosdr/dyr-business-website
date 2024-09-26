@@ -173,7 +173,9 @@ Each page description should have something diffferent. office hours, call us, e
 16. "Serving the greater South Bay Area" (done ?)
 
 9/24
-1. get dev server to test links /w no index.html in them
+1. get dev server to test links /w no index.html in them (done)
 2. copy SEO manually. dont worry about npm/webpack packages
-3. still slightly unhappy about About page colors/look
-4. Q: cani modify content on website, etc without it affecting anything with google?
+3. still slightly unhappy about About page colors/look (better)
+4. Q: can i modify content on website, etc without it affecting anything with google? generally okay if nothing significant. can be positive if its the right stuff.
+5. finish updating links e.g. ../about , ../index.html on other pages apart from index and about page (done)
+6. change color of img scroll buttons (blusish?, white ?, other?)

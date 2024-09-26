@@ -173,7 +173,7 @@ html, body {
 /* HEADER: SELECTED PAGE LINK */
 .selected-link {
     color: rgba(219, 153, 36, 1);
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 800;
 }
 
@@ -464,15 +464,15 @@ section > .about-cont-wrap {
     width: 100%;
     height: 100%;
     transform: rotate(90deg);
-    fill: rgba(234, 179, 8, .9);
+    fill: #7dd3fc;
 }
 
 #Capa_l {
     width: 100%;
     height: 100%;
     transform: rotate(270deg);
-    fill: rgba(234, 179, 8, .9);
-    /* fill: rgba(14, 165, 233, .9); */
+    /* fill: rgba(234, 179, 8, .9); */
+    fill: #7dd3fc;
 }
 
 
@@ -499,6 +499,12 @@ section > .about-cont-wrap {
 .contus-insd-wrap > h2 {
     color: rgba(232, 123, 11, .9);
     margin: 0;
+    font-family: 'Noto Sans';
+}
+
+.contus-insd-wrap > h3 {
+    color: rgba(16, 28, 86, 1);
+    font-family: 'Noto Sans';
 }
 
 .contactus-bottom-wrap > div {
@@ -514,19 +520,22 @@ section > .about-cont-wrap {
     box-sizing: border-box;
     all: unset;
     text-align: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 3px;
     padding: 5px 20px;
-    color: rgba(232, 123, 11, 1);
-    background: rgba(33, 80, 173, .8);
+    /* color: rgba(232, 123, 11, 1); */
+    color: white;
+    background: rgba(33, 80, 173, 1);
     max-width: 180px;
     cursor: pointer;
     font-weight: 550;
     font-size: 1rem;
+    font-family: 'Noto Sans';
 }
 
 .about-botm-btn:hover {
-    background: rgba(33, 80, 173, 1);
+    /* background: rgba(20, 38, 100, .9); */
+    color: rgba(232, 123, 11, 1);
 }
 
 /* DIVIDER */
@@ -541,9 +550,9 @@ section > .about-cont-wrap {
 }
 
 .divider-spn {
-    width: 70%;
+    width: 65%;
     height: 2.5px;
-    background: #0369a1;
+    background: rgba(33, 80, 173, 1);
 }
 
 /* preFooter */

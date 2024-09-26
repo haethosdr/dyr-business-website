@@ -166,7 +166,7 @@ html, body {
 }
 
 .selected-link {
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 800;
     color: rgba(219, 153, 36, 1);
 }
@@ -420,7 +420,7 @@ html, body {
 .serv-lrn-butn {
     all: unset;
     text-align: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     font-size: 1rem;
     font-weight: 550;
     border-radius: 3px;
@@ -432,6 +432,7 @@ html, body {
 
 .serv-lrn-butn:hover {
     background: rgba(16, 28, 86, 1);
+    /* border: .5px solid white; */
 }
 
 .srv-img {

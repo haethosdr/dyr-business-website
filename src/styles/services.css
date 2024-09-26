@@ -345,7 +345,7 @@ html, body {
 /* HEADER: SELECTED PAGE LINK */
 .selected-link {
     color: rgba(219, 153, 36, 1);
-    font-size: 23px;
+    font-size: 22px;
     border-radius: 3px;
     font-weight: 800;
 }

@@ -61,7 +61,7 @@ html, body {
     position: absolute;
     height: 80vh;
     width: 100%;
-    background: rgba(215, 180, 230, 0.3);
+    background: rgba(185, 180, 230, 0.3);
     backdrop-filter: blur(3px);
     z-index: 1;
 }
@@ -178,7 +178,7 @@ html, body {
 /* HEADER: SELECTED PAGE LINK */
 .selected-link {
     color: rgba(219, 153, 36, 1);
-    font-size: 23px;
+    font-size: 22px;
     border-radius: 3px;
     font-weight: 800;
 }
