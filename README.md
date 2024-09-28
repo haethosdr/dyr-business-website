@@ -174,8 +174,19 @@ Each page description should have something diffferent. office hours, call us, e
 
 9/24
 1. get dev server to test links /w no index.html in them (done)
-2. copy SEO manually. dont worry about npm/webpack packages
 3. still slightly unhappy about About page colors/look (better)
 4. Q: can i modify content on website, etc without it affecting anything with google? generally okay if nothing significant. can be positive if its the right stuff.
 5. finish updating links e.g. ../about , ../index.html on other pages apart from index and about page (done)
 6. change color of img scroll buttons (blusish?, white ?, other?)
+
+9/26
+1. copy SEO manually. dont worry about npm/webpack packages (done)
+2. make sure each page has unique seo description/etc (index, about, contact,  page done)
+3. add a few new images (maybe later)
+4. figure out other background page images.
+5. get digital ocean up, paid for, and linked to github.
+6. transfer domain name.
+7. add google map service range when the site is up
+8. Later, could make a FAQ page.
+<!-- <meta property="og:type" content="article"> (for non home page) -->
+<!-- <meta property="og:type" content="website"> (for other pages) -->

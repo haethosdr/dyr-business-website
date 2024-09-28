@@ -28,7 +28,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    background: rgba(201, 170, 180, .3);
+    background: rgba(185, 165, 175, .3);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -44,6 +44,7 @@ html, body {
 #landing-wrap {
     background-image: url('../images/top_background.jpeg');
     background-size: cover;
+    -webkit-background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
     
@@ -64,6 +65,7 @@ html, body {
     max-height: 900px;
     width: 100%;
     background: rgba(135, 121, 171, 0.3);
+    -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
     z-index: 1;
 
@@ -201,8 +203,6 @@ html, body {
     padding: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-    /* transition: opacity 0.4s ease, transform 0.4s ease; /* Transition effects */
-    /* transform: translateY(-10px); Initial transform state */
     z-index: 3;
 }
 
@@ -259,7 +259,6 @@ html, body {
     cursor: pointer;
 }
 
-
 /* nav overlay dialog menu */
 #mobile-dialog {
     display: none;
@@ -271,6 +270,7 @@ html, body {
     width: 100vw;
     height: 100vh;
     background: rgba(1, 36, 86, 0.4);
+    -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
     z-index: 1000;
     border: none;
@@ -445,7 +445,7 @@ section > .contact-info-wrap {
     padding: 0;
     margin: 0;
     color: rgba(16, 28, 86, 1);
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
 }
 
@@ -569,7 +569,6 @@ section > .contact-info-wrap {
 #form-submit {
     all: unset;
     text-align: center;
-    border: 1px solid black;
     border-radius: 3px;
     padding: 7px 30px;
     color: rgba(232, 123, 11, 1);

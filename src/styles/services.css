@@ -25,7 +25,8 @@ a {
 html, body {
     margin: 0;
     padding: 0;
-    background: rgba(245, 224, 224, 1);
+    /* background: rgba(245, 224, 224, 1); */
+    background: rgba(185, 165, 175, .3);
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -52,7 +53,8 @@ html, body {
 
 #landing-wrap-winwash {
     background-image: url('../images/top_background.jpeg');
-    background-size: cover; /* or contain? */
+    background-size: cover;
+    -webkit-background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -250,6 +252,7 @@ html, body {
     width: 100vw;
     height: 100vh;
     background: rgba(1, 36, 86, 0.4);
+    -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
     z-index: 1000;
     border: none;
