@@ -183,10 +183,8 @@ Each page description should have something diffferent. office hours, call us, e
 1. copy SEO manually. dont worry about npm/webpack packages (done)
 2. make sure each page has unique seo description/etc (index, about, contact,  page done)
 3. add a few new images (maybe later)
-4. figure out other background page images.
-5. get digital ocean up, paid for, and linked to github.
+4. figure out other background page images. (unsure still)
+5. get digital ocean up, paid for, and linked to github. (done)
 6. transfer domain name.
 7. add google map service range when the site is up
 8. Later, could make a FAQ page.
-<!-- <meta property="og:type" content="article"> (for non home page) -->
-<!-- <meta property="og:type" content="website"> (for other pages) -->
