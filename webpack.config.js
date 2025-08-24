@@ -9,8 +9,10 @@ module.exports = {
       index: './src/scripts/index.js',  // Entry point for index.html
       about: './src/scripts/about.js',  // Entry point for about.html
       contact: './src/scripts/contact.js', // Entry point for contact.html
+      blogs: './src/scripts/blogs.js',  // Entry point for blogs.html
       testimonials: './src/scripts/testimonials.js', // Entry point...
       services: './src/scripts/services.js', // Entry point....
+      locations: './src/scripts/locations.js', // Entry point....
     },
     devtool: 'source-map',
     plugins: [
@@ -40,6 +42,14 @@ module.exports = {
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['contact'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/blogs.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'blogs/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['blogs'],
         }),
         new HtmlWebpackPlugin({ 
           template: './src/pages/testimonials.html',
@@ -80,6 +90,70 @@ module.exports = {
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['services'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/gutter-cleaning-pressure-washing-los-altos.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'gutter-cleaning-pressure-washing-los-altos/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/gutter-cleaning-services-atherton.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'gutter-cleaning-services-atherton/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/gutter-window-cleaning-redwood-city.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'gutter-window-cleaning-redwood-city/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/pressure-washer-gutter-cleaning-woodside.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'pressure-washer-gutter-cleaning-woodside/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/roof-gutter-cleaning-san-carlos.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'roof-gutter-cleaning-san-carlos/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/solar-panel-window-cleaning-menlo-park.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'solar-panel-window-cleaning-menlo-park/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/window-cleaning-pressure-washing-belmont.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'window-cleaning-pressure-washing-belmont/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/window-gutter-cleaning-emerald-hills.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'window-gutter-cleaning-emerald-hills/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
         }),
     ],
     output: {
