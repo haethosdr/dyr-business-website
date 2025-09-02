@@ -155,6 +155,16 @@ module.exports = {
           scriptLoading: 'defer',
           chunks: ['locations'],
         }),
+
+        // For all the blog pages
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/blogs/affordable-and-reliable-gutter-cleaning-service-near-me-that-delivers.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'affordable-and-reliable-gutter-cleaning-service-near-me-that-delivers.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: [''],
+        }),
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
