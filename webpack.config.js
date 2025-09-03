@@ -91,6 +91,8 @@ module.exports = {
           scriptLoading: 'defer',
           chunks: ['services'],
         }),
+
+        // locations
         new HtmlWebpackPlugin({ 
           template: './src/pages/locations/gutter-cleaning-pressure-washing-los-altos.html',
           favicon: './src/images/rwags-logo.ico',
@@ -151,6 +153,31 @@ module.exports = {
           template: './src/pages/locations/window-gutter-cleaning-emerald-hills.html',
           favicon: './src/images/rwags-logo.ico',
           filename: 'window-gutter-cleaning-emerald-hills/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/window-gutter-cleaning-saratoga.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'window-gutter-cleaning-saratoga/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/window-gutter-cleaning-los-gatos.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'window-gutter-cleaning-los-gatos/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/window-gutter-cleaning-cupertino.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'window-gutter-cleaning-cupertino/index.html',
           inject: 'head',
           scriptLoading: 'defer',
           chunks: ['locations'],
