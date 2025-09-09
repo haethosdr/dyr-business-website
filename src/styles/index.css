@@ -747,6 +747,7 @@ html, body {
     width: max-content;
     height: max-content;
     padding: 25px;
+    /* border: 1px solid green; */
 }
 
 .svg-icon--list a {
@@ -755,7 +756,6 @@ html, body {
     background: transparent;
     border-radius: 50%;
 }
-
 
 .svg-icon--wrapper {
     box-sizing: border-box;
@@ -771,11 +771,19 @@ html, body {
     border-radius: 50%;
 }
 
+/* .svg-icon--wrapper .instagram {
+    fill: red;
+} */
+
 .facebook > .use--icon {
     fill: white;
 }
 
 .yelp > .use--icon {
+    fill: red;
+}
+
+.instagram > .use--icon {
     fill: red;
 }
 
@@ -787,6 +795,20 @@ html, body {
 .yelp > .use--mask {
     fill: transparent;
 }
+
+.svg-icon--social.youtube {
+    fill: red;
+    /* border: 1px solid green; */
+    width: 26px;
+    height: 32px;
+
+        /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+
 
 /* FOOTER SECTION */
 .index-footer {
