@@ -5,6 +5,9 @@ console.log("from locations.js");
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.querySelector('#contact-form');
+    const submitButton = document.querySelector('#form-submit');
+
     const serviceMenuLink = document.querySelector('#services');
     const dropDownMenu = document.querySelector('#dropdown-menu');
 
@@ -59,6 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
             subNavDisplay.style.display = 'none';
             servicesSymb.textContent = '+';
         }
+    });
+
+    submitButton.addEventListener('submit', () => {
+        contactForm.clear();
     });
 
 });

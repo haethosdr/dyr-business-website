@@ -182,6 +182,22 @@ module.exports = {
           scriptLoading: 'defer',
           chunks: ['locations'],
         }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/window-gutter-cleaning-san-jose.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'window-gutter-cleaning-san-jose/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
+        new HtmlWebpackPlugin({ 
+          template: './src/pages/locations/window-gutter-cleaning-san-mateo.html',
+          favicon: './src/images/rwags-logo.ico',
+          filename: 'window-gutter-cleaning-san-mateo/index.html',
+          inject: 'head',
+          scriptLoading: 'defer',
+          chunks: ['locations'],
+        }),
 
         // For all the blog pages
         new HtmlWebpackPlugin({ 
@@ -494,6 +510,10 @@ module.exports = {
           {
             test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
             type: 'asset/resource',
+            // generator: {
+            //   // Keep original name and extension
+            //   filename: 'images/[name][ext]'
+            // }
           },
           {
             test: /\.(woff|woff2|eot|ttf|otf)$/i,
