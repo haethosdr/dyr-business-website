@@ -22,7 +22,7 @@ a {
     box-sizing: border-box;
     text-decoration: none;
     cursor: pointer;
- }
+}
 
 html, body {
     margin: 0;
@@ -621,16 +621,13 @@ textarea.form-input-field {
     padding: 25px;
 }
 
-.svg-icon--list a {
+.svg-icon--wrapper {
     color: rgb(16, 44, 100);
     text-decoration: none;
     background: transparent;
     border-radius: 50%;
-}
-
-
-.svg-icon--wrapper {
     box-sizing: border-box;
+
     width: 36px;
     height: 36px;
     box-shadow: 0 0 0 2px inset;
@@ -643,23 +640,62 @@ textarea.form-input-field {
     border-radius: 50%;
 }
 
-.facebook > .use--icon {
-    fill: white;
+.svg-icon--wrapper.instagram,
+.svg-icon--wrapper.nextdoor,
+.svg-icon--wrapper.youtube {
+    border: none;
+    color: transparent;
+}
+
+.svg-icon--wrapper.nextdoor {
+    color: transparent;
+    text-decoration: none;
+    background: transparent;
+    box-sizing: border-box;
+    width: 40px;
+    height: 45px;
+    box-shadow: 0 0 0 2px inset;
+    border: none;
+}
+
+.svg-icon--wrapper.youtube {
+    width: 36px;
+    height: 45px;
+}
+
+.svg-icon--wrapper.twitter {
+    border: none;
 }
 
 .yelp > .use--icon {
     fill: red;
 }
 
-.use--mask {
+.instagram > .use--icon {
+    fill: red;
+}
+
+.svg-icon--social.facebook > .use--mask {
+    fill: rgba(14, 165, 233, .1);
+}
+
+.svg-icon--social.facebook > .use--icon {
     fill: rgba(14, 165, 233, 1);
-    border-radius: 50%;
+}
+
+.svg-icon--social.nextdoor {
+    color: green;
+    fill: white;
+    background: transparent;
 }
 
 .yelp > .use--mask {
     fill: transparent;
 }
 
+.svg-icon--social.youtube {
+    fill: red;
+}
 
 /* FOOTER SECTION */
 .index-footer {
@@ -772,7 +808,12 @@ textarea.form-input-field {
 
 .foot-link > a {
     color: rgba(240, 233, 221, 1);
-    /* color: rgba(219, 153, 36, 1); */
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.footer-left-locations a {
+    color: rgba(240, 233, 221, 1);
     font-size: .9rem;
     font-weight: 500;
 }

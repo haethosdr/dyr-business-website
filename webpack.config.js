@@ -510,10 +510,10 @@ module.exports = {
           {
             test: /\.(png|svg|jpg|jpeg|gif|ico)$/i,
             type: 'asset/resource',
-            // generator: {
-            //   // Keep original name and extension
-            //   filename: 'images/[name][ext]'
-            // }
+            generator: {
+              // Keep original name and extension
+              filename: '[name][ext]'
+            }
           },
           {
             test: /\.(woff|woff2|eot|ttf|otf)$/i,
