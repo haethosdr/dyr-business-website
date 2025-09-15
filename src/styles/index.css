@@ -81,16 +81,25 @@ html, body {
     gap: 5px;
 }
 
+.top-btn-cont-dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    /* border: 1px solid red; */
+}
+
 .request-button {
     inset: all;
     border: none;
     box-sizing: border-box;
     cursor: pointer;
     font-family: 'Noto Sans', tahoma;
-    font-size: .9rem;
+    font-size: 1.2rem;
     font-weight: 600;
     border-radius: 5px;
-    padding: 6px 10px;
+    padding: 7px 12px;
     color: rgba(219, 153, 36, 1);
     background: rgba(26, 48, 120, 1);
     letter-spacing: .1rem;
@@ -99,6 +108,11 @@ html, body {
 .request-button:hover {
     background: rgba(16, 28, 86, 1);
     /* background: rgba(3, 6, 51, 1); */
+}
+
+.top-btn-cont-dialog .request-button {
+    font-size: 1rem;
+    padding: 6px 10px;
 }
 
 .top-mid-quote {
@@ -191,7 +205,8 @@ html, body {
 }
 
 /* DROPDOWN MENU */
-#dropdown-menu {
+#dropdown-menu,
+#dropdown-menu-locations {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -205,19 +220,22 @@ html, body {
     z-index: 3;
 }
 
-#dropdown-menu > a {
+#dropdown-menu > a,
+#dropdown-menu-locations > a {
     box-sizing: border-box;
     padding: 7px;
     color: white;
     z-index: 10;
 }
 
-#dropdown-menu > a:hover {
+#dropdown-menu > a:hover,
+#dropdown-menu-locations > a:hover {
     box-sizing: border-box;
     color: rgba(219, 153, 36, 1);
 }
 
-#dropdown-menu span {
+#dropdown-menu span,
+#dropdown-menu-locations span {
     box-sizing: border-box;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -282,6 +300,8 @@ html, body {
     height: 100%;
     width: 100%;
     position: relative;
+    border: 1px solid red;
+    overflow-y: scroll;
 }
 
 .nav-cls-btn-wrp {
@@ -342,7 +362,9 @@ html, body {
     background: inherit;
 }
 
-#nav-srvc-menu {
+/* services nav */
+#nav-srvc-menu,
+#loc-srvc-menu {
     display: none;
     width: 70%;
     flex-direction: column;
@@ -352,7 +374,8 @@ html, body {
     padding-bottom: 7px;
 }
 
-#nav-srvc-menu a {
+#nav-srvc-menu a,
+#loc-srvc-menu a {
     color: rgba(219, 153, 36, 1);
     background: rgba(14, 165, 233, .5);
     border-radius: 5px;
@@ -360,6 +383,10 @@ html, body {
     font-weight: 700;
     font-size: 1.1rem;
 }
+
+/* locations nav  */
+
+/* locations-nav */
 
 /* Serve main Quote */
 .sec-quote {
